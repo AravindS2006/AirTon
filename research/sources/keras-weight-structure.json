@@ -1,0 +1,377 @@
+[
+  {
+    "filename": "Gmodel.h5",
+    "model_class": "Sequential",
+    "keras_version": "3.5.0",
+    "backend": "tensorflow",
+    "layers": [
+      {
+        "type": "InputLayer",
+        "name": "input_layer",
+        "input": [
+          null,
+          256,
+          256,
+          3
+        ],
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Conv2D",
+        "name": "conv2d",
+        "input": null,
+        "units": null,
+        "filters": 32,
+        "activation": "relu"
+      },
+      {
+        "type": "MaxPooling2D",
+        "name": "max_pooling2d",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Conv2D",
+        "name": "conv2d_1",
+        "input": null,
+        "units": null,
+        "filters": 32,
+        "activation": "relu"
+      },
+      {
+        "type": "MaxPooling2D",
+        "name": "max_pooling2d_1",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Flatten",
+        "name": "flatten",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Dense",
+        "name": "dense",
+        "input": null,
+        "units": 128,
+        "filters": null,
+        "activation": "relu"
+      },
+      {
+        "type": "Dense",
+        "name": "dense_1",
+        "input": null,
+        "units": 1,
+        "filters": null,
+        "activation": "sigmoid"
+      }
+    ]
+  },
+  {
+    "filename": "my_model2.h5",
+    "model_class": "Sequential",
+    "keras_version": "2.4.0",
+    "backend": "tensorflow",
+    "layers": [
+      {
+        "type": "InputLayer",
+        "name": "conv2d_input",
+        "input": [
+          null,
+          100,
+          100,
+          3
+        ],
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Conv2D",
+        "name": "conv2d",
+        "input": [
+          null,
+          100,
+          100,
+          3
+        ],
+        "units": null,
+        "filters": 64,
+        "activation": "linear"
+      },
+      {
+        "type": "BatchNormalization",
+        "name": "batch_normalization",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Activation",
+        "name": "activation",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": "relu"
+      },
+      {
+        "type": "MaxPooling2D",
+        "name": "max_pooling2d",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Conv2D",
+        "name": "conv2d_1",
+        "input": null,
+        "units": null,
+        "filters": 128,
+        "activation": "linear"
+      },
+      {
+        "type": "BatchNormalization",
+        "name": "batch_normalization_1",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Activation",
+        "name": "activation_1",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": "relu"
+      },
+      {
+        "type": "MaxPooling2D",
+        "name": "max_pooling2d_1",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "ZeroPadding2D",
+        "name": "zero_padding2d",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Conv2D",
+        "name": "conv2d_2",
+        "input": null,
+        "units": null,
+        "filters": 256,
+        "activation": "linear"
+      },
+      {
+        "type": "BatchNormalization",
+        "name": "batch_normalization_2",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Activation",
+        "name": "activation_2",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": "relu"
+      },
+      {
+        "type": "MaxPooling2D",
+        "name": "max_pooling2d_2",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "ZeroPadding2D",
+        "name": "zero_padding2d_1",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Conv2D",
+        "name": "conv2d_3",
+        "input": null,
+        "units": null,
+        "filters": 512,
+        "activation": "linear"
+      },
+      {
+        "type": "BatchNormalization",
+        "name": "batch_normalization_3",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Activation",
+        "name": "activation_3",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": "relu"
+      },
+      {
+        "type": "ZeroPadding2D",
+        "name": "zero_padding2d_2",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Conv2D",
+        "name": "conv2d_4",
+        "input": null,
+        "units": null,
+        "filters": 512,
+        "activation": "linear"
+      },
+      {
+        "type": "BatchNormalization",
+        "name": "batch_normalization_4",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Activation",
+        "name": "activation_4",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": "relu"
+      },
+      {
+        "type": "MaxPooling2D",
+        "name": "max_pooling2d_3",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Flatten",
+        "name": "flatten",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Dense",
+        "name": "dense",
+        "input": null,
+        "units": 64,
+        "filters": null,
+        "activation": "linear"
+      },
+      {
+        "type": "BatchNormalization",
+        "name": "batch_normalization_5",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Activation",
+        "name": "activation_5",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": "relu"
+      },
+      {
+        "type": "Dropout",
+        "name": "dropout",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Dense",
+        "name": "dense_1",
+        "input": null,
+        "units": 128,
+        "filters": null,
+        "activation": "linear"
+      },
+      {
+        "type": "BatchNormalization",
+        "name": "batch_normalization_6",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Activation",
+        "name": "activation_6",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": "relu"
+      },
+      {
+        "type": "Dropout",
+        "name": "dropout_1",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Dense",
+        "name": "dense_2",
+        "input": null,
+        "units": 1,
+        "filters": null,
+        "activation": "linear"
+      },
+      {
+        "type": "BatchNormalization",
+        "name": "batch_normalization_7",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": null
+      },
+      {
+        "type": "Activation",
+        "name": "activation_7",
+        "input": null,
+        "units": null,
+        "filters": null,
+        "activation": "sigmoid"
+      }
+    ]
+  }
+]

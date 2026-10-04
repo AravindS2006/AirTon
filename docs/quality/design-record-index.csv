@@ -1,0 +1,25 @@
+record_id,record,location,state,evidence_or_next_deliverable
+DHF-001,Intended use,docs/product/specification.md,founder direction confirmed; clinical approval open,Home IOP monitoring under a doctor's care
+DHF-002,User needs,docs/product/specification.md,draft,Clinical and representative home user review
+DHF-003,Design inputs,docs/product/requirements.md,draft,Reviewed performance and safety acceptance limits
+DHF-004,Architecture,docs/architecture/system.md,draft,Hardware and cloud interface review
+DHF-005,Risk file,docs/quality/risk-register.md,draft,Hazard-control verification and residual risk review
+DHF-006,Mechanical history,hardware/mechanical/design-history.md,concept artifacts recovered,Native dimensioned CAD and optical/pneumatic layout
+DHF-007,Electronics,hardware/electronics/README.md,unrecovered,Native schematic PCB and as-built BOM
+DHF-008,Firmware,firmware/README.md,simulation only,Controlled physical driver and independent interlocks
+DHF-009,Optical feasibility,docs/hardware/optical-feasibility.md,plan,Raw model-eye observable and uncertainty results
+DHF-010,Calibration,docs/hardware/bench-plan.md,plan,Reference-linked calibration and drift evidence
+DHF-011,Retinal training,ml/recovered-model-audit.md,historical code/logs recovered,Corrected reproducible independent evaluation
+DHF-012,Model identity,models/model-registry.json,weight files and metadata verified,Training-to-checkpoint lineage
+DHF-013,Data provenance,data/dataset-registry.json,partial,Dataset rights and patient/split provenance
+DHF-014,Application source,docs/software/legacy-audit.md,prototype source recovered,Production identity/device/backend integration
+DHF-015,Software verification,docs/software/verification.md,synthetic reference only,Version-specific production verification
+DHF-016,Clinical agreement,docs/clinical/validation-plan.md,plan,Authorized paired-reference study and analysis
+DHF-017,Home-use validation,docs/clinical/home-monitoring-validation.md,plan,Representative self-use and home-context evidence
+DHF-018,Cloud/privacy,docs/cloud/operations.md,design only,Delivery access restore and governance verification
+DHF-019,Regulatory,docs/quality/standards-and-regulation.md,classification research,Reviewed pathway and actual submissions/authorizations
+DHF-020,Manufacturing transfer,quality/production-master/README.md,open,Released BOM procedures fixtures acceptance and yield
+DHF-021,Individual device history,quality/device-history/README.md,open,Serial lot calibration release and service records
+DHF-022,Post-market service,docs/quality/post-market-and-service.md,proposed process,Staffed complaint service reporting and field action procedures
+DHF-023,Business baseline,docs/business/baseline.md,forecast reconciled,Actual quotes invoices contracts and accounts
+DHF-024,IP and corporate,docs/business/ip-status.md,drafting evidence only,Filing receipts ownership assignments and incorporation records

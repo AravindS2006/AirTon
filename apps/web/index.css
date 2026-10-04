@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bundled CSS and system fonts keep the interface readable without a CDN. */
+body { margin: 0; font-family: Arial, sans-serif; }
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid #00a89d;
+  outline-offset: 3px;
+}

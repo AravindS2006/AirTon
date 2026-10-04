@@ -8,7 +8,7 @@ import re
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED = {".git", ".venv", "venv", "tmp", "output", "__pycache__", "build", "dist"}
+EXCLUDED = {".git", ".venv", "venv", "tmp", "output", "local-private", "legacy", "node_modules", "__pycache__", "build", "dist"}
 
 
 def main():
@@ -22,6 +22,14 @@ def main():
                 json.loads(path.read_text(encoding="utf-8"))
             except (ValueError, UnicodeError) as exc:
                 failures.append(f"{path.relative_to(ROOT)}: invalid JSON: {exc}")
+        if path.suffix == ".ipynb":
+            try:
+                notebook = json.loads(path.read_text(encoding="utf-8"))
+                for index, cell in enumerate(notebook.get("cells", [])):
+                    if cell.get("outputs") or cell.get("attachments") or cell.get("execution_count") is not None:
+                        failures.append(f"{path.relative_to(ROOT)} cell {index}: unsanitized notebook outputs/attachments")
+            except (ValueError, UnicodeError) as exc:
+                failures.append(f"{path.relative_to(ROOT)}: invalid notebook: {exc}")
         if path.suffix == ".py":
             try:
                 ast.parse(path.read_text(encoding="utf-8"))
@@ -36,7 +44,7 @@ def main():
                 if target and not (path.parent / target).exists():
                     failures.append(f"{path.relative_to(ROOT)}: broken local link {target}")
                 checked += 1
-    for name in ("artifacts/source/manifest.json", "artifacts/examples/manifest.json"):
+    for name in ("artifacts/source/manifest.json", "artifacts/examples/manifest.json", "artifacts/recovery-manifest.json", "reports/manifest.json"):
         path = ROOT / name
         if not path.exists():
             failures.append(f"Missing retained artifact manifest: {name}")

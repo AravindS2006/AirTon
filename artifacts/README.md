@@ -5,6 +5,11 @@
 | `source/team-airton-2025-07-03.pdf` | Original user-supplied 38-page team deck | Supplied historical source, unchanged |
 | `source/deck-figures/` | Rendered selected original deck pages | Source excerpts; no new validation |
 | `source/manifest.json` | Source origin/hash and excerpt provenance | Integrity record |
+| `source/device-drawings/` | Five actual September 2026 device drawing PDFs | Concept drawings; no native CAD or as-built proof |
+| `research/` | Two aggregate notebook confusion-matrix figures | Historical output excerpts; class-label audit required |
+| `recovery-manifest.json` | 80 retained recovered source/figure/drawing hashes | Exact legacy sources; notebook outputs stripped |
+| `../legacy/` | Fixed-revision public GitHub / Hugging Face app and model source | Historical prototype implementations |
+| `../reports/` | Dated master report in Markdown and PDF | Current evidence synthesis; not clinical validation |
 | `examples/synthetic-review.html` | Fictional doctor-facing review preview | Synthetic software demonstration |
 | `examples/synthetic-measurements.json` | Strict synthetic measurement records | Synthetic demonstration |
 | `examples/synthetic-fhir-observations.json` | Illustrative FHIR-shaped observations | Synthetic; not profile validated |

@@ -1,0 +1,30 @@
+{
+  "state": "historical planning scenarios; not actual sales or financing",
+  "currency": "INR",
+  "source_monthly_units_sum": 180,
+  "contribution_per_unit": 10000,
+  "hardware_gross_margin": 0.2857142857142857,
+  "hardware_only_break_even_units": 126,
+  "scenarios": [
+    {
+      "name": "source_stated_total",
+      "units": 180,
+      "hardware_revenue": 6300000,
+      "hardware_cogs": 4500000,
+      "hardware_contribution": 1800000,
+      "hardware_result_before_excluded_costs": 541000,
+      "consulting_revenue_without_cost_estimate": 240000,
+      "total_revenue_if_consulting_delivered": 6540000
+    },
+    {
+      "name": "source_monthly_row_sum",
+      "units": 180,
+      "hardware_revenue": 6300000,
+      "hardware_cogs": 4500000,
+      "hardware_contribution": 1800000,
+      "hardware_result_before_excluded_costs": 541000,
+      "consulting_revenue_without_cost_estimate": 240000,
+      "total_revenue_if_consulting_delivered": 6540000
+    }
+  ]
+}

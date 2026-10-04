@@ -1,0 +1,1353 @@
+[
+  {
+    "repo_id": "AravindS2006/AIRTON",
+    "kind": "models",
+    "revision": "e38237e6f9ce12464a0309f75bce0ef3b4794af2",
+    "created_at": "2025-02-13T16:31:28.000Z",
+    "last_modified": "2025-02-13T16:31:28.000Z",
+    "runtime_snapshot": null,
+    "siblings": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "size": 1519
+      }
+    ],
+    "retrieved_on": "2026-10-04",
+    "license": "not declared"
+  },
+  {
+    "repo_id": "AravindS2006/Thiruvizhi",
+    "kind": "models",
+    "revision": "7ab5409ff386135527dd2d68d47e7f4d3fb8bc21",
+    "created_at": "2025-11-20T03:41:58.000Z",
+    "last_modified": "2025-11-20T04:24:35.000Z",
+    "runtime_snapshot": null,
+    "siblings": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "size": 1519
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "d0e4579d05118cfa1a8a2ada5ff63ab2cdf227f8",
+        "size": 7722
+      },
+      {
+        "rfilename": "best_vit_model.pth",
+        "blobId": "e69aab30af145c1483eb04f78f193cdd9ed03478",
+        "size": 343650539,
+        "lfs": {
+          "sha256": "577a62f6fa57a42be0ff40eb185dcd18178880b9a250589af618adf82e4af5ed",
+          "size": 343650539,
+          "pointerSize": 134
+        }
+      },
+      {
+        "rfilename": "config.json",
+        "blobId": "e8bf300fa7f0fecc61da2706aae88309e4816d0a",
+        "size": 489
+      },
+      {
+        "rfilename": "model.py",
+        "blobId": "a5805532108501fb4d63ddaa5528247fff4f8ce3",
+        "size": 323
+      }
+    ],
+    "retrieved_on": "2026-10-04",
+    "license": "mit"
+  },
+  {
+    "repo_id": "AravindS2006/AIRTON",
+    "kind": "spaces",
+    "revision": "b03f56aee639f44262661bb57c054525a6631574",
+    "created_at": "2025-02-16T05:04:03.000Z",
+    "last_modified": "2025-02-16T05:41:01.000Z",
+    "runtime_snapshot": "BUILD_ERROR",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "size": 1519
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "676642b1afb927de28d503e3187e2eecf92dc14d",
+        "size": 225
+      },
+      {
+        "rfilename": "app.py",
+        "blobId": "925af2ac013a41cfda01ed56965d8888085984e7",
+        "size": 2487
+      },
+      {
+        "rfilename": "my_model2.h5",
+        "blobId": "661af635fee8a61eda1606a943efc537091363d4",
+        "size": 74157296,
+        "lfs": {
+          "sha256": "c4198d700ba8fcedf590e3378ba513357372490338cb6163b1a6441f7d199ca8",
+          "size": 74157296,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "requirements.txt",
+        "blobId": "0a82e85f396d304d409cd3d6eb1075dd2d6293d2",
+        "size": 43
+      }
+    ],
+    "retrieved_on": "2026-10-04",
+    "license": "not declared"
+  },
+  {
+    "repo_id": "AravindS2006/Airton-node",
+    "kind": "spaces",
+    "revision": "3d9b0d805306e236fce32e034b653f6ab6482fa5",
+    "created_at": "2025-02-22T08:45:51.000Z",
+    "last_modified": "2025-02-22T09:44:04.000Z",
+    "runtime_snapshot": "SLEEPING",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "size": 1519
+      },
+      {
+        "rfilename": "Dockerfile",
+        "blobId": "f66dd75a4f6f8d2934572481a8d2672049bc116f",
+        "size": 563
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "c7865b6c4955a127ca9ddb46be4c04430402fe02",
+        "size": 209
+      },
+      {
+        "rfilename": "package.json",
+        "blobId": "2479358541e119750f43555cf294a3736c1b866c",
+        "size": 483
+      },
+      {
+        "rfilename": "public/img/a.img",
+        "blobId": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "size": 0
+      },
+      {
+        "rfilename": "public/index.html",
+        "blobId": "82f971971ba11f2260b054df17a5dfef3ead2f36",
+        "size": 47395
+      },
+      {
+        "rfilename": "server.js",
+        "blobId": "6a2f65ad779139925d2a6200410de4010866d2d9",
+        "size": 8728
+      }
+    ],
+    "retrieved_on": "2026-10-04",
+    "license": "not declared"
+  },
+  {
+    "repo_id": "AravindS2006/AIRTON_DOCKER",
+    "kind": "spaces",
+    "revision": "f0ac37bffe5ec1686a5799bf1240aaf92de4489a",
+    "created_at": "2025-02-16T06:04:49.000Z",
+    "last_modified": "2025-02-16T07:42:12.000Z",
+    "runtime_snapshot": "BUILD_ERROR",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "size": 1519
+      },
+      {
+        "rfilename": "Dockerfile",
+        "blobId": "4e24073873bc6bec321bc0e13454b5c1276a42e0",
+        "size": 558
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "7c8b82000e2ee8d65b17c47148f51290a6baae3d",
+        "size": 197
+      },
+      {
+        "rfilename": "backend/app.py",
+        "blobId": "16d9d6a8a476cbb8a7565762e1384634757b5aaa",
+        "size": 4505
+      },
+      {
+        "rfilename": "backend/db.py",
+        "blobId": "be3463dfd0d0b8a7f0e2463be7eea04d0485df0b",
+        "size": 1869
+      },
+      {
+        "rfilename": "backend/models/__init__.py",
+        "blobId": "edeb45d9ce9f18786153f4b4be225f981a19a91c",
+        "size": 138
+      },
+      {
+        "rfilename": "backend/models/analysis.py",
+        "blobId": "26aa23a4cb3904aba832c0ee617d5671f262cce6",
+        "size": 1040
+      },
+      {
+        "rfilename": "backend/models/user.py",
+        "blobId": "a1665dafd3aaaf659c7720b9dd1c1e69b7b45f58",
+        "size": 951
+      },
+      {
+        "rfilename": "backend/requirements.txt",
+        "blobId": "cacec9bc9cf18dce3e2cbfa86dc15ce18beef87a",
+        "size": 261
+      },
+      {
+        "rfilename": "backend/security.py",
+        "blobId": "69f21d13cde0b62819156c3446028da46c299151",
+        "size": 1503
+      },
+      {
+        "rfilename": "backend/utils.py",
+        "blobId": "cc83a7cd912cf03fe6b02b226b6ee66e64583085",
+        "size": 1657
+      },
+      {
+        "rfilename": "frontend/app.py",
+        "blobId": "46befdf11ef6bcc825a3778123f531a36ae00983",
+        "size": 7528
+      },
+      {
+        "rfilename": "frontend/requirements.txt",
+        "blobId": "10d6199cf4754674f8630344fa3d153bbd936071",
+        "size": 46
+      },
+      {
+        "rfilename": "frontend/utils.py",
+        "blobId": "be783efb67d4b7ec3cf38e9f684e5d321ec3291c",
+        "size": 68
+      }
+    ],
+    "retrieved_on": "2026-10-04",
+    "license": "not declared"
+  },
+  {
+    "repo_id": "AravindS2006/AIRTON_MAIN",
+    "kind": "spaces",
+    "revision": "77b9bee76df810eb87716f1ca5634d9adc002f3b",
+    "created_at": "2025-02-16T08:50:01.000Z",
+    "last_modified": "2025-03-05T11:57:33.000Z",
+    "runtime_snapshot": "SLEEPING",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "size": 1519
+      },
+      {
+        "rfilename": "Gmodel.h5",
+        "blobId": "6181622e19fbea785fdf21030dd32dbcd9139e3a",
+        "size": 189104112,
+        "lfs": {
+          "sha256": "cdf7c6cf943d71dc04729221210d2711107f0500679e85f01b82e2d69abf9608",
+          "size": 189104112,
+          "pointerSize": 134
+        }
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "a3f60e3973a1d2e8d8d8518afc8b80ba0860cd39",
+        "size": 237
+      },
+      {
+        "rfilename": "app.py",
+        "blobId": "276a375f2c769974cd11c16e70a3b9b682a5a0ab",
+        "size": 2035
+      },
+      {
+        "rfilename": "my_model2.h5",
+        "blobId": "661af635fee8a61eda1606a943efc537091363d4",
+        "size": 74157296,
+        "lfs": {
+          "sha256": "c4198d700ba8fcedf590e3378ba513357372490338cb6163b1a6441f7d199ca8",
+          "size": 74157296,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "requirements.txt",
+        "blobId": "930871e9d397f516f6ceca8e3df8e1670e2946a7",
+        "size": 110
+      }
+    ],
+    "retrieved_on": "2026-10-04",
+    "license": "not declared"
+  },
+  {
+    "repo_id": "AravindS2006/airton_static",
+    "kind": "spaces",
+    "revision": "0e9e345ca184c4e5369cbc74471560a5dbf82e4b",
+    "created_at": "2025-02-13T16:59:08.000Z",
+    "last_modified": "2025-02-15T16:59:46.000Z",
+    "runtime_snapshot": "RUNNING",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "9f6c3601e77fe2eb291c074e6533b861bf3140e1",
+        "size": 2570
+      },
+      {
+        "rfilename": "Dockerfile",
+        "blobId": "be54109b689d2df72ad619b5ffde216f731c4f16",
+        "size": 536
+      },
+      {
+        "rfilename": "Healthy/normal_1097.jpg",
+        "blobId": "10fd521650a50e9d9af778765e6cecf36dbb7f43",
+        "size": 56877
+      },
+      {
+        "rfilename": "Healthy/normal_1114.jpg",
+        "blobId": "3698209f9e96a6362d4927b3161afd39f68d1aee",
+        "size": 48241
+      },
+      {
+        "rfilename": "Healthy/normal_1158.jpg",
+        "blobId": "3f6e87abddbbcd78f0ad952f6e18fe772d1d706a",
+        "size": 48817
+      },
+      {
+        "rfilename": "Healthy/normal_1169.jpg",
+        "blobId": "52fd655c087e6e1d440bf749675ba69b59b18dec",
+        "size": 43007
+      },
+      {
+        "rfilename": "Healthy/normal_1181.jpg",
+        "blobId": "394a104014518ebe09fcd3b6c277942d6b0fb32d",
+        "size": 58183
+      },
+      {
+        "rfilename": "Healthy/normal_1239.jpg",
+        "blobId": "728613a0d9ff78a686420c08d357a7f719a57071",
+        "size": 48379
+      },
+      {
+        "rfilename": "Healthy/normal_125.jpg",
+        "blobId": "c9322416d0370cca1fb1b696b1f41f8bead69681",
+        "size": 36902
+      },
+      {
+        "rfilename": "Healthy/normal_1273.jpg",
+        "blobId": "08195faa25ab549bdd0ef54f25e23b7ee81997b3",
+        "size": 36303
+      },
+      {
+        "rfilename": "Healthy/normal_1292.jpg",
+        "blobId": "cc6070753b69bbdbc01951b5b575488a1712a772",
+        "size": 37756
+      },
+      {
+        "rfilename": "Healthy/normal_1295.jpg",
+        "blobId": "3675cbc9f801f5c4067443cac8aebd00bdca52d0",
+        "size": 38072
+      },
+      {
+        "rfilename": "Healthy/normal_1297.jpg",
+        "blobId": "1089047dcdbc4a71d38bda1eeecc2277ec8983b2",
+        "size": 58216
+      },
+      {
+        "rfilename": "Healthy/normal_1344.jpg",
+        "blobId": "868143a49925764ce117a1cf135f2bbc8381a60a",
+        "size": 41348
+      },
+      {
+        "rfilename": "Healthy/normal_137.jpg",
+        "blobId": "222182c23544464fecf43efe34b481a31c041bbc",
+        "size": 29029
+      },
+      {
+        "rfilename": "Healthy/normal_1386.jpg",
+        "blobId": "591d9723356b4749371276c1dce6a9b42b45aeae",
+        "size": 42550
+      },
+      {
+        "rfilename": "Healthy/normal_1389.jpg",
+        "blobId": "3b88a0c28dcb9b262b25ff33a9febaa382e0cc76",
+        "size": 35720
+      },
+      {
+        "rfilename": "Healthy/normal_1443.jpg",
+        "blobId": "65d32b47453f84c8897cc2eafaee795670ce2764",
+        "size": 62742
+      },
+      {
+        "rfilename": "Healthy/normal_1457.jpg",
+        "blobId": "9f409cabee274d432a7fa1aa774dae945d37288a",
+        "size": 40273
+      },
+      {
+        "rfilename": "Healthy/normal_150.jpg",
+        "blobId": "f99c40bdf7d7bba16285be01b8fcfb95f45eeb2d",
+        "size": 12984
+      },
+      {
+        "rfilename": "Healthy/normal_1517.jpg",
+        "blobId": "5b9260c0d5011618291d59e4c4e9a6e99e30180b",
+        "size": 54723
+      },
+      {
+        "rfilename": "Healthy/normal_1541.jpg",
+        "blobId": "91f164c1be97075d7f05db46dfaa45c6759ad17d",
+        "size": 68836
+      },
+      {
+        "rfilename": "Healthy/normal_1545.jpg",
+        "blobId": "f526840062674ae54f9edc44bc0084d97c69b69c",
+        "size": 98949
+      },
+      {
+        "rfilename": "Healthy/normal_1556.jpg",
+        "blobId": "307a9ebeffed7917c81c1e31ceb2a8d73f1669fc",
+        "size": 66420
+      },
+      {
+        "rfilename": "Healthy/normal_1559.jpg",
+        "blobId": "7d8f6328836c6b5700d076d2579021cf4376c9af",
+        "size": 78329
+      },
+      {
+        "rfilename": "Healthy/normal_1589.jpg",
+        "blobId": "2f61ee99381add0247af1308196e47d29a2cf286",
+        "size": 56516
+      },
+      {
+        "rfilename": "Healthy/normal_1614.jpg",
+        "blobId": "75c7acae4dd8797c8890d51a84394493ca22b4eb",
+        "size": 74377
+      },
+      {
+        "rfilename": "Healthy/normal_1624.jpg",
+        "blobId": "dd641678fbefcf83d186184f46b252d893f2c612",
+        "size": 43974
+      },
+      {
+        "rfilename": "Healthy/normal_1625.jpg",
+        "blobId": "adac2e120b52326f677d1ed00c14ddbe023a1e80",
+        "size": 59194
+      },
+      {
+        "rfilename": "Healthy/normal_1634.jpg",
+        "blobId": "ace62d014f0b72618042498c5228733c76ff4088",
+        "size": 53563
+      },
+      {
+        "rfilename": "Healthy/normal_1643.jpg",
+        "blobId": "beb010e1e4228db60df4f81b6df539c449a7abc5",
+        "size": 67422
+      },
+      {
+        "rfilename": "Healthy/normal_1652.jpg",
+        "blobId": "916645cb715def100644c2ae07a95d5e845e0178",
+        "size": 68113
+      },
+      {
+        "rfilename": "Healthy/normal_1654.jpg",
+        "blobId": "4695bf885d89b219bbb99cf38b9a934ee7c01bf4",
+        "size": 53858
+      },
+      {
+        "rfilename": "Healthy/normal_1667.jpg",
+        "blobId": "a2342acdba896c684aca6bf2ecd65848b7f770b9",
+        "size": 66408
+      },
+      {
+        "rfilename": "Healthy/normal_1711.jpg",
+        "blobId": "074bb217fb052a07a57abd09ff33fe4c360cf615",
+        "size": 64192
+      },
+      {
+        "rfilename": "Healthy/normal_1727.jpg",
+        "blobId": "045a00476ddec042988cd0a1471d3a85e82b06d8",
+        "size": 49760
+      },
+      {
+        "rfilename": "Healthy/normal_1777.jpg",
+        "blobId": "54c168b28ee17aebcae88531d3d42f194f026771",
+        "size": 71978
+      },
+      {
+        "rfilename": "Healthy/normal_1787.jpg",
+        "blobId": "61920e8958298909b99d561df5875d343ce9f54b",
+        "size": 70993
+      },
+      {
+        "rfilename": "Healthy/normal_1799.jpg",
+        "blobId": "3df7fb064fb3a5c8e1bc5c348e364bde648b2045",
+        "size": 71294
+      },
+      {
+        "rfilename": "Healthy/normal_1800.jpg",
+        "blobId": "35c3de2496e2d3d019f2cc70d2d386eb65cce588",
+        "size": 84525
+      },
+      {
+        "rfilename": "Healthy/normal_1803.jpg",
+        "blobId": "d9bb5fb51574975db0af22a7ed24447e6839e34f",
+        "size": 47170
+      },
+      {
+        "rfilename": "Healthy/normal_1859.jpg",
+        "blobId": "fd65e1b7033144df66fa4725c6d4dcf079d2527b",
+        "size": 65260
+      },
+      {
+        "rfilename": "Healthy/normal_1863.jpg",
+        "blobId": "f09e602ae9091d7fc91bf7742714d15f24b41375",
+        "size": 67231
+      },
+      {
+        "rfilename": "Healthy/normal_1913.jpg",
+        "blobId": "cb06994aade3146377417044ce66427575ebef16",
+        "size": 52607
+      },
+      {
+        "rfilename": "Healthy/normal_1914.jpg",
+        "blobId": "8572c2216d96c1af729d350894dd5a42912dd309",
+        "size": 54481
+      },
+      {
+        "rfilename": "Healthy/normal_1921.jpg",
+        "blobId": "37299c56db11c317335d2b02687028bcdc5ed7d7",
+        "size": 74647
+      },
+      {
+        "rfilename": "Healthy/normal_1925.jpg",
+        "blobId": "af27b6ede0b45e458bdde17079577f51145208fb",
+        "size": 66498
+      },
+      {
+        "rfilename": "Healthy/normal_1930.jpg",
+        "blobId": "0c40741d216287d30c0a4e977ec01c795e896aec",
+        "size": 58558
+      },
+      {
+        "rfilename": "Healthy/normal_1932.jpg",
+        "blobId": "5b14bafafb273c74fe5b90574ffb94b89464e0aa",
+        "size": 72075
+      },
+      {
+        "rfilename": "Healthy/normal_1936.jpg",
+        "blobId": "1d50c28237ccb325eb2138748d50445da0090705",
+        "size": 76394
+      },
+      {
+        "rfilename": "Healthy/normal_1979.jpg",
+        "blobId": "d1cbae426a29d594e5b28b8b35cb8718f3e95038",
+        "size": 53958
+      },
+      {
+        "rfilename": "Healthy/normal_1981.jpg",
+        "blobId": "0cedbd4548d4937ea3a74cf601fd547cbbf0927b",
+        "size": 76931
+      },
+      {
+        "rfilename": "Healthy/normal_2012.jpg",
+        "blobId": "89fa0d88ad10525d537ea06b21149f6cc19f52f9",
+        "size": 40782
+      },
+      {
+        "rfilename": "Healthy/normal_2013.jpg",
+        "blobId": "b8ce80aa97aca24beb031a386f4182a075482efd",
+        "size": 67831
+      },
+      {
+        "rfilename": "Healthy/normal_2023.jpg",
+        "blobId": "c316e7da3320f9636c681e583cb04cbde3e61c73",
+        "size": 38714
+      },
+      {
+        "rfilename": "Healthy/normal_2025.jpg",
+        "blobId": "93873725325ce6c662563e9cb84413b4da2bfeda",
+        "size": 109694,
+        "lfs": {
+          "sha256": "dcf5f0015ddb74f809421fbd55abe728872d4f476564b5a595fd994454559ff4",
+          "size": 109694,
+          "pointerSize": 131
+        }
+      },
+      {
+        "rfilename": "Healthy/normal_2026.jpg",
+        "blobId": "877cda3a10b6652445ab04755fd6c3223c8c3da0",
+        "size": 112113,
+        "lfs": {
+          "sha256": "ad1b22887de06020120272961d27e5c6f31d8afa3d413540aaf1b226dc175073",
+          "size": 112113,
+          "pointerSize": 131
+        }
+      },
+      {
+        "rfilename": "Healthy/normal_2033.jpg",
+        "blobId": "399e072869cfa3116e4b853057877f3fc460565a",
+        "size": 69993
+      },
+      {
+        "rfilename": "Healthy/normal_2043.jpg",
+        "blobId": "0a7fdfc6090178e89e2ded315cd5dec02e9859b0",
+        "size": 47327
+      },
+      {
+        "rfilename": "Healthy/normal_2044.jpg",
+        "blobId": "ec035a47cd98332c8ceee8eb1320772b49d3b794",
+        "size": 51755
+      },
+      {
+        "rfilename": "Healthy/normal_2060.jpg",
+        "blobId": "3b3468461077b0e9cb99c11d935aa45402688230",
+        "size": 63671
+      },
+      {
+        "rfilename": "Healthy/normal_2118.jpg",
+        "blobId": "a9aca4988e8d47e63b2a0453a8fe1512ce05dd03",
+        "size": 49036
+      },
+      {
+        "rfilename": "Healthy/normal_23.jpg",
+        "blobId": "882404396f12aa21b086885c05974d3c189773c9",
+        "size": 10357
+      },
+      {
+        "rfilename": "Healthy/normal_230.jpg",
+        "blobId": "a153815861cd9c3b6c880abb335a8a2547918ed6",
+        "size": 17626
+      },
+      {
+        "rfilename": "Healthy/normal_257.jpg",
+        "blobId": "c28eeef26e728febc5f61360aa400d4879860b15",
+        "size": 37721
+      },
+      {
+        "rfilename": "Healthy/normal_266.jpg",
+        "blobId": "0a4a8bcf41fd0bca2eaa639a628fcad69fa15ea5",
+        "size": 18887
+      },
+      {
+        "rfilename": "Healthy/normal_272.jpg",
+        "blobId": "f3daee193e8f8c5a4127f06bf3621b50d6a55cc4",
+        "size": 13696
+      },
+      {
+        "rfilename": "Healthy/normal_286.jpg",
+        "blobId": "5bfbe66efda752151f8cecf45b4404891130e060",
+        "size": 25730
+      },
+      {
+        "rfilename": "Healthy/normal_32.jpg",
+        "blobId": "fb7cdd89240e7707daf8e2c7b7d4cdf7a49083b9",
+        "size": 21837
+      },
+      {
+        "rfilename": "Healthy/normal_332.jpg",
+        "blobId": "ba439470adf68c6286457c28e4c139168248cd51",
+        "size": 22129
+      },
+      {
+        "rfilename": "Healthy/normal_338.jpg",
+        "blobId": "37196c7bb849904615a746e3a4b13d769cc66149",
+        "size": 19593
+      },
+      {
+        "rfilename": "Healthy/normal_346.jpg",
+        "blobId": "28d23e84e063caa90e5850bcdc88afb5d8986a67",
+        "size": 13884
+      },
+      {
+        "rfilename": "Healthy/normal_354.jpg",
+        "blobId": "5a4fe5165159f3b6e68879b2d737a5c7e7880b0b",
+        "size": 20522
+      },
+      {
+        "rfilename": "Healthy/normal_379.jpg",
+        "blobId": "112bf5bf45c3416782c377186bc2fd0a663e6447",
+        "size": 27148
+      },
+      {
+        "rfilename": "Healthy/normal_412.jpg",
+        "blobId": "cd43362a0729b5ffc0399fa9df386acc6dee1e63",
+        "size": 12388
+      },
+      {
+        "rfilename": "Healthy/normal_422.jpg",
+        "blobId": "2c399e11a6892f58561e0a3c4bd8d2efd4bb626c",
+        "size": 22768
+      },
+      {
+        "rfilename": "Healthy/normal_441.jpg",
+        "blobId": "ead161cec87bf07270386f363b3e9d18444c426c",
+        "size": 31183
+      },
+      {
+        "rfilename": "Healthy/normal_444.jpg",
+        "blobId": "73cf3e63379602df13f2bf49133ef94f43bc0ff4",
+        "size": 24649
+      },
+      {
+        "rfilename": "Healthy/normal_455.jpg",
+        "blobId": "b5b905a6749c23267df3e00cae63ef20fe8b4195",
+        "size": 25909
+      },
+      {
+        "rfilename": "Healthy/normal_464.jpg",
+        "blobId": "cfc7ba37bc9ca8b56b54498906e0c8ba2681a38b",
+        "size": 17763
+      },
+      {
+        "rfilename": "Healthy/normal_50.jpg",
+        "blobId": "5661b245fe5c0d4951512c7749a33011fb2fe67f",
+        "size": 15677
+      },
+      {
+        "rfilename": "Healthy/normal_517.jpg",
+        "blobId": "d3e6be11fa1c7422e69cb4aa1067302beea2bc48",
+        "size": 24891
+      },
+      {
+        "rfilename": "Healthy/normal_525.jpg",
+        "blobId": "feb9a0e0865d228c3b04846211c065eaa9f00079",
+        "size": 20672
+      },
+      {
+        "rfilename": "Healthy/normal_549.jpg",
+        "blobId": "03c8c9b769f519e14131515d1a78c3209a885cdf",
+        "size": 21863
+      },
+      {
+        "rfilename": "Healthy/normal_550.jpg",
+        "blobId": "651b6d2b1655707909bb226c32750fa88bcd78d3",
+        "size": 24635
+      },
+      {
+        "rfilename": "Healthy/normal_554.jpg",
+        "blobId": "adc9e32e49f0556d367aea85292ae5e21e9f7acc",
+        "size": 25291
+      },
+      {
+        "rfilename": "Healthy/normal_570.jpg",
+        "blobId": "df71be216db08f86328e726debcc229d3d0c7614",
+        "size": 18962
+      },
+      {
+        "rfilename": "Healthy/normal_582.jpg",
+        "blobId": "747abb4a5ca64ca2570be2aaf24c0005bcddc822",
+        "size": 18838
+      },
+      {
+        "rfilename": "Healthy/normal_598.jpg",
+        "blobId": "7ccbc7ec446a61eb36b18919128835d63b459e45",
+        "size": 19939
+      },
+      {
+        "rfilename": "Healthy/normal_607.jpg",
+        "blobId": "87267e925b8904b42af097102ec15ea0eaaa04b0",
+        "size": 17549
+      },
+      {
+        "rfilename": "Healthy/normal_609.jpg",
+        "blobId": "7517a5a860601ec9b16a5def47b394d7a561e68c",
+        "size": 18189
+      },
+      {
+        "rfilename": "Healthy/normal_65.jpg",
+        "blobId": "b17bb8c4a6fbd591535df0238e81159e177cf514",
+        "size": 9278
+      },
+      {
+        "rfilename": "Healthy/normal_7.jpg",
+        "blobId": "01c0d23afe63359bbf2755b7f26c8422645c6400",
+        "size": 9730
+      },
+      {
+        "rfilename": "Healthy/normal_73.jpg",
+        "blobId": "982dd3d2743f0c0d5833c5d2fd2f9d1a0fb0b5fc",
+        "size": 30354
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "2550fa35ecc9168fb033e7ab552d7fafcc5979f3",
+        "size": 957
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1047.jpg",
+        "blobId": "a376cdf47fee8c23714e3e2985ba1f032900dd1f",
+        "size": 67852
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1085.jpg",
+        "blobId": "71523f8fa827d040c386280340b852dcde46c566",
+        "size": 87424
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1087.jpg",
+        "blobId": "c4538b31a9041f6019780602ae288d2f31d707cf",
+        "size": 84225
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1090.jpg",
+        "blobId": "c8dd8bcd8a4728ff998ec1078a70fb1c41754b91",
+        "size": 62170
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1105.jpg",
+        "blobId": "26075b3e23dca165e21bddd23c983147a4c4350c",
+        "size": 59627
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1106.jpg",
+        "blobId": "1731500ac96ab2a21db7602a82e68eb01dd4b019",
+        "size": 61599
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_111.jpg",
+        "blobId": "0126f8a17cb8caabbe33bc24403edb1f2cfc35e7",
+        "size": 12697
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1115.jpg",
+        "blobId": "eb0751096d28b5e8430fdc3ab9aa0c0edac10ae9",
+        "size": 71006
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1127.jpg",
+        "blobId": "a2e9da2a74749b19c262913f85fe80a907fc45e3",
+        "size": 74786
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_113.jpg",
+        "blobId": "0c32dbd35cf64c9fd897f21edeacdd2a8a3938d8",
+        "size": 55601
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1130.jpg",
+        "blobId": "fa5a74e82ed4dff3110553d614d2b7ffb4bed1b7",
+        "size": 59199
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1133.jpg",
+        "blobId": "0196c37a0c1d24f79498c07d50a4d75336b8f029",
+        "size": 67572
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_114.jpg",
+        "blobId": "eb3ad0c26583b62040847a6de673309baf08b168",
+        "size": 28178
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1155.jpg",
+        "blobId": "0050f2a801127d4962641580143e2f21c006f1d0",
+        "size": 69885
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_1199.jpg",
+        "blobId": "39d851ecda7ab4b367eae607121d6d7949fecf8a",
+        "size": 44513
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_135.jpg",
+        "blobId": "24e4b57c54f323b85ea5c3de2c415db624e8807e",
+        "size": 20622
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_138.jpg",
+        "blobId": "70d1823a8310376060b40e5dc735d0bea55620ed",
+        "size": 46223
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_154.jpg",
+        "blobId": "afbfb48eb0e2f51d57dc884c518a5f696e16feeb",
+        "size": 20415
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_180.jpg",
+        "blobId": "30fdfd8a558ad7fcc14c6b799041a388e3583f7d",
+        "size": 35039
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_190.jpg",
+        "blobId": "c76b8b51c23b2d25d26e729e05248236559b9490",
+        "size": 4688
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_231.jpg",
+        "blobId": "3470cd3488cc175790e51efdeb106139f463c810",
+        "size": 47213
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_251.jpg",
+        "blobId": "fd6f62275b1bccccb4a80be96a890a4c97251d61",
+        "size": 26400
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_253.jpg",
+        "blobId": "3a80b7e06247db7166215427e89fa93c4cd5948a",
+        "size": 32264
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_26.jpg",
+        "blobId": "825e628b379e6b2cfe354eaf539e61c653f2786b",
+        "size": 13967
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_262.jpg",
+        "blobId": "36ead7daf07e3be485537eaf3b62a60e018bc6f5",
+        "size": 43305
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_281.jpg",
+        "blobId": "33f7fc2f4555a5027777afe1f0e72431ac2bbba7",
+        "size": 36040
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_289.jpg",
+        "blobId": "d685999ef5eda3fe60be525fe964fb783e7022e5",
+        "size": 24612
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_300.jpg",
+        "blobId": "4f7b84a74e5e133cd4f30e3aa5d1397c7fe0b6a7",
+        "size": 20665
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_31.jpg",
+        "blobId": "b8aa555a42de0de7d476f87587eac08f17bf56f4",
+        "size": 14938
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_310.jpg",
+        "blobId": "6b6b4a868caa67647a167d481cf7423ff9b5e6e5",
+        "size": 25497
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_319.jpg",
+        "blobId": "eca05d0653a1795e32240d03024169df16fda278",
+        "size": 33379
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_329.jpg",
+        "blobId": "061e739e6f9e0f20b6e6b31785e288ab39847bec",
+        "size": 43989
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_335.jpg",
+        "blobId": "846903e434ed23007c8944fcafcb52ba9d8f1028",
+        "size": 31720
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_336.jpg",
+        "blobId": "df78077ab76bcbdae5010e52b70eb0b69484a6a8",
+        "size": 23592
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_348.jpg",
+        "blobId": "0e40623dd059a4bbc9e547dcc89f5d11db350749",
+        "size": 75093
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_377.jpg",
+        "blobId": "f4dec4bb21a8946d27370b937f3680ac70211a86",
+        "size": 24961
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_389.jpg",
+        "blobId": "23c241ae610a25089c4b5c53a5efe858be454ed7",
+        "size": 21523
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_41.jpg",
+        "blobId": "f03eda4a5b1e7c2b29790849ef788656b5e878e8",
+        "size": 9703
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_422.jpg",
+        "blobId": "49278ab121502bc6d3f508562a961f2133f19930",
+        "size": 69322
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_423.jpg",
+        "blobId": "3a09fc0df8c476dba5177b071ce1eea63425c5ca",
+        "size": 29849
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_430.jpg",
+        "blobId": "a20583ff1217c769d952f921539b260200cc8f3b",
+        "size": 20974
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_440.jpg",
+        "blobId": "ae86d70699cbe0bfc61ca9327026f526ac5bf51f",
+        "size": 82242
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_443.jpg",
+        "blobId": "463adf80e918fc298ae6cf11dda58cd8469228e4",
+        "size": 33650
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_448.jpg",
+        "blobId": "3d3cfe9e6f559613e5d808be2b1b712f5c36b132",
+        "size": 35492
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_487.jpg",
+        "blobId": "5c00efceb3cf672df885a75d1d841b5a9a97f68f",
+        "size": 47131
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_492.jpg",
+        "blobId": "ba9fb2b9a5832bf2b9394cfd647032dee9d32900",
+        "size": 32970
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_530.jpg",
+        "blobId": "d727bc7fff40da9b6e2c08ece47d5a66a8c41944",
+        "size": 64606
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_531.jpg",
+        "blobId": "f09d1b31df517216b7431b9f2c34f1799b4927ab",
+        "size": 61304
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_537.jpg",
+        "blobId": "f3dfef44c291c792969f48bf5b1734e8124ba3a5",
+        "size": 117289,
+        "lfs": {
+          "sha256": "f8425d1e35b649494bc3dd4a43b26e16a5af4dfe51e206dcf5f5ea04fd28402f",
+          "size": 117289,
+          "pointerSize": 131
+        }
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_54.jpg",
+        "blobId": "e57d124e07f11998321fa5aaad448348f7800361",
+        "size": 12553
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_542.jpg",
+        "blobId": "b349acf035b9180c95fab4b33f6f2331d8477401",
+        "size": 71637
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_543.jpg",
+        "blobId": "a392f3c5267462dc32aed29897c523d867fb6bc7",
+        "size": 82504
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_547.jpg",
+        "blobId": "c3233abfce4d6b655b4df2ee0342185105430d0c",
+        "size": 102411,
+        "lfs": {
+          "sha256": "7eb2faf9dab0fdede0c8bcfde72924b8399655261bb3b17efb8bae11c116376f",
+          "size": 102411,
+          "pointerSize": 131
+        }
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_579.jpg",
+        "blobId": "ac12e0afa4c88dc13e493a47d7434fc2a6d28bc6",
+        "size": 71910
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_581.jpg",
+        "blobId": "21657620ad6a870835b2fdc3098ccc577a3ecf17",
+        "size": 70915
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_606.jpg",
+        "blobId": "e8959dc01535acaeb29759c1b60e7a5daa73174b",
+        "size": 85996
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_608.jpg",
+        "blobId": "7ed3ab1320ddd447f644743c38d5bbe9f189e23c",
+        "size": 73404
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_610.jpg",
+        "blobId": "40dfb845a775d1781bad69c8ffb53f053d6b0301",
+        "size": 89476
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_616.jpg",
+        "blobId": "2f8f414a8d683fc30e4893f4370dad70ba6b0b5b",
+        "size": 80500
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_617.jpg",
+        "blobId": "6e3d802f8b554e1ea0ee19273a2f6b1593879afd",
+        "size": 93279
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_618.jpg",
+        "blobId": "f919904c401f8962e37fb241016254e4b294c02e",
+        "size": 68472
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_623.jpg",
+        "blobId": "e4c6021d66515a0cdc0221390138af89dae3121d",
+        "size": 98922
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_63.jpg",
+        "blobId": "103871b6e48439f92a14a31f446a10cbeb40b191",
+        "size": 10551
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_630.jpg",
+        "blobId": "b53f25834e4404edc019fbca2fcdcc886d6e0402",
+        "size": 92006
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_641.jpg",
+        "blobId": "fb85872eb88258d5508382b8489d3164bd572512",
+        "size": 42179
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_643.jpg",
+        "blobId": "9368f8533966e6e8b530a46889bcc87346f725bf",
+        "size": 42706
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_672.jpg",
+        "blobId": "602d5a6e0d0172795b2a228c85cfdb21a6089e6f",
+        "size": 51199
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_676.jpg",
+        "blobId": "f04e58fe73839cd7a89d433243a633379d333d06",
+        "size": 52081
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_690.jpg",
+        "blobId": "e363af6bbb92e9ce6ea717bb78b6a20eb9ad52e5",
+        "size": 53625
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_691.jpg",
+        "blobId": "89d7b72039b7161ec0cb803fba08fb9915d6c77b",
+        "size": 50041
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_703.jpg",
+        "blobId": "3b005eca3020958d9dab6c243e835afdea18b26f",
+        "size": 46189
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_708.jpg",
+        "blobId": "352b09f33bcf45a8e18e1ad23dcb11286fd6d7c6",
+        "size": 45481
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_712.jpg",
+        "blobId": "feb358c457ac73abef8be69fb4be32db726da5ac",
+        "size": 50064
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_72.jpg",
+        "blobId": "c7f9a05b91c1133818969a115a8ae2e024a37978",
+        "size": 12306
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_753.jpg",
+        "blobId": "cafb4271e3a508aa3f8e424d9570f8dd3c3f94ca",
+        "size": 46053
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_756.jpg",
+        "blobId": "9eb6a58b462e7abf19a558560b3de18f5a6da7ba",
+        "size": 53796
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_761.jpg",
+        "blobId": "dd41a9a84b506bd9bce68b4b7269a7083e6cbbea",
+        "size": 47431
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_804.jpg",
+        "blobId": "118df710ac696c88bcf69c0b10cc8a951902ef28",
+        "size": 49400
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_81.jpg",
+        "blobId": "824a3e9e2cb55d3b89d95b582243da24f5d9bd9e",
+        "size": 15589
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_813.jpg",
+        "blobId": "688dec2ebcde0e43e90c164959eab404c5588e84",
+        "size": 41429
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_82.jpg",
+        "blobId": "0ec2abb65279ff805538988c03d9d6f2896cc40d",
+        "size": 13986
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_820.jpg",
+        "blobId": "1dfdf33df994c620539d5fd1b88f138fdaa755e2",
+        "size": 44187
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_827.jpg",
+        "blobId": "bc9cd977a0fa51c96cb03cbab9e26116a5cbfa40",
+        "size": 48530
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_831.jpg",
+        "blobId": "e3afe79fa206f0a3a280d73a4381526b35bf5986",
+        "size": 45942
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_854.jpg",
+        "blobId": "604fc98273f098bf448ac27cfd9e4e6539d8e389",
+        "size": 47204
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_865.jpg",
+        "blobId": "1dbee33300d38bde114aa046122ee8f3526ecbed",
+        "size": 67953
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_89.jpg",
+        "blobId": "336f9df4d2219136a286f7d0e64f36ed527bf323",
+        "size": 8023
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_895.jpg",
+        "blobId": "a85ca476621cc825abf1bf88eeee85c51efb609b",
+        "size": 83438
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_911.jpg",
+        "blobId": "dcdbabcd562a9b611a26c2d110d8730d2c58fe9d",
+        "size": 62636
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_972.jpg",
+        "blobId": "885f23506b3fa2a38d33b790734e70eb27507e97",
+        "size": 69594
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_977.jpg",
+        "blobId": "016bfdc406bc8560a18283a555bb3ade80c2677d",
+        "size": 45559
+      },
+      {
+        "rfilename": "UnHealthy/glaucoma_979.jpg",
+        "blobId": "b5a9db4267162852806736b4a3cf54842106cc52",
+        "size": 58195
+      },
+      {
+        "rfilename": "app.py",
+        "blobId": "abfb45f0aedc1df2ec22b220233e508371bc9c2c",
+        "size": 1348
+      },
+      {
+        "rfilename": "index.html",
+        "blobId": "c3c5758fb46701151099c8c59dc929cdcee182ba",
+        "size": 20652
+      },
+      {
+        "rfilename": "my_model2.h5",
+        "blobId": "661af635fee8a61eda1606a943efc537091363d4",
+        "size": 74157296,
+        "lfs": {
+          "sha256": "c4198d700ba8fcedf590e3378ba513357372490338cb6163b1a6441f7d199ca8",
+          "size": 74157296,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "requirements.txt",
+        "blobId": "1163adc2bd11698f44b873fd008ccf7f99db26a3",
+        "size": 324
+      },
+      {
+        "rfilename": "script.js",
+        "blobId": "10cbbcdd75bf4a3a57af5fc02b5000f59ec2ca20",
+        "size": 3947
+      },
+      {
+        "rfilename": "style.css",
+        "blobId": "efe13c71b2d0ad5a50300b54f3189c2405610a1f",
+        "size": 428
+      },
+      {
+        "rfilename": "train.py",
+        "blobId": "7ba9aa9977bdda0deb5ed6a8ea1f70a9d0151c64",
+        "size": 3050
+      }
+    ],
+    "retrieved_on": "2026-10-04",
+    "license": "not declared"
+  },
+  {
+    "repo_id": "AravindS2006/Airton_streamlit",
+    "kind": "spaces",
+    "revision": "5bfbd86e53a15d9b5937e7d29f536d6d72369b83",
+    "created_at": "2025-02-15T14:24:27.000Z",
+    "last_modified": "2025-02-16T09:31:09.000Z",
+    "runtime_snapshot": "SLEEPING",
+    "siblings": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+        "size": 1519
+      },
+      {
+        "rfilename": ".streamlit/secrets.toml",
+        "blobId": "2d8cc3ed2e452f9e5f18c441215e417a307f9435",
+        "size": 447
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "2e230750b01638db9a054ee9352050a78634bc1c",
+        "size": 230
+      },
+      {
+        "rfilename": "app.py",
+        "blobId": "06fca53bf885245279cf915a02c7e0ffe0afdb59",
+        "size": 2615
+      },
+      {
+        "rfilename": "html_templates/index.html",
+        "blobId": "d89268b8be17a34b5d965cadc5b02d92cb1459fe",
+        "size": 799
+      },
+      {
+        "rfilename": "index.html",
+        "blobId": "d28195e8bf123c5ed91be3c0fa366be82d5d75fc",
+        "size": 3418
+      },
+      {
+        "rfilename": "my_model2.h5",
+        "blobId": "661af635fee8a61eda1606a943efc537091363d4",
+        "size": 74157296,
+        "lfs": {
+          "sha256": "c4198d700ba8fcedf590e3378ba513357372490338cb6163b1a6441f7d199ca8",
+          "size": 74157296,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "requirements.txt",
+        "blobId": "930871e9d397f516f6ceca8e3df8e1670e2946a7",
+        "size": 110
+      },
+      {
+        "rfilename": "train.py",
+        "blobId": "7ba9aa9977bdda0deb5ed6a8ea1f70a9d0151c64",
+        "size": 3050
+      }
+    ],
+    "retrieved_on": "2026-10-04",
+    "license": "not declared"
+  }
+]

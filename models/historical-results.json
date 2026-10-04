@@ -1,0 +1,57 @@
+{
+  "evidence_type": "historical archived notebook outputs; not reproduced",
+  "dataset": "ORIGA balanced subset336; held-out84 reused for model selection",
+  "label_order": [
+    0,
+    1
+  ],
+  "label_mapping": {
+    "0": "normal",
+    "1": "glaucoma"
+  },
+  "plot_axis_label_error": "original figures reverse the class names",
+  "audit_calculations": [
+    {
+      "model": "VGG19",
+      "matrix_numeric_order": [
+        [
+          39,
+          9
+        ],
+        [
+          13,
+          23
+        ]
+      ],
+      "tn": 39,
+      "fp": 9,
+      "fn": 13,
+      "tp": 23,
+      "accuracy": 0.7380952380952381,
+      "sensitivity": 0.6388888888888888,
+      "specificity": 0.8125,
+      "origin": "matrix values visually read; metrics calculated in audit"
+    },
+    {
+      "model": "ResNet18",
+      "matrix_numeric_order": [
+        [
+          35,
+          13
+        ],
+        [
+          9,
+          27
+        ]
+      ],
+      "tn": 35,
+      "fp": 13,
+      "fn": 9,
+      "tp": 27,
+      "accuracy": 0.7380952380952381,
+      "sensitivity": 0.75,
+      "specificity": 0.7291666666666666,
+      "origin": "matrix values visually read; metrics calculated in audit"
+    }
+  ]
+}

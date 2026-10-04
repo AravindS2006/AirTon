@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glaucoma Detection</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #response-message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Glaucoma Detection</h1>
+        <form id="predict-form">
+            <div class="form-group">
+                <label for="file">Upload Image:</label>
+                <input type="file" class="form-control-file" id="file" accept="image/*">
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        <div id="response-message"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('predict-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            const fileInput = document.getElementById('file');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const imageData = e.target.result; // This is the base64 encoded image
+
+                    // Send the image data to Streamlit
+                    fetch('/predict/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'  // Changed to JSON
+                        },
+                        body: JSON.stringify({
+                            image_data: imageData  // Send as JSON
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        const message = `Prediction: ${data.prediction}`;  // Expect "prediction" key
+                        document.getElementById('response-message').innerText = message;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        document.getElementById('response-message').innerText = "An error occurred. Please try again.";
+                    });
+                }
+
+                reader.readAsDataURL(file); // Read file as Data URL
+            } else {
+                document.getElementById('response-message').innerText = "Please select an image.";
+            }
+        });
+    </script>
+</body>
+
+</html>

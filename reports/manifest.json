@@ -1,0 +1,20 @@
+{
+  "as_of": "2026-10-04",
+  "repository_baseline": "0.2.0",
+  "state": "working evidence/specification baseline; not approved clinical release",
+  "build_command": "python scripts/build_project_report.py",
+  "pdf_pages": 10,
+  "review": "All final pages rendered with Poppler and visually reviewed on 2026-10-04",
+  "artifacts": [
+    {
+      "path": "reports/airton-project-report-2026-10-04.md",
+      "bytes": 27757,
+      "sha256": "f834c1f190393d9c8032eab2d8bd2aa370239ff1074d21f8ccc91f30e6bd008e"
+    },
+    {
+      "path": "reports/airton-project-report-2026-10-04.pdf",
+      "bytes": 38519,
+      "sha256": "9bb1fdb995cf924042fa4ceac47dbcc3b112f561897417ea31dcb92a89fab0ca"
+    }
+  ]
+}

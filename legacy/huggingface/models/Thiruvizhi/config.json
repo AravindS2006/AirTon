@@ -1,0 +1,27 @@
+{
+  "_name_or_path": "AravindS2006/Thiruvizhi",
+  "model_type": "efficientnet",
+  "architectures": [
+    "EfficientNet"
+  ],
+  "num_labels": 2,
+  "labels": {
+    "0": "normal",
+    "1": "glaucoma"
+  },
+  "image_size": 224,
+  "channels": 3,
+  "dropout": 0.2,
+  "classifier_dropout": 0.2,
+  "pooling": "avg",
+  "pretrained": true,
+  "library_name": "torchvision",
+  "metrics": [
+    "accuracy",
+    "roc_auc"
+  ],
+  "datasets": [
+    "acrima"
+  ],
+  "pipeline_tag": "image-classification"
+}

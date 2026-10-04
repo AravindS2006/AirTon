@@ -1,0 +1,16 @@
+{
+  "repository_baseline": "0.2.0",
+  "as_of": "2026-10-04",
+  "active_reference_software": "src/airton",
+  "active_reference_software_version": "0.1.0",
+  "software_mode": "synthetic_only",
+  "web_working_copy": "apps/web",
+  "historical_sources": "legacy",
+  "model_registry": "models/model-registry.json",
+  "dataset_registry": "data/dataset-registry.json",
+  "artifact_registry": "artifacts/recovery-manifest.json",
+  "design_record_index": "docs/quality/design-record-index.csv",
+  "private_local_root": "local-private",
+  "publication_performed": false,
+  "clinical_hardware_verified": false
+}

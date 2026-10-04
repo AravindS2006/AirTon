@@ -1,0 +1,152 @@
+{
+  "id": 7613135,
+  "title": "CNNs for Automatic Glaucoma Assessment using Fundus Images: An Extensive Validation",
+  "doi": "10.6084/m9.figshare.7613135.v1",
+  "version": 1,
+  "published_date": "2019-03-15T12:34:22Z",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "description": "A new clinical database, ACRIMA, has been made publicly available, containing 705 labelled images. It is composed of 396 glaucomatous images and 309 normal images. Additionally, python scripts used to obtain the presented results are also available.<br>",
+  "url_public_html": "https://figshare.com/articles/dataset/CNNs_for_Automatic_Glaucoma_Assessment_using_Fundus_Images_An_Extensive_Validation/7613135",
+  "authors": [
+    {
+      "id": 5959346,
+      "full_name": "Andres Diaz-Pinto",
+      "first_name": "Andres",
+      "last_name": "Diaz-Pinto",
+      "is_active": true,
+      "url_name": "Andres_Diaz-Pinto",
+      "orcid_id": "0000-0002-4865-8296"
+    },
+    {
+      "id": 5962816,
+      "full_name": "Sandra Morales",
+      "first_name": "Sandra",
+      "last_name": "Morales",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 5962814,
+      "full_name": "Valery Naranjo",
+      "first_name": "Valery",
+      "last_name": "Naranjo",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 6249731,
+      "full_name": "Thomas K\u00f6hler",
+      "first_name": "Thomas",
+      "last_name": "K\u00f6hler",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 6249734,
+      "full_name": "Jose M. Mossi",
+      "first_name": "Jose M.",
+      "last_name": "Mossi",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    },
+    {
+      "id": 529875,
+      "full_name": "Amparo Navea",
+      "first_name": "Amparo",
+      "last_name": "Navea",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": ""
+    }
+  ],
+  "files": [
+    {
+      "id": 14137700,
+      "name": "Database.zip",
+      "size": 23608145,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/14137700",
+      "supplied_md5": "75c39a5d731ea17374396589e3273c5f",
+      "computed_md5": "75c39a5d731ea17374396589e3273c5f",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 14137712,
+      "name": "Algorithm&Weights.zip",
+      "size": 753586371,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/14137712",
+      "supplied_md5": "831d15f28446883786f26b695c4cb1cb",
+      "computed_md5": "831d15f28446883786f26b695c4cb1cb",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 14155520,
+      "name": "bootstrapTests_part1.zip",
+      "size": 1573523016,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/14155520",
+      "supplied_md5": "a22de127d62afa42a1be8b4e2b807738",
+      "computed_md5": "a22de127d62afa42a1be8b4e2b807738",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 14137775,
+      "name": "bootstrapTests_part2_bootstrap.zip",
+      "size": 5580,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/14137775",
+      "supplied_md5": "487ddbf681ab564c981019c01b4dc155",
+      "computed_md5": "487ddbf681ab564c981019c01b4dc155",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 14137820,
+      "name": "bootstrapTests_part3_ModelsByFold_part1.zip",
+      "size": 4157803406,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/14137820",
+      "supplied_md5": "4fae2bd32553fe35838422c3855ed793",
+      "computed_md5": "4fae2bd32553fe35838422c3855ed793",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 14137829,
+      "name": "bootstrapTests_part4_ModelsByFold_part2.zip",
+      "size": 3380081844,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/14137829",
+      "supplied_md5": "11bc7b2f359d599ec89b701f304c5288",
+      "computed_md5": "11bc7b2f359d599ec89b701f304c5288",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 14617397,
+      "name": "requirements.txt",
+      "size": 1350,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/14617397",
+      "supplied_md5": "c1d122fa9114bbeafe8b323cf3179415",
+      "computed_md5": "c1d122fa9114bbeafe8b323cf3179415",
+      "mimetype": "text/plain"
+    },
+    {
+      "id": 14617400,
+      "name": "Readme.txt",
+      "size": 2059,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/14617400",
+      "supplied_md5": "010b6da79113fe0491ceb7a9f1f7e10a",
+      "computed_md5": "010b6da79113fe0491ceb7a9f1f7e10a",
+      "mimetype": "text/plain"
+    }
+  ]
+}

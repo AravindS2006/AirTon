@@ -1,0 +1,13 @@
+/* style.css -  You can add custom CSS here if needed beyond Tailwind utilities.
+   For most styling, Tailwind utility classes are used directly in the HTML. */
+
+/* Example of custom animations or more complex styles (if needed) */
+/* @keyframes pulse-bg {
+    0% { opacity: 0.7; }
+    50% { opacity: 0.9; }
+    100% { opacity: 0.7; }
+}
+
+.animate-pulse-bg {
+    animation: pulse-bg 3s infinite cubic-bezier(0.4, 0, 0.6, 1);
+} */

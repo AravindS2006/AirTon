@@ -1,0 +1,188 @@
+{
+  "reviewed_on": "2026-10-04",
+  "all_models_clinically_qualified": false,
+  "models": [
+    {
+      "id": "M01",
+      "name": "Gmodel.h5 early CNN family",
+      "purpose": "retinal image classification research",
+      "input_shape": [
+        256,
+        256,
+        3
+      ],
+      "framework": "Keras",
+      "local_weights": "models/weights/Gmodel.h5",
+      "bytes": 189104112,
+      "sha256": "cdf7c6cf943d71dc04729221210d2711107f0500679e85f01b82e2d69abf9608",
+      "url": "https://huggingface.co/spaces/AravindS2006/AIRTON_MAIN/resolve/77b9bee76df810eb87716f1ca5634d9adc002f3b/Gmodel.h5",
+      "evidence": [
+        "P03",
+        "P06"
+      ],
+      "status": "local hash verified; architecture matches early family; exact training lineage unproven",
+      "license_status": "not declared",
+      "clinical_qualified": false
+    },
+    {
+      "id": "M02",
+      "name": "my_model2.h5 custom CNN",
+      "purpose": "retinal image classification research",
+      "input_shape": [
+        100,
+        100,
+        3
+      ],
+      "framework": "Keras",
+      "local_weights": "models/weights/my_model2.h5",
+      "bytes": 74157296,
+      "sha256": "c4198d700ba8fcedf590e3378ba513357372490338cb6163b1a6441f7d199ca8",
+      "url": "https://huggingface.co/spaces/AravindS2006/AIRTON_MAIN/resolve/77b9bee76df810eb87716f1ca5634d9adc002f3b/my_model2.h5",
+      "evidence": [
+        "P06"
+      ],
+      "status": "local hash verified; HDF5 structure inspected; class/data/metric lineage unproven",
+      "license_status": "not declared",
+      "clinical_qualified": false
+    },
+    {
+      "id": "M03",
+      "name": "VGG19 initial",
+      "purpose": "retinal research; not IOP estimation",
+      "framework": "PyTorch / torchvision / MONAI",
+      "evidence": [
+        "P04",
+        "P05"
+      ],
+      "checkpoint_recorded": "vgg19_model_1_Epoch16_ACC=0.7380952380952381.pth",
+      "checkpoint_downloaded": false,
+      "input_shape": [
+        3,
+        224,
+        224
+      ],
+      "dataset": "origa-kaggle-historical",
+      "recorded_selected_validation_accuracy": 0.7380952380952381,
+      "selected_epoch": 16,
+      "status": "historical notebook output; no independent test or rerun",
+      "clinical_qualified": false
+    },
+    {
+      "id": "M04",
+      "name": "ResNet18",
+      "purpose": "retinal research; not IOP estimation",
+      "framework": "PyTorch / torchvision / MONAI",
+      "evidence": [
+        "P04",
+        "P05"
+      ],
+      "checkpoint_recorded": "resnet18_model_2_Epoch7_ACC=0.7380952380952381.pth",
+      "checkpoint_downloaded": false,
+      "input_shape": [
+        3,
+        224,
+        224
+      ],
+      "dataset": "origa-kaggle-historical",
+      "recorded_selected_validation_accuracy": 0.7380952380952381,
+      "selected_epoch": 7,
+      "status": "historical notebook output; no independent test or rerun",
+      "clinical_qualified": false
+    },
+    {
+      "id": "M05",
+      "name": "DenseNet169 custom",
+      "purpose": "retinal research; not IOP estimation",
+      "framework": "PyTorch / torchvision / MONAI",
+      "evidence": [
+        "P04",
+        "P05"
+      ],
+      "checkpoint_recorded": "densenet169_model_Epoch27_ACC=0.7380952380952381.pth",
+      "checkpoint_downloaded": false,
+      "input_shape": [
+        3,
+        224,
+        224
+      ],
+      "dataset": "origa-kaggle-historical",
+      "recorded_selected_validation_accuracy": 0.7380952380952381,
+      "selected_epoch": 27,
+      "status": "historical notebook output; no independent test or rerun",
+      "clinical_qualified": false
+    },
+    {
+      "id": "M06",
+      "name": "VGG19 custom head",
+      "purpose": "retinal research; not IOP estimation",
+      "framework": "PyTorch / torchvision / MONAI",
+      "evidence": [
+        "P04",
+        "P05"
+      ],
+      "checkpoint_recorded": "vgg19_model_2_Epoch2_ACC=0.42857142857142855.pth",
+      "checkpoint_downloaded": false,
+      "input_shape": [
+        3,
+        224,
+        224
+      ],
+      "dataset": "origa-kaggle-historical",
+      "recorded_selected_validation_accuracy": 0.42857142857142855,
+      "selected_epoch": 2,
+      "status": "historical notebook output; no independent test or rerun",
+      "clinical_qualified": false
+    },
+    {
+      "id": "M07",
+      "name": "VGG16 architecture demonstration",
+      "evidence": [
+        "P04",
+        "P05"
+      ],
+      "status": "structure displayed; no training result verified",
+      "clinical_qualified": false
+    },
+    {
+      "id": "M08",
+      "name": "Thiruvizhi related publication",
+      "evidence": [
+        "P12"
+      ],
+      "revision": "7ab5409ff386135527dd2d68d47e7f4d3fb8bc21",
+      "weights_filename": "best_vit_model.pth",
+      "bytes": 343650539,
+      "sha256": "577a62f6fa57a42be0ff40eb185dcd18178880b9a250589af618adf82e4af5ed",
+      "checkpoint_downloaded": false,
+      "architecture_status": "README EfficientNet256px vs config224px vs model.py Linear768x2; unresolved",
+      "dataset_claim": "ACRIMA",
+      "airton_relation": "same author; direct linkage not verified",
+      "license_status": "card declares MIT; dataset terms separate",
+      "clinical_qualified": false
+    },
+    {
+      "id": "M09",
+      "name": "AIRTON model Hub repository",
+      "evidence": [
+        "P06"
+      ],
+      "revision": "e38237e6f9ce12464a0309f75bce0ef3b4794af2",
+      "status": "contains only .gitattributes; no weight release"
+    },
+    {
+      "id": "M10",
+      "name": "Synthetic reference regression",
+      "evidence": [
+        "repository generated example"
+      ],
+      "status": "fictional pipeline exercise only",
+      "clinical_qualified": false
+    },
+    {
+      "id": "M11",
+      "name": "AirTon physical-signal IOP estimator",
+      "status": "not recovered or validated; planned after metrology feasibility",
+      "clinical_qualified": false
+    }
+  ]
+}

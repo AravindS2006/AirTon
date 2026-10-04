@@ -1,0 +1,72 @@
+Team No. 4
+SARAVANAN R K
+ARAVINDSELVAN C
+VASANTH K
+
+
+Problem Statement
+Glaucoma, the "silent thief of sight," affects over 80 million people worldwide and often goes undetected until irreversible vision loss occurs. Current detection methods are expensive, invasive, and inaccessible in rural areas. The severity lies in its permanent blindness potential if untreated. Lack of early, affordable screening tools leads to delayed diagnosis, resulting in avoidable blindness and reduced quality of life.
+
+Existing Solution
+Traditional methods include Goldmann Applanation Tonometry and Ophthalmoscopic Examinations, which require trained specialists, costly equipment, and hospital visits. Gaps:
+Expensive, non-portable devices.
+Invasive and uncomfortable tests.
+Limited availability in rural/remote regions.
+Dependence on skilled ophthalmologists.
+No real-time integration with digital platforms for awareness or monitoring.
+
+
+Proposed Solution
+Our venture Airton introduces a portable, affordable, and non-invasive air-puff tonometer integrated with AI-powered glaucoma detection. The device uses controlled air puffs to measure intraocular pressure (IOP), while the mobile app & cloud integration provide instant analysis, patient history tracking, and referrals. The technology stack includes Arduino/ESP32 microcontrollers, pressure sensors, AI models, and a mobile/web app, making early glaucoma detection accessible to all.
+
+Prototype Image
+Cost(Current): Approximately ₹7000
+
+Target Customer
+Ophthalmologists and eye-care hospitals.
+Primary health centers in rural areas.
+NGOs working in preventive healthcare.
+Patients above 40 years (high risk).
+Health-tech companies and government healthcare schemes.
+Telemedicine and diagnostic centers.
+
+
+Budget Split up
+#
+Utilization Description
+Cost
+1
+R&D and Capital Costs
+₹3,00,000
+2
+Operations & Rent
+₹65,000 - ₹95,000
+3
+Marketing & Sales	
+₹35,000 - ₹55,000
+4
+Contingency Fund	
+~₹30,000 - ₹50,000
+5
+Total
+₹5,00,000
+
+Project Timeline
+
+Jun– Jul 2024: Problem validation & Market Study 
+Aug 2024 – Apr 2025: Proof of Concept Development (v1) 
+May – Jul 2025: Proof of Concept Validation 
+Aug 2025 – Jan 2026: Working on Hardware
+Feb – Mar 2026: AI Model Development  & Validation 
+Apr – Jul 2026: Final prototype + launch readiness
+
+
+Expand to AI-based retinal imaging for comprehensive eye disease screening.
+Integration with telemedicine platforms for remote consultations.
+Cloud-based predictive analytics for early-risk patients.
+Miniaturized wearable version for continuous eye pressure monitoring.
+Collaboration with government healthcare schemes for rural deployment.
+Licensing & partnerships with global medical device companies.
+
+Future Aspects
+

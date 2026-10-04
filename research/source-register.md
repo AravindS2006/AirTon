@@ -46,3 +46,22 @@ Local primary source: [team deck](../artifacts/source/team-airton-2025-07-03.pdf
 figure labels. Pages 13, 18-20, and 23 were also rendered and visually inspected.
 The deck is a description of team intent and reported work, not independent
 evidence of device safety, efficacy, regulatory status, or business results.
+
+
+## Additional sources for recovered model lineage and home monitoring
+
+| ID | Primary source | Checked evidence / limitation |
+|---|---|---|
+| S32 | [ORIGA original publication](https://doi.org/10.1109/IEMBS.2010.5626137), [author bibliographic record](https://scholars.duke.edu/publication/1148065) | 2010 original dataset description; 650 images; exact notebook cohort and rights need separate evidence |
+| S33 | [Kaggle glaucoma-detection release](https://www.kaggle.com/datasets/sshikamaru/glaucoma-detection) | Named in actual notebook download command; dataset page readable text unavailable; notebook output declares CC0 |
+| S34 | [ACRIMA Figshare record](https://figshare.com/articles/dataset/ACRIMA_database/7613135), [provider API](https://api.figshare.com/v2/articles/7613135) | API retrieved 4 October 2026: version 1 and CC BY 4.0; provider metadata retained locally |
+| S35 | [Diaz-Pinto et al., 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6425593/) | Original ACRIMA study; 705 images, 309 normal / 396 glaucoma. Study results are not AirTon results |
+| S36 | [FDA home-use device design guidance](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/design-considerations-devices-intended-home-use) | Final November 2014; home user/environment/device interaction; US design reference, not Indian permission |
+| S37 | [ISO 14971:2019 catalogue](https://www.iso.org/standard/72704.html) | Edition 3, confirmed 2025; catalogue reviewed, licensed clauses not reproduced |
+| S38 | [IP India e-services](https://www.ipindia.gov.in/pages/e-services) | Official public search/status route; no AirTon filing identified or action performed |
+| S39 | [US8652044B2](https://patents.google.com/patent/US8652044B2/en) | Published portable non-contact tonometer prior-art orientation; no freedom-to-operate/legal-status opinion |
+| S40 | [US4724843A](https://patents.google.com/patent/US4724843A/en) | Published handheld alignment/air-puff tonometer; no novelty conclusion for AirTon |
+
+Actual project sources P01-P14 are indexed separately in
+[project evidence register](../docs/project/evidence-register.md). Dates distinguish
+provider metadata, content claims, projections and actual repository additions.

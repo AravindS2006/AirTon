@@ -25,6 +25,11 @@ reviewers before hardware freeze. No numeric safety limit is inferred from the d
 | R17 | Store real data only with approved purpose, governance, controls and retention | Protocol/privacy audit and restore/deletion tests | Open |
 | R18 | Serviceability and landed recurring cost meet approved affordability target | Quoted BOM, yield/service cost model | Open |
 | R19 | All clinical output/release claims trace to approved evidence | Claim/evidence review and release checklist | Open |
+| R20 | Each home patient/device is enrolled with an assigned care team and reviewed monitoring plan | Enrolment/assignment/plan authorization and change records | Founder direction; implementation open |
+| R21 | Training and critical-task competency support safe independent use or caregiver use | Representative formative and summative usability studies | Open |
+| R22 | Distinguish saved locally, delivered and reviewed; do not imply continuous clinical attention | Delivery/review state and home-user comprehension tests | Open |
+| R23 | Follow clinician-defined instructions; no autonomous medication adjustment or fixed alert threshold | Labeling, care-plan and UI review; fault/missing-data scenarios | Open |
+| R24 | Every released device retains build, calibration, inspection, release and service history | Production-master and serial/lot device-history audit | Record structure only |
 
 Human safety acceptance criteria include independent shutdown behavior and defined
 maximum exposure/pressure/energy, but their numerical values are deliberately

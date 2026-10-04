@@ -17,6 +17,9 @@ build/
 dist/
 tmp/
 output/
+local-private/
+node_modules/
+*.tsbuildinfo
 data/raw/*
 !data/raw/README.md
 data/processed/*

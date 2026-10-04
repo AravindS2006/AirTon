@@ -12,6 +12,7 @@ dependencies = []
 [project.optional-dependencies]
 ml = ["numpy>=1.26,<3", "scikit-learn>=1.4,<2"]
 validation = ["jsonschema>=4.20,<5"]
+reports = ["reportlab>=4,<5", "pypdf>=5,<7"]
 
 [project.scripts]
 airton = "airton.cli:main"

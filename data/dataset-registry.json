@@ -3,15 +3,102 @@
   "downloaded": false,
   "datasets": [
     {
+      "id": "origa-kaggle-historical",
+      "source_ids": [
+        "P04",
+        "P05",
+        "S32",
+        "S33"
+      ],
+      "url": "https://www.kaggle.com/datasets/sshikamaru/glaucoma-detection",
+      "original_reference": "https://doi.org/10.1109/IEMBS.2010.5626137",
+      "modality": "retinal fundus and optic annotations",
+      "project_usage": "used in supplied DeepLearn notebooks; verified from source and recorded outputs",
+      "reported_images": 650,
+      "recorded_classes": {
+        "0_normal": 482,
+        "1_glaucoma": 168
+      },
+      "selected_images": 336,
+      "inferred_training_images": 252,
+      "inferred_validation_images": 84,
+      "grouping": "image-level random split; no patient grouping recorded",
+      "independent_final_test": false,
+      "license_status": "Kaggle notebook output declares CC0-1.0; original rights and commercial suitability unresolved",
+      "airton_pressure_calibration_compatible": false
+    },
+    {
+      "id": "early-airton-folder-cohort",
+      "source_ids": [
+        "P03"
+      ],
+      "url": "https://drive.google.com/drive/folders/15w6x6_fGCnUfSBTjHM7G5PcQmSO3kPF9",
+      "modality": "retinal fundus",
+      "project_usage": "used by early Keras notebook; loader outputs recorded",
+      "reported_training_images": 455,
+      "reported_validation_images": 64,
+      "label_mapping_status": "class0/class1; diagnostic mapping not preserved",
+      "license_status": "original collection and release terms unknown",
+      "grouping": "split folder provenance and participant overlap unresolved",
+      "airton_pressure_calibration_compatible": false
+    },
+    {
+      "id": "published-cnn-folder-images",
+      "source_ids": [
+        "P06"
+      ],
+      "url": "https://huggingface.co/spaces/AravindS2006/airton_static/tree/0e9e345ca184c4e5369cbc74471560a5dbf82e4b",
+      "modality": "retinal fundus",
+      "project_usage": "images present in public Space; actual checkpoint training use not proven",
+      "license_status": "not declared; raw files not imported",
+      "grouping": "no manifest or participant IDs recovered",
+      "airton_pressure_calibration_compatible": false
+    },
+    {
+      "id": "acrima-thiruvizhi-card",
+      "source_ids": [
+        "P12",
+        "S34",
+        "S35"
+      ],
+      "url": "https://figshare.com/articles/dataset/ACRIMA_database/7613135",
+      "modality": "retinal fundus",
+      "project_usage": "training claimed by Thiruvizhi card; no train manifest or direct AirTon linkage verified",
+      "reported_images": 705,
+      "reported_classes": {
+        "normal": 309,
+        "glaucoma": 396
+      },
+      "license_status": "Figshare provider API states CC BY 4.0 for version1, checked 2026-10-04; review attribution and full release context",
+      "grouping": "no actual split manifest recovered",
+      "airton_pressure_calibration_compatible": false
+    },
+    {
+      "id": "drishti-named-drive-folder",
+      "source_ids": [
+        "P13"
+      ],
+      "url": "https://drive.google.com/drive/folders/1bB3r_TOeJYtFw0PVYXMie5K0031nndv4",
+      "modality": "retinal fundus",
+      "project_usage": "Drive folder contains drishtiGS-named images; use by a particular checkpoint not verified",
+      "license_status": "dataset release rights unreviewed; metadata listing only",
+      "grouping": "no training association inferred",
+      "airton_pressure_calibration_compatible": false
+    },
+    {
       "id": "refuge-2018",
       "source_id": "S10",
       "url": "https://arxiv.org/abs/1910.03667",
       "modality": "retinal fundus",
       "reported_images": 1200,
-      "tasks": ["glaucoma classification", "optic disc/cup segmentation"],
+      "tasks": [
+        "glaucoma classification",
+        "optic disc/cup segmentation"
+      ],
       "airton_pressure_calibration_compatible": false,
       "license_status": "exact release terms and access review pending",
-      "grouping": "verify patient provenance and overlap before splitting"
+      "grouping": "verify patient provenance and overlap before splitting",
+      "project_usage": "candidate; no use established in recovered experiments"
     },
     {
       "id": "refuge2",
@@ -19,10 +106,15 @@
       "url": "https://arxiv.org/abs/2202.08994",
       "modality": "retinal fundus",
       "reported_images": 2000,
-      "tasks": ["glaucoma classification", "segmentation", "domain evaluation"],
+      "tasks": [
+        "glaucoma classification",
+        "segmentation",
+        "domain evaluation"
+      ],
       "airton_pressure_calibration_compatible": false,
       "license_status": "exact release terms and access review pending",
-      "grouping": "verify overlap with REFUGE and patient identity"
+      "grouping": "verify overlap with REFUGE and patient identity",
+      "project_usage": "candidate; no use established in recovered experiments"
     },
     {
       "id": "papila-v1",
@@ -31,18 +123,29 @@
       "modality": "retinal fundus and clinical metadata",
       "reported_images": 488,
       "reported_patients": 244,
-      "tasks": ["glaucoma/suspect classification", "segmentation", "paired-eye research"],
+      "tasks": [
+        "glaucoma/suspect classification",
+        "segmentation",
+        "paired-eye research"
+      ],
       "airton_pressure_calibration_compatible": false,
       "license_status": "data-release terms review pending; paper license is separate",
-      "grouping": "both eyes by patient ID; retain suspect category"
+      "grouping": "both eyes by patient ID; retain suspect category",
+      "project_usage": "candidate; no use established in recovered experiments"
     },
     {
       "id": "airton-paired-signals",
       "modality": "synchronized stimulus/optical signals plus reference measurements",
       "available": false,
-      "tasks": ["pressure calibration", "quality rejection", "agreement evaluation"],
+      "tasks": [
+        "pressure calibration",
+        "quality rejection",
+        "agreement evaluation"
+      ],
       "license_status": "collection protocol, approvals and access governance pending",
-      "grouping": "participant, eye, session, visit, site, device"
+      "grouping": "participant, eye, session, visit, site, device",
+      "project_usage": "planned collection"
     }
-  ]
+  ],
+  "raw_images_downloaded_during_recovery": false
 }

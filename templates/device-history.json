@@ -1,0 +1,18 @@
+{
+  "record_state": "template; no device released",
+  "serial_number": null,
+  "hardware_revision": null,
+  "bom_revision": null,
+  "assembly_record_ref": null,
+  "component_lot_refs": [],
+  "firmware_sha256": null,
+  "estimator_version": null,
+  "calibration_record_ref": null,
+  "inspection_records": [],
+  "final_acceptance_record_ref": null,
+  "release_authority": null,
+  "released_at": null,
+  "service_records": [],
+  "quarantine_state": "unassessed",
+  "note": "Keep patient/device assignments in a restricted system, not this Git record."
+}

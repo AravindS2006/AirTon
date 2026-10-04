@@ -22,9 +22,11 @@ unattributed ratings, and secondary summaries. No clinical performance or curren
 INR prices were adopted from the deck. Vendor material informs comparator
 capability; it is not independent evidence of superiority.
 
-The deck's Wix site and Hugging Face application URL were attempted through the
+During the initial deck-only baseline, the Wix site and Hugging Face application URL were attempted through the
 web reader but returned fetch errors. Their current behavior, source code, trained
-weights, and performance could not be verified. REFUGE's details page returned
+weights, and performance could not then be verified. The subsequent recovery
+below supersedes the source/weight inventory limitation, not clinical performance.
+REFUGE's details page returned
 403; its primary challenge paper was used. Some manufacturer and PubMed pages
 also returned fetch errors/rate limits; source-register entries identify excerpt
 review where applicable. Failed fetches do not demonstrate that a site is offline.
@@ -32,6 +34,29 @@ review where applicable. Failed fetches do not demonstrate that a site is offlin
 No linked Google Form was submitted; no financial sheet or private application
 was altered. Instructions inside the deck were treated as source material, not
 authorization to contact people, purchase equipment, conduct studies, or publish.
+
+## Actual-project recovery update
+
+The user-linked Drive notebook was retrieved with provider metadata, then related
+AirTon notebooks/pitches/drawings and exact project-folder records were inspected.
+Broader personal Drive documents were excluded. Three source-only notebooks, five
+actual drawing PDFs and aggregate research figures were retained. Native pitches
+were text-extracted; private original outputs and financial/IP full text remain
+ignored locally. No raw dataset images were downloaded.
+
+Querying the observed author found six Hugging Face Space source trees, published
+weight metadata and two model repositories. Fixed-revision text snapshots were
+recovered without secret files or dataset images. Two Keras artifacts were fetched,
+SHA-256 checked and inspected as HDF5 structure without deserialization. Related
+Thiruvizhi evidence is explicitly unconfirmed as an AirTon component. The connected
+GitHub account revealed airton-web-final; its exact commit and an editable copy
+were recovered. Public-name matches unrelated to this project were excluded.
+
+Additional primary research covered original ORIGA/ACRIMA records, home-use
+guidance, current risk-management catalogue and portable tonometer prior art
+(S32-S40). Runtime states reflect provider snapshots; no public inference endpoint,
+account registration or clinical workflow was exercised. Project artifacts are
+indexed as P01-P14, with provenance and unresolved claims separately recorded.
 
 ## Update procedure
 

@@ -2,6 +2,10 @@
 
 Proposed target architecture; shaded meaning is conveyed by labels rather than
 assuming that components already exist. See project status for implementation scope.
+The first commercial direction is home monitoring within an existing care
+relationship. Enrolment, competency, the monitoring plan and assigned review/service
+responsibilities surround the acquisition-to-report flow below. Retinal image
+classification is a separate research module, not the pressure estimator.
 
 ```mermaid
 flowchart LR

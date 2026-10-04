@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airton - AI-Powered Eye Health</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heroicons@2.1.1/heroicons.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        /* Custom Tailwind Configuration (can be moved to tailwind.config.js for better organization) */
+        @layer utilities {
+            .text-gradient-teal-purple {
+                background: linear-gradient(90deg, theme('colors.teal.500'), theme('colors.purple.500'));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-gray-800 bg-opacity-50 backdrop-blur-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold text-gradient-teal-purple">Airton</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="hover:text-teal-300 transition-colors duration-300">About</a>
+                <a href="#how-it-works" class="hover:text-teal-300 transition-colors duration-300">How It Works</a>
+                <a href="#benefits" class="hover:text-teal-300 transition-colors duration-300">Benefits</a>
+                <a href="/login" class="hover:text-teal-300 transition-colors duration-300">Login</a>
+                <a href="/register" class="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-md transition-colors duration-300">Register</a>
+            </div>
+            <button class="md:hidden text-gray-300 hover:text-white focus:outline-none focus:text-white" aria-label="Toggle menu" id="mobile-menu-button">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                    <path v-if="!isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M4 6H20V8H4V6ZM4 11H20V13H4V11ZM4 16H20V18H4V16Z"/>
+                    <path v-if="isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden bg-gray-800" id="mobile-menu">
+            <div class="px-6 py-4 space-y-2">
+                <a href="#about" class="block py-2 hover:text-teal-300 transition-colors duration-300">About</a>
+                <a href="#how-it-works" class="block py-2 hover:text-teal-300 transition-colors duration-300">How It Works</a>
+                <a href="#benefits" class="block py-2 hover:text-teal-300 transition-colors duration-300">Benefits</a>
+                <a href="/login" class="block py-2 hover:text-teal-300 transition-colors duration-300">Login</a>
+                <a href="/register" class="block py-2 bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-md transition-colors duration-300 text-center">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-20 md:py-32 bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">See the Future of <span class="text-gradient-teal-purple">Eye Health</span></h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-12">Early Detection, Clearer Vision with AI-Powered Glaucoma Analysis.</p>
+            <a href="#analyze-eye-section" class="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300">Analyze Your Eye Now</a>
+        </div>
+        <!-- Hero Background Animation Placeholder - Replace with actual animation -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 opacity-70"></div>
+            <!-- Add your animated eye graphic, 3D device, or geometric animation here.  Consider using JavaScript/Canvas or a looping video. -->
+            <div class="absolute inset-0 bg-teal-700 opacity-10 animate-pulse"></div> <!-- Example pulse animation -->
+        </div>
+    </section>
+
+    <!-- About Airton Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">About <span class="text-gradient-teal-purple">Airton</span></h2>
+                    <p class="text-gray-300 mb-8">Airton is a startup dedicated to revolutionizing eye health through innovative technology. We are committed to providing individuals with accessible and accurate tools for early detection and proactive management of glaucoma and other eye diseases. Our AI-powered medical device offers a convenient and reliable way to analyze fundus images, empowering users to take control of their vision health.</p>
+                    <p class="text-gray-300 mb-8">We believe that early detection is key to preventing vision loss. Airton's technology is designed to be user-friendly and insightful, bridging the gap between cutting-edge AI and everyday eye care.</p>
+                    <a href="/about-us" class="text-teal-300 hover:text-teal-500 transition-colors duration-300">Learn More About Us <span aria-hidden="true">→</span></a>
+                </div>
+                <div>
+                    <img src="placeholder-device.png" alt="Airton Medical Device" class="rounded-lg shadow-lg" loading="lazy"> <!-- Replace with actual device image -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-12">How <span class="text-gradient-teal-purple">Airton</span> Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-teal-500">
+                        <i data-heroicons="arrow-up-tray" class="h-8 w-8 text-white"></i> <!-- Upload Icon -->
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">1. Upload Your Image</h3>
+                    <p class="text-gray-300">Safely upload your fundus eye image through our secure platform. We support various image formats.</p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-purple-500">
+                        <i data-heroicons="cpu-chip" class="h-8 w-8 text-white"></i> <!-- AI Chip Icon -->
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">2. AI Analysis</h3>
+                    <p class="text-gray-300">Our advanced AI model analyzes your image for indicators of glaucoma and other eye conditions.</p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-cyan-500">
+                        <i data-heroicons="presentation-chart-line" class="h-8 w-8 text-white"></i> <!-- Chart/Results Icon -->
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">3. Get Your Report</h3>
+                    <p class="text-gray-300">Receive a detailed report with your eye condition analysis and personalized recommendations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white text-center mb-16">Key <span class="text-gradient-teal-purple">Benefits</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-teal-500 bg-opacity-20">
+                        <i data-heroicons="eye" class="h-6 w-6 text-teal-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Early Detection</h3>
+                    <p class="text-gray-300 text-center">Detect potential glaucoma risk in its early stages, enabling timely intervention.</p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-purple-500 bg-opacity-20">
+                        <i data-heroicons="home-modern" class="h-6 w-6 text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Convenient At-Home Testing</h3>
+                    <p class="text-gray-300 text-center">Analyze your eye health from the comfort and convenience of your home.</p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-cyan-500 bg-opacity-20">
+                        <i data-heroicons="check-badge" class="h-6 w-6 text-cyan-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">AI-Powered Accuracy</h3>
+                    <p class="text-gray-300 text-center">Leverage the power of advanced AI for reliable and insightful analysis results.</p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-orange-500 bg-opacity-20">
+                        <i data-heroicons="light-bulb" class="h-6 w-6 text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Personalized Insights</h3>
+                    <p class="text-gray-300 text-center">Receive tailored recommendations based on your unique eye condition analysis.</p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-lime-500 bg-opacity-20">
+                        <i data-heroicons="heart" class="h-6 w-6 text-lime-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Proactive Eye Health</h3>
+                    <p class="text-gray-300 text-center">Take a proactive approach to managing your eye health and preserving your vision.</p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-rose-500 bg-opacity-20">
+                        <i data-heroicons="shield-check" class="h-6 w-6 text-rose-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Secure & Private</h3>
+                    <p class="text-gray-300 text-center">Your medical data is handled with utmost security and privacy. [Add specific details about security measures].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analyze Eye Section (Placeholder - Integrate with Streamlit) -->
+    <section id="analyze-eye-section" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-12">Analyze Your <span class="text-gradient-teal-purple">Eye</span></h2>
+            <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
+                <p class="text-gray-300 mb-6">Upload your fundus eye image to get started with AI-powered analysis.</p>
+                <div class="mb-6">
+                    <label for="image-upload" class="block text-sm font-medium text-gray-200 mb-2">Upload Fundus Image</label>
+                    <input type="file" id="image-upload" accept="image/*" class="hidden">
+                    <div id="drop-area" class="border-2 border-dashed border-gray-600 rounded-lg p-6 cursor-pointer hover:bg-gray-700 transition-colors duration-300">
+                        <p class="text-gray-300 mb-2"><i data-heroicons="cloud-arrow-up" class="inline-block h-5 w-5 mr-2"></i>Drag and drop your image here or <label for="image-upload" class="text-teal-300 hover:text-teal-400 cursor-pointer">browse files</label></p>
+                        <p class="text-gray-500 text-sm">Supported formats: JPG, PNG, BMP</p>
+                    </div>
+                </div>
+                <button id="analyze-button" class="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-md font-semibold transition-colors duration-300 disabled:opacity-50" disabled>Analyze Image</button>
+                <div id="progress-bar" class="hidden mt-4 bg-gray-700 rounded-full h-2">
+                    <div class="bg-teal-500 h-2 rounded-full" style="width: 0%" id="progress-bar-fill"></div>
+                </div>
+                <p id="upload-status" class="text-sm text-gray-400 mt-2 hidden"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Functionalities (Coming Soon) -->
+    <section id="advanced-features" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-12">Advanced <span class="text-gradient-teal-purple">Features</span> - Coming Soon</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-purple-500 bg-opacity-20">
+                        <i data-heroicons="calendar" class="h-6 w-6 text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Appointment Scheduling</h3>
+                    <p class="text-gray-400 text-center">Schedule virtual or in-person consultations with eye care professionals through our platform. <span class="italic">Coming Soon</span></p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-cyan-500 bg-opacity-20">
+                        <i data-heroicons="book-open" class="h-6 w-6 text-cyan-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Educational Resources</h3>
+                    <p class="text-gray-400 text-center">Access a library of articles, FAQs, and videos about glaucoma and eye health. <span class="italic">Coming Soon</span></p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-orange-500 bg-opacity-20">
+                        <i data-heroicons="chart-bar" class="h-6 w-6 text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Progress Tracking</h3>
+                    <p class="text-gray-400 text-center">Track your eye health trends over time and get personalized insights. <span class="italic">Coming Soon</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Very Advanced Functionalities (Under Construction) -->
+    <section id="very-advanced-features" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-12">Future <span class="text-gradient-teal-purple">Innovations</span> - Under Construction</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-teal-500 bg-opacity-20">
+                        <i data-heroicons="video-camera" class="h-6 w-6 text-teal-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Telemedicine Integration</h3>
+                    <p class="text-gray-400 text-center">Experience virtual consultations with eye specialists directly through Airton. <span class="italic">Under Construction</span></p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-purple-500 bg-opacity-20">
+                        <i data-heroicons="rocket-launch" class="h-6 w-6 text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">AI-Powered Personalization</h3>
+                    <p class="text-gray-400 text-center">Get even more personalized insights and recommendations based on your eye health profile. <span class="italic">Under Construction</span></p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 hidden md:block">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-cyan-500 bg-opacity-20">
+                        <i data-heroicons="watch" class="h-6 w-6 text-cyan-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Wearable Device Integration</h3>
+                    <p class="text-gray-400 text-center">Exploring seamless integration with wearables for continuous eye health monitoring. <span class="italic">Future Innovation</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400 mb-4">© 2023 Airton. All Rights Reserved.</p>
+            <nav class="flex justify-center space-x-6 mb-4">
+                <a href="/about-us" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a>
+                <a href="/contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a>
+                <a href="/privacy-policy" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                <a href="/terms-of-service" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+            </nav>
+            <p class="text-gray-500 text-sm">Disclaimer: Airton is not a substitute for professional medical advice. Results are for informational purposes only. Consult with a qualified ophthalmologist for diagnosis and treatment.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

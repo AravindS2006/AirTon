@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirTon - AI-Powered Eye Health</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom Tailwind Configuration (can be moved to tailwind.config.js for better organization) */
+        @layer utilities {
+            .text-gradient-primary {
+                background: linear-gradient(90deg, theme('colors.blue.400'), theme('colors.purple.500'));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+            }
+            .shadow-custom {
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            }
+        }
+
+        /* Custom Scrollbar (Optional, for a more polished look) */
+        /* Works in Chrome, Safari, Edge */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2d3748; /* Darker background */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568; /* Scrollbar color */
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* Scrollbar hover color */
+        }
+
+        /* For Firefox */
+        /* Works in Firefox */
+        html {
+            scrollbar-color: #4a5568 #2d3748;
+            scrollbar-width: thin;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/heroicons@2.1.1/heroicons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Dark mode toggle (moved to inline script for immediate effect)
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans antialiased dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="bg-gray-800 bg-opacity-50 backdrop-blur-md sticky top-0 z-50 shadow-custom">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-gradient-primary hover:opacity-80 transition-opacity duration-300">AirTon</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="hover:text-blue-300 transition-colors duration-300 nav-link">About</a>
+                <a href="#how-it-works" class="hover:text-blue-300 transition-colors duration-300 nav-link">How It Works</a>
+                <a href="#benefits" class="hover:text-blue-300 transition-colors duration-300 nav-link">Benefits</a>
+                <a href="#analyze-eye-section" class="hover:text-blue-300 transition-colors duration-300 nav-link">Analyze</a>
+                <a href="#" id="dashboardLink" onclick="showDashboard()" class="hover:text-blue-300 transition-colors duration-300 nav-link" style="display: none;">Dashboard</a>
+                <a href="#" onclick="showLoginForm()" id="loginLink" class="hover:text-blue-300 transition-colors duration-300" >Login</a>
+                <a href="#" onclick="showRegistrationForm()" id="registerLink" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-300">Register</a>
+            </div>
+            <button class="md:hidden text-gray-300 hover:text-white focus:outline-none focus:text-white" aria-label="Toggle menu" id="mobile-menu-button">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                    <path v-if="!isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M4 6H20V8H4V6ZM4 11H20V13H4V11ZM4 16H20V18H4V16Z"/>
+                    <path v-if="isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden bg-gray-800" id="mobile-menu">
+            <div class="px-6 py-4 space-y-2">
+                <a href="#about" class="block py-2 hover:text-blue-300 transition-colors duration-300 nav-link-mobile">About</a>
+                <a href="#how-it-works" class="block py-2 hover:text-blue-300 transition-colors duration-300 nav-link-mobile">How It Works</a>
+                <a href="#benefits" class="block py-2 hover:text-blue-300 transition-colors duration-300 nav-link-mobile">Benefits</a>
+                <a href="#analyze-eye-section" class="block py-2 hover:text-blue-300 transition-colors duration-300 nav-link-mobile">Analyze</a>
+                <a href="#" onclick="showDashboard()" id="dashboardLinkMobile" class="block py-2 hover:text-blue-300 transition-colors duration-300 nav-link-mobile" style="display: none;">Dashboard</a>
+                <a href="#" onclick="showLoginForm()" id="loginLinkMobile" class="block py-2 hover:text-blue-300 transition-colors duration-300">Login</a>
+                <a href="#" onclick="showRegistrationForm()" id="registerLinkMobile" class="block py-2 bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-300 text-center">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-20 md:py-32 bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                See Clearly, Live Fully. <br>
+                <span class="text-gradient-primary">AI-Powered Eye Health</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                AirTon uses cutting-edge AI to provide early detection of glaucoma and other eye diseases, empowering you to take control of your vision.
+            </p>
+            <a href="#analyze-eye-section" class="bg-blue-500 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors duration-300 shadow-custom">Analyze Your Eye Now</a>
+        </div>
+        <!-- Hero Background Animation Placeholder - Replace with actual animation -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 opacity-70"></div>
+            <!-- Add your animated eye graphic, 3D device, or geometric animation here.  Consider using JavaScript/Canvas or a looping video. -->
+            <div class="absolute inset-0 bg-blue-700 opacity-10 animate-pulse"></div> <!-- Example pulse animation -->
+        </div>
+    </section>
+
+    <!-- About AirTon Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">About <span class="text-gradient-primary">AirTon</span></h2>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        AirTon is more than just a tool; it's a commitment to your vision health. We leverage the power of artificial intelligence to provide accessible and accurate eye disease detection. Our mission is to empower individuals with the knowledge and resources they need to proactively manage their eye health and prevent vision loss.
+                    </p>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        Our AI-powered platform analyzes fundus images, providing early detection of glaucoma and other conditions. We believe that early detection is key to effective treatment and preserving your sight.
+                    </p>
+                    <a href="/about-us" class="text-blue-300 hover:text-blue-500 transition-colors duration-300 inline-flex items-center">
+                        Learn More <span aria-hidden="true" class="ml-2">→</span>
+                    </a>
+                </div>
+                <div>
+                    <img src="img\WhatsApp_Image_2025-02-19_at_20.15.54_e893b70d-removebg-preview.png" alt="AirTon Medical Device" class="rounded-lg shadow-lg" loading="lazy"> <!-- Replace with actual device image -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-12">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-800 rounded-lg shadow-custom hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-blue-500 bg-opacity-20">
+                        <i data-heroicons="arrow-up-tray" class="h-8 w-8 text-blue-500"></i> <!-- Upload Icon -->
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">1. Upload Your Image</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Securely upload your fundus eye image. Our platform supports various image formats, ensuring a seamless experience.
+                    </p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-lg shadow-custom hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-purple-500 bg-opacity-20">
+                        <i data-heroicons="cpu-chip" class="h-8 w-8 text-purple-500"></i> <!-- AI Chip Icon -->
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">2. AI Analysis</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Our advanced AI algorithms analyze your image, identifying potential indicators of glaucoma and other eye conditions with remarkable accuracy.
+                    </p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-lg shadow-custom hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-cyan-500 bg-opacity-20">
+                        <i data-heroicons="presentation-chart-line" class="h-8 w-8 text-cyan-500"></i> <!-- Chart/Results Icon -->
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">3. Get Your Report</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Receive a comprehensive report detailing your eye condition analysis, along with personalized recommendations to help you maintain optimal eye health.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white text-center mb-16">Key Benefits</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-900 rounded-lg shadow-custom hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-blue-500 bg-opacity-20">
+                        <i data-heroicons="eye" class="h-6 w-6 text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Early Detection</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Identify potential glaucoma risk in its earliest stages, enabling timely intervention and treatment.
+                    </p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-custom hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-purple-500 bg-opacity-20">
+                        <i data-heroicons="home-modern" class="h-6 w-6 text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Convenient At-Home Testing</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Analyze your eye health from the comfort and convenience of your home, saving you time and effort.
+                    </p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-custom hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-cyan-500 bg-opacity-20">
+                        <i data-heroicons="check-badge" class="h-6 w-6 text-cyan-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">AI-Powered Accuracy</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Leverage the power of advanced AI for reliable and insightful analysis results, providing you with peace of mind.
+                    </p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-custom hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-orange-500 bg-opacity-20">
+                        <i data-heroicons="light-bulb" class="h-6 w-6 text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Personalized Insights</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Receive tailored recommendations based on your unique eye condition analysis, empowering you to make informed decisions.
+                    </p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-custom hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-lime-500 bg-opacity-20">
+                        <i data-heroicons="heart" class="h-6 w-6 text-lime-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Proactive Eye Health</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Take a proactive approach to managing your eye health and preserving your vision for years to come.
+                    </p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg shadow-custom hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-rose-500 bg-opacity-20">
+                        <i data-heroicons="shield-check" class="h-6 w-6 text-rose-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 text-center">Secure & Private</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">
+                        Your medical data is handled with utmost security and privacy, adhering to the highest industry standards. [Add specific details about security measures].
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analyze Eye Section (Placeholder - Integrate with Streamlit) -->
+    <section id="analyze-eye-section" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-12">Analyze Your Eye<span class="text-gradient-primary"></span></h2>
+            <div class="bg-gray-800 p-8 rounded-lg shadow-xl">
+                <p class="text-gray-300 mb-6">Upload your fundus eye image to get started with AI-powered analysis.</p>
+                <div class="mb-6">
+                    <label for="image-upload" class="block text-sm font-medium text-gray-200 mb-2">Upload Fundus Image</label>
+                    <input type="file" id="image-upload" accept="image/*" class="hidden" onchange="handleFileUpload(this)">
+                    <div id="drop-area" class="border-2 border-dashed border-gray-600 rounded-lg p-6 cursor-pointer hover:bg-gray-700 transition-colors duration-300">
+                        <i data-heroicons="cloud-arrow-up" class="inline-block h-5 w-5 mr-2 text-gray-400"></i>
+                        <span class="text-gray-300">Drag and drop your image here or <label for="image-upload" class="text-blue-300 hover:text-blue-400 cursor-pointer">browse files</label></span>
+                        <p class="text-gray-500 text-sm">Supported formats: JPG, PNG, BMP</p>
+                    </div>
+                </div>
+                <button id="analyze-button" class="bg-blue-500 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-semibold transition-colors duration-300 shadow-custom disabled:opacity-50" disabled onclick="analyzeImage()">Analyze Image</button>
+                <div id="progress-bar" class="hidden mt-4 bg-gray-700 rounded-full h-2">
+                    <div class="bg-blue-500 h-2 rounded-full" style="width: 0%" id="progress-bar-fill"></div>
+                </div>
+                <p id="upload-status" class="text-sm text-gray-400 mt-2 hidden"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Results Section -->
+    <section id="analysis-results-section" class="py-20 bg-gray-900" style="display: none;">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">Analysis Results</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Image Display -->
+                <div class="bg-gray-700 rounded-lg p-4">
+                    <img id="analyzedImage" src="#" alt="Analyzed Eye Image" class="rounded-lg shadow-md mx-auto max-w-full h-auto">
+                </div>
+                <!-- Results Summary -->
+                <div class="bg-gray-700 rounded-lg p-4">
+                    <p id="glaucomaProbability" class="text-lg mb-2"></p>
+                    <p id="analysisDescription" class="text-gray-300"></p>
+                    <div id="otherDiseases" class="mt-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login/Registration Modals (Hidden by default) -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-800 rounded-lg p-8 w-full max-w-md shadow-custom">
+            <h2 class="text-2xl font-semibold mb-6 text-center">Login</h2>
+            <form id="loginFormSubmitModal">
+                <div class="mb-4">
+                    <label for="loginEmailModal" class="block text-gray-300 text-sm font-bold mb-2">Email:</label>
+                    <input type="email" id="loginEmailModal" name="email" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline bg-gray-700" autocomplete="email">
+                </div>
+                <div class="mb-4">
+                    <label for="loginPasswordModal" class="block text-gray-300 text-sm font-bold mb-2">Password:</label>
+                    <input type="password" id="loginPasswordModal" name="password" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline bg-gray-700" autocomplete="current-password">
+                </div>
+                <div class="mb-4">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-300">Login</button>
+                </div>
+                <div id="loginErrorModal" class="text-red-500 mb-2" style="display: none;"></div>
+            </form>
+            <p class="text-gray-400 text-center">Don't have an account? <a href="#" onclick="showRegistrationFormModal()" class="text-blue-500 hover:text-blue-700">Register</a></p>
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-white focus:outline-none" onclick="closeModal('loginModal')">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="registrationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-800 rounded-lg p-8 w-full max-w-md shadow-custom">
+            <h2 class="text-2xl font-semibold mb-6 text-center">Register</h2>
+            <form id="registrationFormSubmitModal">
+                <div class="mb-4">
+                    <label for="registerNameModal" class="block text-gray-300 text-sm font-bold mb-2">Name:</label>
+                    <input type="text" id="registerNameModal" name="name" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline bg-gray-700" autocomplete="name">
+                </div>
+                <div class="mb-4">
+                    <label for="registerEmailModal" class="block text-gray-300 text-sm font-bold mb-2">Email:</label>
+                    <input type="email" id="registerEmailModal" name="email" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline bg-gray-700" autocomplete="email">
+                </div>
+                <div class="mb-4">
+                    <label for="registerPasswordModal" class="block text-gray-300 text-sm font-bold mb-2">Password:</label>
+                    <input type="password" id="registerPasswordModal" name="password" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline bg-gray-700" autocomplete="new-password">
+                </div>
+                <div class="mb-4">
+                    <label for="registerAgeModal" class="block text-gray-300 text-sm font-bold mb-2">Age:</label>
+                    <input type="number" id="registerAgeModal" name="age" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline bg-gray-700">
+                </div>
+                <div class="mb-4">
+                    <label for="registerMedicalHistoryModal" class="block text-gray-300 text-sm font-bold mb-2">Medical History (Optional):</label>
+                    <textarea id="registerMedicalHistoryModal" name="medicalHistory" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 h-32"></textarea>
+                </div>
+                <div class="mb-4">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-300">Register</button>
+                </div>
+                <div id="registrationErrorModal" class="text-red-500 mb-2" style="display: none;"></div>
+            </form>
+            <p class="text-gray-400 text-center">Already have an account? <a href="#" onclick="showLoginFormModal()" class="text-blue-500 hover:text-blue-700">Login</a></p>
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-white focus:outline-none" onclick="closeModal('registrationModal')">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- User Dashboard (Simplified) -->
+    <section id="userDashboard" class="py-20 bg-gray-800" style="display: none;">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-8">Welcome, <span id="userNameDashboard"></span>!</h2>
+            <div class="bg-gray-700 rounded-lg p-6 mb-8 shadow-custom">
+                <h3 class="text-xl font-semibold mb-2">User Profile</h3>
+                <p><strong>Name:</strong> <span id="profileNameDashboard"></span></p>
+                <p><strong>Email:</strong> <span id="profileEmailDashboard"></span></p>
+                <p><strong>Age:</strong> <span id="profileAgeDashboard"></span></p>
+                <p><strong>Medical History:</strong> <span id="profileMedicalHistoryDashboard"></span></p>
+            </div>
+            <div class="bg-gray-700 rounded-lg p-6 mb-8 shadow-custom">
+                <h3 class="text-xl font-semibold mb-2">Analysis History</h3>
+                <ul id="analysisHistoryListDashboard" class="list-none p-0">
+                    <!-- History items will be added here dynamically -->
+                </ul>
+            </div>
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-300" onclick="logout()">Logout</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400 mb-4">© 2023 AirTon. All Rights Reserved.</p>
+            <nav class="flex justify-center space-x-6 mb-4">
+                <a href="/about-us" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a>
+                <a href="/contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a>
+                <a href="/privacy-policy" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                <a href="/terms-of-service" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+            </nav>
+            <p class="text-gray-500 text-sm">Disclaimer: AirTon is not a substitute for professional medical advice. Results are for informational purposes only. Consult with a qualified ophthalmologist for diagnosis and treatment.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle (moved to inline script for immediate effect)
+        function toggleTheme() {
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon
+            } else {
+                body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon
+            }
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Function to handle file upload
+        function handleFileUpload(input) {
+            const file = input.files[0];
+            const dropArea = document.getElementById('drop-area');
+            const analyzeButton = document.getElementById('analyze-button');
+            const uploadStatus = document.getElementById('upload-status');
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // Display the uploaded image immediately
+                    dropArea.classList.add('bg-green-700'); // Indicate success
+                    dropArea.innerHTML = `<img src="${e.target.result}" alt="Uploaded Image" class="rounded-lg shadow-md max-w-full h-auto">`;
+                    analyzeButton.disabled = false;
+                    uploadStatus.textContent = 'Image uploaded successfully!';
+                    uploadStatus.classList.remove('hidden');
+                    // Store the image data URL for later use
+                    localStorage.setItem('uploadedImageData', e.target.result);
+                }
+                reader.onerror = function(e) {
+                    console.error('Error reading file:', e);
+                    uploadStatus.textContent = 'Error uploading image.';
+                    uploadStatus.classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Function to analyze the image
+        function analyzeImage() {
+            const progressBar = document.getElementById('progress-bar');
+            const progressBarFill = document.getElementById('progress-bar-fill');
+            const analyzeButton = document.getElementById('analyze-button');
+            const analysisResultsSection = document.getElementById('analysis-results-section');
+            const analyzedImage = document.getElementById('analyzedImage'); // Get the image element
+
+            // Get the image data URL from local storage
+            const imageDataURL = localStorage.getItem('uploadedImageData');
+
+            if (!imageDataURL) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please upload an image first!',
+                });
+                return;
+            }
+
+            // Disable the analyze button and show progress
+            analyzeButton.disabled = true;
+            progressBar.classList.remove('hidden');
+            let progress = 0;
+            const intervalId = setInterval(() => {
+                progress += 10;
+                progressBarFill.style.width = `${progress}%`;
+                if (progress >= 90) {
+                    clearInterval(intervalId);
+                }
+            }, 200);
+
+            // Simulate the analysis process (replace with your actual API call)
+            // For demonstration, we'll use a setTimeout to simulate network latency
+            setTimeout(() => {
+                clearInterval(intervalId); // Stop the progress bar
+                progressBarFill.style.width = '100%'; // Ensure it reaches 100%
+                analyzeButton.disabled = false;
+
+                // Simulate analysis results
+                const glaucomaProbability = Math.random();
+                const analysisDescription = glaucomaProbability > 0.7 ? 'Possible signs of glaucoma detected. Consult an ophthalmologist.' : 'No significant signs of glaucoma detected.';
+                const otherDiseases = {
+                    'Diabetic Retinopathy': Math.random(),
+                    'Macular Degeneration': Math.random()
+                };
+
+                // Update the analysis results
+                document.getElementById('glaucomaProbability').textContent = `Glaucoma Probability: ${glaucomaProbability.toFixed(2)}`;
+                document.getElementById('analysisDescription').textContent = analysisDescription;
+
+                // Display other diseases if present
+                const otherDiseasesDiv = document.getElementById('otherDiseases');
+                otherDiseasesDiv.innerHTML = ''; // Clear previous results
+                if (otherDiseases && Object.keys(otherDiseases).length > 0) {
+                    const otherDiseasesTitle = document.createElement('h3');
+                    otherDiseasesTitle.textContent = 'Other Detected Diseases:';
+                    otherDiseasesDiv.appendChild(otherDiseasesTitle);
+
+                    for (const disease in otherDiseases) {
+                        const diseaseInfo = document.createElement('p');
+                        diseaseInfo.textContent = `${disease}: ${otherDiseases[disease].toFixed(2)}`;
+                        otherDiseasesDiv.appendChild(diseaseInfo);
+                    }
+                }
+
+                // Set the image source to the data URL
+                analyzedImage.src = imageDataURL;
+                analysisResultsSection.style.display = 'block';
+            }, 2000); // Simulate 2 seconds of processing time
+        }
+
+        // Function to show the login form (modal)
+        function showLoginForm() {
+            document.getElementById('loginModal').classList.remove('hidden');
+        }
+
+        // Function to show the registration form (modal)
+        function showRegistrationForm() {
+            document.getElementById('registrationModal').classList.remove('hidden');
+        }
+
+        // Function to show the login form (modal)
+        function showLoginFormModal() {
+            document.getElementById('loginModal').classList.remove('hidden');
+            document.getElementById('registrationModal').classList.add('hidden');
+            document.getElementById('loginErrorModal').style.display = 'none'; // Clear any previous errors
+        }
+
+        // Function to show the registration form (modal)
+        function showRegistrationFormModal() {
+            document.getElementById('registrationModal').classList.remove('hidden');
+            document.getElementById('loginModal').classList.add('hidden');
+            document.getElementById('registrationErrorModal').style.display = 'none';
+        }
+
+        // Function to close any modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Function to show the user dashboard
+        function showDashboard() {
+            // Hide all sections
+            hideAllSections();
+            document.getElementById('userDashboard').style.display = 'block';
+            // Populate user dashboard with data
+            populateDashboard();
+        }
+
+        function hideAllSections() {
+            document.getElementById('hero').style.display = 'block'; // Keep hero visible
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('how-it-works').style.display = 'none';
+            document.getElementById('benefits').style.display = 'none';
+            document.getElementById('analyze-eye-section').style.display = 'none';
+            document.getElementById('analysis-results-section').style.display = 'none';
+            document.getElementById('userDashboard').style.display = 'none';
+            document.getElementById('loginModal').classList.add('hidden');
+            document.getElementById('registrationModal').classList.add('hidden');
+        }
+
+        // Function to populate the user dashboard
+        function populateDashboard() {
+            fetch('/user', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    if (response.status === 401 || response.status === 403) {
+                        // Token expired or invalid - logout
+                        logout();
+                        throw new Error('Session expired. Please login again.');
+                    }
+                    throw new Error('Failed to fetch user data');
+                }
+                return response.json();
+            })
+            .then(userData => {
+                // Populate user profile
+                document.getElementById('userNameDashboard').textContent = userData.name;
+                document.getElementById('profileNameDashboard').textContent = userData.name;
+                document.getElementById('profileEmailDashboard').textContent = userData.email;
+                document.getElementById('profileAgeDashboard').textContent = userData.age || 'N/A';
+                document.getElementById('profileMedicalHistoryDashboard').textContent = userData.medicalHistory || 'N/A';
+
+                // Populate analysis history
+                const analysisHistoryList = document.getElementById('analysisHistoryListDashboard');
+                analysisHistoryList.innerHTML = ''; // Clear previous history
+                if (userData.analysisHistory && userData.analysisHistory.length > 0) {
+                    userData.analysisHistory.forEach(analysis => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `
+                            <div class="bg-gray-700 rounded-lg p-4 mb-2 shadow-custom">
+                                <p><strong>Date:</strong> ${new Date(analysis.date).toLocaleDateString()}</p>
+                                <p><strong>Glaucoma Probability:</strong> ${analysis.glaucoma_probability.toFixed(2)}</p>
+                                <p><strong>Analysis:</strong> ${analysis.analysis_description}</p>
+                                ${analysis.imagePath ? `<img src="/uploads/${analysis.imagePath.split('/').pop()}" alt="Analyzed Image" style="max-width: 100px; height: auto;" class="rounded-lg shadow-md mt-2">` : ''}
+                            </div>
+                        `;
+                        analysisHistoryList.appendChild(listItem);
+                    });
+                } else {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = 'No analysis history found.';
+                    analysisHistoryList.appendChild(listItem);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching user data:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: error.message || 'Error fetching user data. Please try again.',
+                });
+                // Optionally, redirect to login if the session is invalid
+                if (error.message === 'Session expired. Please login again.') {
+                    logout();
+                }
+            });
+        }
+
+        // Function to handle login form submission (modal)
+        document.getElementById('loginFormSubmitModal').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmailModal').value;
+            const password = document.getElementById('loginPasswordModal').value;
+
+            // Basic client-side validation
+            if (!email || !password) {
+                document.getElementById('loginErrorModal').textContent = 'Please enter both email and password.';
+                document.getElementById('loginErrorModal').style.display = 'block';
+                return;
+            }
+
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        throw new Error(err.message || 'Login failed.');
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                localStorage.setItem('authToken', data.token);
+                closeModal('loginModal');
+                // Update navigation bar
+                updateNavigationBar();
+                showDashboard();
+            })
+            .catch(error => {
+                console.error('Login error:', error);
+                document.getElementById('loginErrorModal').textContent = error.message || 'Login failed. Please check your credentials.';
+                document.getElementById('loginErrorModal').style.display = 'block';
+            });
+        });
+
+        // Function to handle registration form submission (modal)
+        document.getElementById('registrationFormSubmitModal').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('registerNameModal').value;
+            const email = document.getElementById('registerEmailModal').value;
+            const password = document.getElementById('registerPasswordModal').value;
+            const age = document.getElementById('registerAgeModal').value;
+            const medicalHistory = document.getElementById('registerMedicalHistoryModal').value;
+
+            // Basic client-side validation
+            if (!name || name.length < 2) {
+                document.getElementById('registrationErrorModal').textContent = 'Name must be at least 2 characters long.';
+                document.getElementById('registrationErrorModal').style.display = 'block';
+                return;
+            }
+            if (!email || !email.includes('@')) {
+                document.getElementById('registrationErrorModal').textContent = 'Invalid email format.';
+                document.getElementById('registrationErrorModal').style.display = 'block';
+                return;
+            }
+            if (!password || password.length < 6) {
+                document.getElementById('registrationErrorModal').textContent = 'Password must be at least 6 characters long.';
+                document.getElementById('registrationErrorModal').style.display = 'block';
+                return;
+            }
+
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, password, age, medicalHistory })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        throw new Error(err.message || 'Registration failed.');
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registration Successful',
+                    text: 'Please login to continue.',
+                });
+                closeModal('registrationModal');
+                showLoginForm();
+            })
+            .catch(error => {
+                console.error('Registration error:', error);
+                document.getElementById('registrationErrorModal').textContent = error.message || 'Registration failed. Please try again later.';
+                document.getElementById('registrationErrorModal').style.display = 'block';
+            });
+        });
+
+        // Function to handle logout
+        function logout() {
+            localStorage.removeItem('authToken');
+            Swal.fire({
+                icon: 'success',
+                title: 'Logged Out',
+                text: 'You have been successfully logged out.',
+            });
+            // Update navigation bar
+            updateNavigationBar();
+            // Redirect to the hero section or login page
+            hideAllSections();
+            document.getElementById('hero').style.display = 'block';
+        }
+
+        // Function to update the navigation bar based on login status
+        function updateNavigationBar() {
+            const isLoggedIn = isUserLoggedIn();
+            document.getElementById('dashboardLink').style.display = isLoggedIn ? 'block' : 'none';
+            document.getElementById('loginLink').style.display = isLoggedIn ? 'none' : 'block';
+            document.getElementById('registerLink').style.display = isLoggedIn ? 'none' : 'block';
+            document.getElementById('dashboardLinkMobile').style.display = isLoggedIn ? 'block' : 'none';
+            document.getElementById('loginLinkMobile').style.display = isLoggedIn ? 'none' : 'block';
+            document.getElementById('registerLinkMobile').style.display = isLoggedIn ? 'none' : 'block';
+        }
+
+        // Function to handle navigation link clicks
+        document.querySelectorAll('.nav-link, .nav-link-mobile').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') { // Handle login/register links (already handled by modals)
+                    return;
+                }
+                if (targetId === '#analyze-eye-section') {
+                    hideAllSections();
+                    document.getElementById('analyze-eye-section').style.display = 'block';
+                }
+                else if (targetId === '#about') {
+                    hideAllSections();
+                    document.getElementById('about').style.display = 'block';
+                }
+                else if (targetId === '#how-it-works') {
+                    hideAllSections();
+                    document.getElementById('how-it-works').style.display = 'block';
+                }
+                else if (targetId === '#benefits') {
+                    hideAllSections();
+                    document.getElementById('benefits').style.display = 'block';
+                }
+                else {
+                    // Handle other sections (e.g., About, How It Works, Benefits)
+                    hideAllSections();
+                    document.getElementById(targetId.substring(1)).style.display = 'block'; // Remove the '#'
+                }
+            });
+        });
+
+        // Initialize the page
+        // Check for dark mode preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('themeToggle').innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon
+        } else {
+            document.documentElement.classList.remove('dark');
+            document.getElementById('themeToggle').innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon
+        }
+
+        // Update navigation bar on page load
+        updateNavigationBar();
+
+        // Show login form or dashboard based on login status
+        if (isUserLoggedIn()) {
+            showDashboard();
+        } else {
+            // Optionally, show the hero section or other content
+            hideAllSections();
+            document.getElementById('hero').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# Initial risk register
+# Preliminary risk register - home monitoring baseline
 
 Qualitative preliminary hazards, not a completed ISO 14971 risk analysis. Severity,
 probability, detectability, acceptance rules and residual benefit/risk require
@@ -20,6 +20,9 @@ team review. Controls listed here are proposed unless an implementation is named
 | H12 | Infection/contamination or poor cleaning | Patient/operator harm | Reviewed cleaning/air-path design; infection control assessment | Open |
 | H13 | Clock error or corrupted/replayed payload | Wrong trend / report integrity | Clock quality, schema, deduplication and conflict detection | Demo software controls only |
 | H14 | Lay-user misunderstanding / inaccessible feedback | Unsafe attempt or false reassurance | Representative usability testing, low-vision/language support | Open |
+| H15 | Repeat attempts after alignment failures or unsuitable self-use | Excess exposure, discomfort or unusable observations | Reviewed attempt limits, eligibility/training, guided safe stop; R20/R21 | Open |
+| H16 | Patient assumes upload means immediate clinician response | Delayed contact or inappropriate self-management | Explicit local/delivered/reviewed state and care instructions; R22/R23 | Open |
+| H17 | Device shared, drifted, repaired or returned without controlled release | Wrong attribution, infection or inaccurate home history | Enrolment, cleaning/quarantine, calibration and serial/lot service records; R20/R24 | Open |
 
 For each hazard add initiating events, foreseeable misuse, risk estimates, control
 requirements, implementation evidence, verification result, residual-risk review,

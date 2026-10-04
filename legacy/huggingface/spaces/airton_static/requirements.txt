@@ -1,0 +1,17 @@
+# Required version of TensorFlow
+
+tensorflow==2.16.1
+pillow==8.3.2
+numpy==1.26
+flask
+
+# Ensure latest versions of pip, setuptools, and wheel are used
+pip>=24.2
+setuptools>=65.0.0
+wheel>=0.40.0
+
+# Include the Streamlit package
+#streamlit==1.24.0
+
+# Additional dependencies
+# Add other necessary packages for your application

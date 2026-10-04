@@ -1,0 +1,20 @@
+{
+  "baseline_version": "0.2.0",
+  "as_of": "2026-10-04",
+  "product_direction": "home IOP monitoring for patients already under a doctor's care",
+  "direction_confirmed_by": "founder instruction on 2026-10-04",
+  "document_state": "working specification; clinical design approval pending",
+  "clinical_release_authorized": false,
+  "autonomous_diagnosis_enabled": false,
+  "medication_recommendations_enabled": false,
+  "retinal_classifier_track": "separate research and future indication",
+  "monitoring_schedule": null,
+  "accepted_repetitions_per_eye": null,
+  "maximum_retries_per_session": null,
+  "clinical_alert_thresholds": null,
+  "calibration_interval": null,
+  "pneumatic_limits": null,
+  "optical_exposure_limits": null,
+  "requires_review": ["eligibility", "training", "safety limits", "agreement criteria", "care plan", "service and escalation coverage"],
+  "note": "Null values are unresolved design inputs. This configuration cannot drive acquisition or issue clinical alerts."
+}

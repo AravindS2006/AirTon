@@ -1,5 +1,13 @@
 # Machine learning workstream
 
+Actual historical work is now preserved in three [source-only notebooks](notebooks/README.md).
+Read the [recovered experiment audit](recovered-model-audit.md),
+[model registry](../models/model-registry.json),
+[historical results](../models/historical-results.json) and
+[dataset registry](../data/dataset-registry.json). These record source/log evidence,
+not a new training run. Two published Keras files are stored locally outside Git
+and verified by hash; their exact training lineage is unresolved.
+
 Two separate research tasks:
 
 | Task | Inputs and target | Needed data |

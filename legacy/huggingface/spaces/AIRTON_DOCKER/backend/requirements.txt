@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+tensorflow #Or tensorflow or keras as needed by your model
+Pillow
+SQLAlchemy
+bcrypt  #For password hashing
+python-jose #For JWT
+passlib  #If using bcrypt with Passlib for security
+psycopg2-binary # For Postgresql - if using that

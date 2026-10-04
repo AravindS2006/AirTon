@@ -1,0 +1,15 @@
+{
+  "state": "historical planning scenarios; not actual sales or financing",
+  "source": "P09 Financial Budget, modified 2025-06-05",
+  "as_of": "2026-10-04",
+  "currency": "INR",
+  "monthly_units_in_source": [5, 8, 10, 13, 17, 19, 17, 20, 16, 17, 18, 20],
+  "stated_annual_units": 180,
+  "unit_price": 35000,
+  "unit_cogs": 25000,
+  "monthly_consulting_revenue": 20000,
+  "annual_fixed_costs": 1259000,
+  "consulting_costs_known": false,
+  "excluded_costs": ["tax and finance costs", "yield and rejected units", "service and calibration", "warranty and replacement", "clinical and regulatory work", "working capital timing"],
+  "scenario_notes": "Monthly units sum to 200. Preserve both the stated 180-unit case and the row-derived 200-unit case."
+}

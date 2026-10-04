@@ -1,0 +1,94 @@
+SMART INDIA HACKATHON 2024
+
+Problem Statement ID – 1550
+Problem Statement Title- Development of portable device (non-contact device) for measurement of eye pressure in glaucoma patients for usage at home.
+Theme - MedTech / BioTech / HealthTech
+PS Category - Hardware
+Team ID -
+Team Name - AirTon
+
+AirTon
+Current Solution
+
+Air puff tonometer
+Too costly (around Rs.3,00,000)
+Can’t  be afforded by all
+2
+@SIH Idea submission- Template
+AirTon
+Proposed Solution
+
+Similar to the Current solution
+With a model similar to that of thermometer  in low cost
+2
+
+TECHNICAL APPROACH
+Technologies to be used:
+C/C++/Python
+Microcontroller
+Internet of Things
+Air pump mechanism
+Principle of Tonometer
+Sensors
+3
+@SIH Idea submission- Template
+Methodology and process for implementation:
+Designing the circuit
+Programming 
+Assembling the Components
+Calibration
+Testing
+AirTon
+3
+
+4
+4
+
+FEASIBILITY AND VIABILITY
+Analysis of the feasibility of the idea:
+
+Accessible to all
+Minimal discomfort
+Ease of use
+Replaceable materials
+5
+@SIH Idea submission- Template
+Potential challenges and risks:
+
+Calibration 
+Accuracy
+Sterilization
+Cost
+Strategies for overcoming these challenges:
+
+Usage of cost effective , reliable sensors and air pump (small size).
+Make the product built by the users – with user manual.
+AirTon
+5
+
+IMPACT AND BENEFITS
+Potential impact on the target audience:
+Increased accessibility (Rural & Urban)
+Early Detection and Prevention
+Cost Savings
+Global Health Impact
+6
+@SIH Idea submission- Template
+Benefits of the solution:
+Accessible to all
+Minimal discomfort
+Ease of use
+Replaceable materials
+AirTon
+6
+
+RESEARCH  AND REFERENCES
+Tonopen: A Critical Appraisal Shibal Bhartiya MS, MBBS, Sonia Bhargav MS, DNB, Sumita Sethi MS, Shalini Mohan MS, DNB, Anand Aggarwal MD, DNB
+https://www.ncbi.nlm.nih.gov/books/NBK582132/
+https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/glaucoma
+
+7
+@SIH Idea submission- Template
+AirTon
+7
+

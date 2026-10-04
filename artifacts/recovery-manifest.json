@@ -1,0 +1,483 @@
+{
+  "retrieved_on": "2026-10-04",
+  "artifacts": [
+    {
+      "path": "legacy/huggingface/models/Thiruvizhi/config.json",
+      "sha256": "c18481e7ceca0461e76cda1b31a53ddb88d70be332aeb33c0f0a6eff4ba2af0e",
+      "bytes": 489,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/models/Thiruvizhi/model.py",
+      "sha256": "daa126a2962083ac3e232c2fcbacd71e716555f67327a916ac75269f614e6c1e",
+      "bytes": 323,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/models/Thiruvizhi/README.md",
+      "sha256": "bc04eee7e1c6dcac9ef2b3a0937c33359492bcec2e71f5844c57b2fea86e0e06",
+      "bytes": 7722,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON/app.py",
+      "sha256": "86709dd301845a643bde78e7377ba32c02677b83185b168e1882062a6491b9a6",
+      "bytes": 2487,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON/README.md",
+      "sha256": "b5ff71e1234f0ad6e20b0f59b3f694e006dd2c6426d220d9aa9694eedb11b26e",
+      "bytes": 225,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON/requirements.txt",
+      "sha256": "ad79b2616b1293691dac711b5f407994a34db10c537d10d56792c4d185c3e741",
+      "bytes": 43,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/Airton-node/Dockerfile",
+      "sha256": "1c5cfe62e4d72bfb8b8d5d290470b1f3b79fe0a76f132c7eea7d6c323c24f757",
+      "bytes": 563,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/Airton-node/package.json",
+      "sha256": "4cc9b9510916729a740a292fb36344709c102eaf16c72b4f906d060ec68714b1",
+      "bytes": 483,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/Airton-node/README.md",
+      "sha256": "c751c1d48ea243b4eba3b4f01cae4ab7e7cfffe35f4fd9e147583038c97bab7b",
+      "bytes": 209,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/Airton-node/server.js",
+      "sha256": "c63cd3bf86cc23dcadc931aa9a4b603176ee6e36a12419bc0c14eaf8a64a896c",
+      "bytes": 8728,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/Dockerfile",
+      "sha256": "e70af95085988b613b40961b71330ed3e5c0774add01dd98d0d61ad4d9919df8",
+      "bytes": 558,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/README.md",
+      "sha256": "32971db935dd86dc6f5ef8e96046c8e017627546a5a4278f00b11baf5b959089",
+      "bytes": 197,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_MAIN/app.py",
+      "sha256": "a4648445e17922c60814c210c6ef6c05d62defc12bc78662dd4ccdb5549d7ac0",
+      "bytes": 2035,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_MAIN/README.md",
+      "sha256": "ebb647ccaebaeed9b346594e2ff24ab7e39cbbb210f868a793fc6715b7f2a88f",
+      "bytes": 237,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_MAIN/requirements.txt",
+      "sha256": "183fe682d6f634b6a4256ad54b6a0365a3859c1020f1094ea7d2c26cb49d59fc",
+      "bytes": 110,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/airton_static/app.py",
+      "sha256": "1475bbf676d910a23df7f74150e7b62da9c6d23e03346fb39ae6a9781a72567e",
+      "bytes": 1348,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/airton_static/Dockerfile",
+      "sha256": "74ce253a4b70e777928a8ded2cf2d0f2ccfcbc178b89a53796941648c75f7108",
+      "bytes": 536,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/airton_static/index.html",
+      "sha256": "5c635b50672f5abf1c0539191132ba66175e89b69418f9c189fadcaf50c86d19",
+      "bytes": 20652,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/airton_static/README.md",
+      "sha256": "29d777ee7417be38c3a5abbe2f6220f006707615ba1e01519664c508a3a83729",
+      "bytes": 957,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/airton_static/requirements.txt",
+      "sha256": "a24a6cee7d14c819b9f35909beb06b9c6ab73f414ba05f20261c7c27c11a0c5a",
+      "bytes": 324,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/airton_static/script.js",
+      "sha256": "736d6f525faf949c22053b3ff8a38888dfb2934a1983c1c03f309cb5ce8f9358",
+      "bytes": 3947,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/airton_static/style.css",
+      "sha256": "602e077af9cd06491cf012bbb76b712d666b8a970bccceed11d8897148f0fbe5",
+      "bytes": 428,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/airton_static/train.py",
+      "sha256": "656a0aa579c20190f31335eaa99f20f232a4cd9fe4c425dd29dcd820b9c62075",
+      "bytes": 3050,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/Airton_streamlit/app.py",
+      "sha256": "006b68b3d68ba2ed50ec8d9605d7e49ec077656261edcdf24a272be0d59a8b61",
+      "bytes": 2615,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/Airton_streamlit/index.html",
+      "sha256": "137ec4e6c823354af1e9b07733de81ad5a005632eb864e0f8767ab82c3ae1133",
+      "bytes": 3418,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/Airton_streamlit/README.md",
+      "sha256": "60c95bf9ded3477432311e203349eeda9e2b972801e39e7ed60bd20cb281ef96",
+      "bytes": 230,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/Airton_streamlit/requirements.txt",
+      "sha256": "183fe682d6f634b6a4256ad54b6a0365a3859c1020f1094ea7d2c26cb49d59fc",
+      "bytes": 110,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/Airton_streamlit/train.py",
+      "sha256": "656a0aa579c20190f31335eaa99f20f232a4cd9fe4c425dd29dcd820b9c62075",
+      "bytes": 3050,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/Airton-node/public/index.html",
+      "sha256": "c34f5711c7751cf6fdf823dc7b4aa2533d1d3316ef8460194bd9d7fc74931923",
+      "bytes": 47395,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/backend/app.py",
+      "sha256": "ed458c27c9262f6bf3865e9060e881e361cf84f859d2417f8b0a6efa65b275b7",
+      "bytes": 4505,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/backend/db.py",
+      "sha256": "fdd47029b988f4599202d9ff781cf68f3a74062290d227cf23ab46e21fcdfcf6",
+      "bytes": 1869,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/backend/requirements.txt",
+      "sha256": "83661007bfbab7a27551b3b6a0abb090af56b74aba243f3e7800c10a331a102d",
+      "bytes": 261,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/backend/security.py",
+      "sha256": "00b3d43876af0d4581dc4403b4b44cb9b737f0a6be7d6b4734c2dd96bb880369",
+      "bytes": 1503,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/backend/utils.py",
+      "sha256": "089788d9c2159cbf423fdee120b2821e23b5f4dc5524ad1ccf7464109ddc6a20",
+      "bytes": 1657,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/frontend/app.py",
+      "sha256": "cf37c81069126c8e1e34aaad536de634ab1775723eb8dc6b07030f5e5233e8b4",
+      "bytes": 7528,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/frontend/requirements.txt",
+      "sha256": "55ba6f768bd2c5e751a67ebdf4e84b93230e6592a99cced2d534f0cd4b2be70b",
+      "bytes": 46,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/frontend/utils.py",
+      "sha256": "05dd304ba1a377cd688a9c844fc2e97d995f4363cf812cf3d8e42ce28cf03998",
+      "bytes": 68,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/backend/models/analysis.py",
+      "sha256": "31ff91fa8f03c19857d4c393d6aec7f60bfd9db7b6808b6abfc952b633ebb335",
+      "bytes": 1040,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/backend/models/user.py",
+      "sha256": "3c8129a503c11bade41c9e54ddcb690d9f78d77d7d2c0983503fe8396a32fbac",
+      "bytes": 951,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/AIRTON_DOCKER/backend/models/__init__.py",
+      "sha256": "4e755719d0a11988b404f65ef2d4026a9a5c3cf8166a02b4fa09ea154975fef0",
+      "bytes": 138,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/huggingface/spaces/Airton_streamlit/html_templates/index.html",
+      "sha256": "73feafc8d996026e88de8859451f5ed6f7a01e31d15d96fee34b4a04eeea883b",
+      "bytes": 799,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/.gitignore",
+      "sha256": "fe718e7babb14f3cbad2d97f08889b9ce5215ed3fe0e43b2b8cfbfb3b9b844e8",
+      "bytes": 253,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/App.tsx",
+      "sha256": "28f92d1e1ada9bf0e36bd8e3c7a4f33168b6dd81f73bd5acead7e166fea9173f",
+      "bytes": 2573,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/index.html",
+      "sha256": "2eaf52de7db7f0fd03e89172cc80d0226304b1793fc0bae4d93d85d514c785d2",
+      "bytes": 1481,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/index.tsx",
+      "sha256": "2c3dfce9143be925b4e4910b28664527467db11d489cf93ade60a1e6fd52eb38",
+      "bytes": 435,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/metadata.json",
+      "sha256": "cff190ed6a4b0262ae4e9134acf6bca5c37c502523dd23e790a11768a72993bc",
+      "bytes": 325,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/package-lock.json",
+      "sha256": "36d55227eeb65e680c931228dd1c28205791813a1304806a7438d5f71c378fe4",
+      "bytes": 75889,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/package.json",
+      "sha256": "cc87dfa915538b97aa54d03d64b06fc73c5455902d66b3f4afda9a5abd4a8ec6",
+      "bytes": 483,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/README.md",
+      "sha256": "f3c7cdcb7fc536c12410cd333f41fbb707339542bc397ac8e115d4953b6ebd1c",
+      "bytes": 575,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/tsconfig.json",
+      "sha256": "8641deb29adfd1958488d1951f0d5ddf3013f498aa67ce0f621e347f0ef608d2",
+      "bytes": 542,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/types.ts",
+      "sha256": "e02c715d686414c4d89bb8d13422abcf7ca09a192225e30d87f44c96fc544aeb",
+      "bytes": 625,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/vite.config.ts",
+      "sha256": "63e5a78aeea5894837a62ad0b90869c602bad713f93ae44e61c436a7b7689a19",
+      "bytes": 580,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/AboutUs.tsx",
+      "sha256": "c332aa22debbdbc44b5308f93a39f736199172b0655ce6bc3ae9edb807dfe567",
+      "bytes": 2823,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/AdminDashboard.tsx",
+      "sha256": "6b0480d3331237d078a4abd19d7f5a146c504ae95631a5c0ae8a004332076cbc",
+      "bytes": 3643,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/Blog.tsx",
+      "sha256": "0acc8d0216899e731c58c3bb67800503bf75bfc5f113d9726ee4949281e483e3",
+      "bytes": 2686,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/Dashboard.tsx",
+      "sha256": "870355b7006274f86e2aeec6acb6f13f63d0a14dca485ef787938bc8c3f207e9",
+      "bytes": 3455,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/DashboardHome.tsx",
+      "sha256": "b90ff17d835fdf3f4ebd0e297cd944cca4ba421b5ff919ab8a11bf76de3d9298",
+      "bytes": 928,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/DoctorDashboard.tsx",
+      "sha256": "8488f90b49368af08926468b797a5a24f8f064e0209f188d81c43c81cbc317a5",
+      "bytes": 3316,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/FAQ.tsx",
+      "sha256": "6aacb90be6c3b8c9b939e25721d38fb4f636f943649d1b25f88604f536b4110f",
+      "bytes": 2275,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/Footer.tsx",
+      "sha256": "300a8d3912ab320b25cc179e3215810b5109c61b1e8b4c86c97f3cfe5dfb8bd2",
+      "bytes": 2278,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/Header.tsx",
+      "sha256": "50d0a9ad6e5fe776bb24d0681936e83fff531c3549f1402d962eb2c58828b8a3",
+      "bytes": 1810,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/LandingPage.tsx",
+      "sha256": "49cec588b0771c8ec6c5884f91abfcde022a940569970820fd3aa68a72e1f8d4",
+      "bytes": 8726,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/Login.tsx",
+      "sha256": "0b51651abd10a37517e3c2eb6a5d7d96fcdc2a71a746210c5df6ae50d5066d56",
+      "bytes": 2543,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/NotFound.tsx",
+      "sha256": "1c4037a1fa399e3b1649f742f75d55b43f67fd73e305fced7546764b246842ba",
+      "bytes": 828,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/Notifications.tsx",
+      "sha256": "ff159de1669d78d6102434bcea159f4b01b056661a2eb8bb2fb7813892baf9f3",
+      "bytes": 1717,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/PatientDashboard.tsx",
+      "sha256": "3e08bb7b862828c743dd3ca02683eff16fc0751f71c07f97ca17e2edf6c990bf",
+      "bytes": 5312,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/PrivacyPolicy.tsx",
+      "sha256": "8cc4fe85b669e686fb9eaf20ddb0a40d97207339722f9dc3006198d619134ea5",
+      "bytes": 2785,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/Profile.tsx",
+      "sha256": "74811822ce37bf02c0cee39cadc886a739b0a8a82cbb145aaec2db80ef4815c9",
+      "bytes": 1327,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/components/Settings.tsx",
+      "sha256": "3c7eeb2ed604c491416beda040127afdde7554693a8be3c945b7b7de1b6f4db8",
+      "bytes": 2164,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "legacy/github/airton-web-final/services/mockApiService.ts",
+      "sha256": "1b3b8a3891862eed0443c668c82e2c49abdd0819dcf02c8ae77fd56d70f8ef62",
+      "bytes": 2816,
+      "classification": "historical project source; not qualified for clinical use"
+    },
+    {
+      "path": "ml/notebooks/archive/airton-glaucoma-deeplearn-copy.ipynb",
+      "sha256": "f355b51f665b63609023643a75a6863ebe880a7a3e0789a67eb02a7c0128218f",
+      "original_sha256": "f2a92c2179b7e50cc9886254936a574cea62f624290c34be8f7cf50d6b1454df",
+      "classification": "historical training code, output stripped"
+    },
+    {
+      "path": "ml/notebooks/archive/airton-glaucoma-deeplearn.ipynb",
+      "sha256": "e82584d3ff3867cac2576ea48680412de9ee4f656264e164af13e387e5847c23",
+      "original_sha256": "3a0ccbe2723d32a901fce2c4015308a17988adedfaa0a21c67b5338c082f37be",
+      "classification": "historical training code, output stripped"
+    },
+    {
+      "path": "ml/notebooks/archive/airton-ml-2024.ipynb",
+      "sha256": "83a9af103a65db86ff5b98c808eefddd9b70720ca509bc1e9b8a85b21e99b473",
+      "original_sha256": "f05cfd90d399f4be5ae034b6204850accae7b165bad257d34c72d899d34b4d9b",
+      "classification": "historical training code, output stripped"
+    },
+    {
+      "path": "artifacts/research/origa-vgg19-confusion-matrix.png",
+      "sha256": "ca2057f6f29d92a526e8dc4536a2ea1a12ac3a48f4d6cc024d811c4932c09b8f",
+      "classification": "aggregate historical research result; no subject images"
+    },
+    {
+      "path": "artifacts/research/origa-resnet18-confusion-matrix.png",
+      "sha256": "83960aa0b56de0fc26ee6ddf0c89a1429f26314d6df64df20f4c8264631e919a",
+      "classification": "aggregate historical research result; no subject images"
+    },
+    {
+      "path": "artifacts/source/device-drawings/allviews-2026-09-13.pdf",
+      "sha256": "bf8a91b7d9c766cee9a1563a98d67a303d4fa93b5f09cd90f286bd17fb629249",
+      "bytes": 43604,
+      "classification": "device concept drawing; no manufacturing dimensions"
+    },
+    {
+      "path": "artifacts/source/device-drawings/front-2026-09-13.pdf",
+      "sha256": "0f79b765f0b22dd34ae6e00737dc7c6be11527d32ecfb81b89d45c8af1b8383d",
+      "bytes": 65252,
+      "classification": "device concept drawing; no manufacturing dimensions"
+    },
+    {
+      "path": "artifacts/source/device-drawings/patentdrawing-2026-09-13.pdf",
+      "sha256": "32f044566b4ae8aa90d65226d4c19ad11132be3057c40afc4d14e656455d2d74",
+      "bytes": 55130,
+      "classification": "device concept drawing; no manufacturing dimensions"
+    },
+    {
+      "path": "artifacts/source/device-drawings/rear-2026-09-13.pdf",
+      "sha256": "39be94a3c192c338efc63cc0a4c19e170c43f9860e4cb6c88e49609fad79a596",
+      "bytes": 58242,
+      "classification": "device concept drawing; no manufacturing dimensions"
+    },
+    {
+      "path": "artifacts/source/device-drawings/side-2026-09-13.pdf",
+      "sha256": "267ed521d30333bde584802fa4076aa98a0f03aad8578ecbfb9699e86ab2b3c0",
+      "bytes": 59526,
+      "classification": "device concept drawing; no manufacturing dimensions"
+    }
+  ]
+}

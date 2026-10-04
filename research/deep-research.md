@@ -285,3 +285,34 @@ calibration records; ethics/study records; dataset terms; model code/weights and
 evaluation partitions; cloud architecture and access policy; dated supplier
 quotes; anonymized survey responses; and institutional/IP agreements. The
 repository provides locations and templates for these without inventing them.
+
+
+## Recovery update - 4 October 2026
+
+The original dossier used the July2025deck as the only supplied project evidence.
+Recovery of the linked notebook, Drive project artifacts and author's public
+repositories materially changes the historical baseline. Actual retinal
+experiments, two public Keras weight files, six application snapshots and a
+React patient/doctor/admin interface now exist locally. The September2026drawing
+PDFs extend the known visual design history. These are genuine artifacts with
+recorded provenance; they do not close physical safety or clinical gates.
+
+The founder selected home IOP monitoring for patients already under a doctor's
+care as the first commercial direction. The [product specification](../docs/product/specification.md)
+and [home-use validation plan](../docs/clinical/home-monitoring-validation.md)
+now govern sequencing. Pressure metrology, self-positioning, failure rejection,
+repeatability, calibration and assigned clinician review take precedence over
+adding an independent fundus diagnosis claim.
+
+The [ML audit](../ml/recovered-model-audit.md) finds ORIGA use, validation-set
+reuse, reversed confusion-matrix axis names, train/inference preprocessing
+mismatch and incomplete checkpoint lineage. The [software audit](../docs/software/legacy-audit.md)
+finds random disease probabilities in the Node demonstration and random IOP/mock
+business records in the React prototype. These findings constrain claims rather
+than invalidate the existence of software development work.
+
+The actual financial Sheet's monthly units sum to200despite its180unit displayed
+total. [Business reconciliation](../docs/business/baseline.md) supersedes the
+earlier deck-only arithmetic on this point. The budget, filing, startup and
+launch evidence remain incomplete. The current [master report](../reports/airton-project-report-2026-10-04.md)
+consolidates the revised evidence and operational plan.

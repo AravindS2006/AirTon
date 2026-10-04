@@ -1,8 +1,10 @@
 # Hardware workstream
 
-The PDF contains concepts and a simulation screenshot. Editable electronics and
-mechanical projects have not been supplied. This directory intentionally contains
-design inputs and work-area instructions, not fabricated manufacturing files.
+The original deck contains concepts and a simulation screenshot. Five actual
+device drawing PDFs dated 13 September 2026 are preserved with a
+[mechanical design-history record](mechanical/design-history.md). Editable CAD,
+electronics, Proteus and as-built firmware files were not recovered. The drawings
+do not specify dimensions, tolerances or a verified physical build.
 
 Read [optical feasibility](../docs/hardware/optical-feasibility.md),
 [bench verification](../docs/hardware/bench-plan.md), and

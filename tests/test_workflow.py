@@ -112,6 +112,8 @@ class WorkflowTests(unittest.TestCase):
             self.assertEqual((Path(tmp) / "measurements.json").read_bytes(), original)
             self.assertEqual(len(MeasurementStore(Path(tmp) / "measurements.sqlite3").list()), 12)
             self.assertTrue((Path(tmp) / "review.html").is_file())
+            for name in ("measurements.json", "review.html", "fhir-observations.json", "manifest.json"):
+                self.assertNotIn(b"\r\n", (Path(tmp) / name).read_bytes())
 
     def test_grouped_split_keeps_both_eyes_together(self):
         subjects = [f"demo-{i}" for i in range(30) for _ in range(2)]

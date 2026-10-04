@@ -18,11 +18,11 @@ def build_demo(output, count=12, seed=42):
     for record in records:
         store.ingest(record)
         (raw_dir / (record["measurement_id"] + ".json")).write_bytes(raw[record["measurement_id"]])
-    (output / "measurements.json").write_text(json.dumps(records, indent=2, allow_nan=False) + "\n", encoding="utf-8")
-    (output / "review.html").write_text(render_report(records), encoding="utf-8")
-    (output / "fhir-observations.json").write_text(json.dumps([fhir_observation(r) for r in records], indent=2) + "\n", encoding="utf-8")
+    (output / "measurements.json").write_text(json.dumps(records, indent=2, allow_nan=False) + "\n", encoding="utf-8", newline="\n")
+    (output / "review.html").write_text(render_report(records), encoding="utf-8", newline="\n")
+    (output / "fhir-observations.json").write_text(json.dumps([fhir_observation(r) for r in records], indent=2) + "\n", encoding="utf-8", newline="\n")
     (output / "manifest.json").write_text(json.dumps({"synthetic": True, "seed": seed, "record_count": len(records), "clinical_model": None,
-        "purpose": "Software workflow verification only", "version": "0.1.0"}, indent=2) + "\n", encoding="utf-8")
+        "purpose": "Software workflow verification only", "version": "0.1.0"}, indent=2) + "\n", encoding="utf-8", newline="\n")
     return output
 
 

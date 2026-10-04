@@ -1,6 +1,6 @@
 {
   "release_date": "2026-10-04",
-  "generated_at": "2026-10-04T03:38:58.817010+00:00",
+  "generated_at": "2026-10-04T03:41:07.678675+00:00",
   "synthetic": true,
   "commands": [
     "python scripts/demo.py",
@@ -11,32 +11,32 @@
   "artifacts": [
     {
       "path": "artifacts/examples/synthetic-review.html",
-      "sha256": "65882c3fe29405ec4632dc916fd07ff880a842a7d305473a16f0608a062f68e2",
+      "sha256": "5267d43dde818ddf5f82e3803db4ce56a05020ab609857880a00d30e20f21b03",
       "evidence_level": "synthetic-generated"
     },
     {
       "path": "artifacts/examples/synthetic-measurements.json",
-      "sha256": "36d8c2ad2389eaa804fca11634ab5fa03b4d11c80064a1cbe0c1ae0fe3549d36",
+      "sha256": "92387ffd9a3c4ec72d8e9a5c40817aea6a040c674074929bf679c02e74e4445f",
       "evidence_level": "synthetic-generated"
     },
     {
       "path": "artifacts/examples/synthetic-fhir-observations.json",
-      "sha256": "cb2871df35a56b87aebda343058d46c3b7379fe6b275b4ea83087180255920ee",
+      "sha256": "3c972adec6185f0d37f1836cd34e81b317742bd7c6c06c983af2d9aea0c19b5a",
       "evidence_level": "synthetic-generated"
     },
     {
       "path": "artifacts/examples/synthetic-ml-metrics.json",
-      "sha256": "43274b4c0f3bbac5a76291165d6b789141e99bb76cf692182e97c37de47568c9",
+      "sha256": "28c45345b6c3b104232e18ea02e17e543146faf2955b91c6aecfd5d881aad172",
       "evidence_level": "synthetic-generated"
     },
     {
       "path": "artifacts/examples/synthetic-ml-model.json",
-      "sha256": "4a1724c96c715c443d8f67402f49423c06035f2055e9e3b422d4099802cbdc34",
+      "sha256": "3e4c429d3149f925a35ff7d2ab2577a5cdf1be8abcbacd4a4889d8f4ede8e0a8",
       "evidence_level": "synthetic-generated"
     },
     {
       "path": "artifacts/examples/synthetic-ml-run-manifest.json",
-      "sha256": "2f0349eccafee50515602fd615f7c2ea59e2cebe505b639681a48c60f8892838",
+      "sha256": "56d2032cf82f0bac736d47b2a6c8851c683f7af8bc77de4b5d88fbe215b40201",
       "evidence_level": "synthetic-generated"
     }
   ]

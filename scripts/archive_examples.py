@@ -44,7 +44,7 @@ def main():
     (target / "manifest.json").write_text(json.dumps({"release_date": "2026-10-04", "generated_at": datetime.now(timezone.utc).isoformat(), "synthetic": True,
         "commands": ["python scripts/demo.py", "python scripts/train_synthetic.py", "python scripts/archive_examples.py"],
         "limitations": "Fictional values; software verification only; FHIR example not profile-validated; ML scores have no clinical meaning.",
-        "artifacts": files}, indent=2) + "\n", encoding="utf-8")
+        "artifacts": files}, indent=2) + "\n", encoding="utf-8", newline="\n")
     deck_source = ROOT / "artifacts/source"
     figures = deck_source / "deck-figures"
     figures.mkdir(exist_ok=True)
@@ -62,7 +62,7 @@ def main():
         "origin": "User-supplied Team AirTon_20250703_080412_0000.pdf; copied without editing",
         "page_count": 38, "rendering": "pypdfium2 at scale 1.2; original pages; no image edits",
         "extraction": "pypdf text extraction; figure text may be omitted",
-        "rights": "Team/institution/third-party rights require publication review", "artifacts": source_files}, indent=2) + "\n", encoding="utf-8")
+        "rights": "Team/institution/third-party rights require publication review", "artifacts": source_files}, indent=2) + "\n", encoding="utf-8", newline="\n")
     print("Archived only allowlisted synthetic examples and original source artifacts")
 
 

@@ -12,6 +12,7 @@ These results establish software behaviors on synthetic data only.
 | `python scripts/check_repository.py` | Passed | Local Markdown links, Python/JSON syntax and retained artifact hashes |
 | Browser review of synthetic HTML | Reviewed | Explicit fictional-data banner; OD/OS; timestamps; quality and no-result rows; scrollable table |
 | Original PDF inspection | 38-page text extraction; selected design pages rendered/reviewed | Block diagram, MVP requirements/render, Proteus and fundus-output figure |
+| Git content integrity | Retained artifact hashes checked against committed blobs | LF text generation and Git attributes preserve manifests across checkout platforms |
 
 The initial test run revealed unclosed SQLite connections on Windows. Connections
 now close deterministically after commit/rollback and tests pass including temporary

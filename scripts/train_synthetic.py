@@ -46,10 +46,10 @@ def run(output, seed=42):
     manifest = {"synthetic": True, "seed": seed, "dataset_sha256": hashlib.sha256(dataset).hexdigest(),
                 "subject_splits": {k: sorted(v) for k, v in split.items()}, "numpy_version": np.__version__, "sklearn_version": sklearn.__version__,
                 "limitations": "Artificial algebraic target and arbitrary features; cannot estimate real eye pressure or glaucoma risk."}
-    (output / "run-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    (output / "metrics.json").write_text(json.dumps({"synthetic": True, "validation": validation, "test": test, "test_dummy_mean_baseline": dummy}, indent=2) + "\n", encoding="utf-8")
+    (output / "run-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
+    (output / "metrics.json").write_text(json.dumps({"synthetic": True, "validation": validation, "test": test, "test_dummy_mean_baseline": dummy}, indent=2) + "\n", encoding="utf-8", newline="\n")
     (output / "model.json").write_text(json.dumps({"synthetic": True, "model_type": "linear-regression-demo", "clinical_use": False,
-        "features": ["synthetic_feature_a", "synthetic_feature_b"], "intercept": float(model.intercept_), "coefficients": model.coef_.tolist()}, indent=2) + "\n", encoding="utf-8")
+        "features": ["synthetic_feature_a", "synthetic_feature_b"], "intercept": float(model.intercept_), "coefficients": model.coef_.tolist()}, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(f"Synthetic ML exercise saved to {output.resolve()}; not clinical performance")
 
 

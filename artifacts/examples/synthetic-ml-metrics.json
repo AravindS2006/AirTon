@@ -1,0 +1,30 @@
+{
+  "synthetic": true,
+  "validation": {
+    "n_pairs": 40,
+    "mae_mmhg": 0.28234460970461256,
+    "rmse_mmhg": 0.352009990494027,
+    "bias_estimate_minus_reference_mmhg": -0.06401430779503166,
+    "exploratory_loa_lower_mmhg": -0.7510923991687288,
+    "exploratory_loa_upper_mmhg": 0.6230637835786654,
+    "note": "Descriptive normal-approximation limits only; repeated-eye data require a clustered agreement analysis."
+  },
+  "test": {
+    "n_pairs": 40,
+    "mae_mmhg": 0.26291012728025887,
+    "rmse_mmhg": 0.31467228686388754,
+    "bias_estimate_minus_reference_mmhg": -0.1808193594486914,
+    "exploratory_loa_lower_mmhg": -0.6920135020133945,
+    "exploratory_loa_upper_mmhg": 0.33037478311601165,
+    "note": "Descriptive normal-approximation limits only; repeated-eye data require a clustered agreement analysis."
+  },
+  "test_dummy_mean_baseline": {
+    "n_pairs": 40,
+    "mae_mmhg": 3.3961215924494663,
+    "rmse_mmhg": 3.8508977748418967,
+    "bias_estimate_minus_reference_mmhg": -0.05473772211538739,
+    "exploratory_loa_lower_mmhg": -7.697878792853018,
+    "exploratory_loa_upper_mmhg": 7.5884033486222435,
+    "note": "Descriptive normal-approximation limits only; repeated-eye data require a clustered agreement analysis."
+  }
+}

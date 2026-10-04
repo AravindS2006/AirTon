@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:airton:synthetic-measurement:1.0",
+  "title": "AirTon synthetic measurement only",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "measurement_id", "session_id", "subject_id", "device_id", "eye", "captured_at", "synthetic", "quality_status", "quality_reasons", "iop_estimate_mmhg", "calibration_id", "model_id", "firmware_version", "raw_sha256", "clock_status"],
+  "$defs": {
+    "demoId": {"type": "string", "pattern": "^demo-[A-Za-z0-9_-]{1,80}$"}
+  },
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "measurement_id": {"$ref": "#/$defs/demoId"},
+    "session_id": {"$ref": "#/$defs/demoId"},
+    "subject_id": {"$ref": "#/$defs/demoId"},
+    "device_id": {"$ref": "#/$defs/demoId"},
+    "calibration_id": {"$ref": "#/$defs/demoId"},
+    "model_id": {"$ref": "#/$defs/demoId"},
+    "eye": {"enum": ["OD", "OS"]},
+    "captured_at": {"type": "string", "format": "date-time", "maxLength": 40, "pattern": "(Z|[+-][0-9]{2}:[0-9]{2})$"},
+    "synthetic": {"const": true},
+    "quality_status": {"enum": ["pass", "reject"]},
+    "quality_reasons": {"type": "array", "uniqueItems": true, "items": {"enum": ["alignment", "blink", "signal_missing", "calibration_expired", "clock_untrusted"]}},
+    "iop_estimate_mmhg": {"type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 100},
+    "firmware_version": {"type": "string", "pattern": "^demo-[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "raw_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "clock_status": {"enum": ["trusted", "untrusted"]}
+  },
+  "allOf": [
+    {"if": {"properties": {"quality_status": {"const": "reject"}}}, "then": {"properties": {"iop_estimate_mmhg": {"type": "null"}, "quality_reasons": {"minItems": 1}}}, "else": {"properties": {"iop_estimate_mmhg": {"type": "number"}, "quality_reasons": {"maxItems": 0}, "clock_status": {"const": "trusted"}}}},
+    {"if": {"properties": {"clock_status": {"const": "untrusted"}}}, "then": {"properties": {"quality_status": {"const": "reject"}, "quality_reasons": {"contains": {"const": "clock_untrusted"}}}}}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "synthetic": true,
+  "model_type": "linear-regression-demo",
+  "clinical_use": false,
+  "features": [
+    "synthetic_feature_a",
+    "synthetic_feature_b"
+  ],
+  "intercept": 9.880260682102508,
+  "coefficients": [
+    12.095410302386048,
+    3.0924020397988965
+  ]
+}

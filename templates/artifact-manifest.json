@@ -1,0 +1,18 @@
+{
+  "template": true,
+  "artifact_id": null,
+  "relative_path_or_approved_storage_reference": null,
+  "type": null,
+  "evidence_level": null,
+  "origin": null,
+  "created_at": null,
+  "creator": null,
+  "tool_and_version": null,
+  "source_revision": null,
+  "sha256": null,
+  "contains_personal_data": null,
+  "license_or_permission": null,
+  "review_status": "pending",
+  "reviewer": null,
+  "related_requirements": []
+}

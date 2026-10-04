@@ -1,0 +1,43 @@
+{
+  "release_date": "2026-10-04",
+  "generated_at": "2026-10-04T03:38:58.817010+00:00",
+  "synthetic": true,
+  "commands": [
+    "python scripts/demo.py",
+    "python scripts/train_synthetic.py",
+    "python scripts/archive_examples.py"
+  ],
+  "limitations": "Fictional values; software verification only; FHIR example not profile-validated; ML scores have no clinical meaning.",
+  "artifacts": [
+    {
+      "path": "artifacts/examples/synthetic-review.html",
+      "sha256": "65882c3fe29405ec4632dc916fd07ff880a842a7d305473a16f0608a062f68e2",
+      "evidence_level": "synthetic-generated"
+    },
+    {
+      "path": "artifacts/examples/synthetic-measurements.json",
+      "sha256": "36d8c2ad2389eaa804fca11634ab5fa03b4d11c80064a1cbe0c1ae0fe3549d36",
+      "evidence_level": "synthetic-generated"
+    },
+    {
+      "path": "artifacts/examples/synthetic-fhir-observations.json",
+      "sha256": "cb2871df35a56b87aebda343058d46c3b7379fe6b275b4ea83087180255920ee",
+      "evidence_level": "synthetic-generated"
+    },
+    {
+      "path": "artifacts/examples/synthetic-ml-metrics.json",
+      "sha256": "43274b4c0f3bbac5a76291165d6b789141e99bb76cf692182e97c37de47568c9",
+      "evidence_level": "synthetic-generated"
+    },
+    {
+      "path": "artifacts/examples/synthetic-ml-model.json",
+      "sha256": "4a1724c96c715c443d8f67402f49423c06035f2055e9e3b422d4099802cbdc34",
+      "evidence_level": "synthetic-generated"
+    },
+    {
+      "path": "artifacts/examples/synthetic-ml-run-manifest.json",
+      "sha256": "2f0349eccafee50515602fd615f7c2ea59e2cebe505b639681a48c60f8892838",
+      "evidence_level": "synthetic-generated"
+    }
+  ]
+}

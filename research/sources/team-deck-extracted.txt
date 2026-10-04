@@ -1,0 +1,1515 @@
+PAGE 1
+Intra Puff Pressure Analyzer
+TEAM MEMBERS:
+COLLEGE NAME : SRI  SAIRAM ENGINEERING COLLEGE,
+CHENANI
+SARAVANAN R K 
+VASANTH K
+ARAVINDSELVAN C 
+
+PAGE 2
+Overview
+Who Are We? 04Problem/Oppurtunity 05Interview & Survey 06
+Customer Persona 08
+Value Proposition Canvas 11
+Solution 1213Lean Canvas
+Market size estimation 10
+14Competion Analysis
+17MVP Description
+22MVP Validation 24Branding, Positioning and Channels
+Go-To- Market Strategy 25Sales Funnel 27Customer Acquisitionn Plan 28
+Forecast Profit & Loss 30
+Fundin Plan & Projections 32
+Breakeven Analysis 33
+Start-up Costs 31
+Unit Economics 34
+Funding Plan 35
+Brand Framework 36
+Team Composition 37
+
+PAGE 3
+About Us
+Our venture aims to address the challenges faced by patients by
+developing a portable, non-invasive device that utilizes air puff
+technology to measure IOP. This solution will offer a more patient-
+friendly approach, reducing discomfort while enabling frequent
+monitoring outside of clinical environments. By making glaucoma
+detection and IOP measurement more accessible, our device has the
+potential to revolutionize early diagnosis and long-term management
+of the disease, ultimately reducing the global burden of blindness
+caused by glaucoma.
+
+
+PAGE 4
+We are AirTon
+Glaucoma is a leading cause of
+blindness, and its early detection
+depends on accurate measurement of
+intraocular pressure (IOP). Existing
+methods are invasive, uncomfortable,
+and limited to clinical environments,
+making routine monitoring difficult and
+inaccessible to many.
+Why What How
+It is  a portable, non-invasive device
+that uses air puff technology to
+measure IOP. It provides a comfortable,
+patient-friendly method for early
+glaucoma detection and regular
+monitoring outside clinical settings.
+The portable device measures intraocular
+pressure (IOP) using a gentle air puff to
+deform the cornea, with pressure sensors
+analyzing the deformation. IoT
+integration enables remote monitoring,
+and interference pattern analysis ensures
+accuracy. It offers convenient self-
+monitoring at home for early detection of
+eye problems. We generate revenue by
+selling the device to hospitals, eyecare
+clinics and we also provide on the basis of
+subscription
+
+
+PAGE 5
+Glaucoma is a leading cause of irreversible
+blindness worldwide, characterized by elevated
+intraocular pressure (IOP) that damages the optic
+nerve.
+Current methods for measuring IOP are invasive,
+uncomfortable, and predominantly limited to
+clinical settings. 
+This restricts access to timely and frequent
+monitoring, particularly for people in remote or
+underserved areas.
+Context
+Traditional IOP measurement techniques, such
+as Goldmann applanation tonometry, require
+direct contact with the eye. This process is
+uncomfortable, can cause infection, and must
+be performed by trained professionals,
+restricting the frequency of testing. The lack of
+portable, non-invasive solutions further
+exacerbates accessibility challenges, hindering
+early detection and monitoring of glaucoma.
+Contact tonometry methods
+Handheld tonometers
+Home-use devices with limited non-
+invasive capabilities
+Discomfort
+Accuracy and accessibility
+Costly 
+Require specialized training, 
+Unsuitable for widespread home or field
+use.
+When does the problem occur
+Alleviate fear, improve patient compliance, and
+provide a sense of empowerment and reassurance
+by making regular monitoring accessible and
+stress-free.
+Primary: Glaucoma patients, especially
+those requiring regular monitoring of IOP.
+Secondary: Eye care professionals, clinics,
+hospitals, and telemedicine platforms
+looking for more accessible, patient-
+friendly solutions.
+Tertiary: Remote or underserved populations
+with limited access to clinical facilities and
+specialized eye care.
+Problem
+What is the root cause of the problem
+Alternatives
+What do customers do now to fix the problem
+Alternative Shortcomings
+What are the disadvantages of the alternativesEmotional ImpactCustomers
+Who has the problem most often
+Increased Screening Rates
+Cost Reduction 
+Enhanced Quality of Life
+Improved Patient Compliance
+Quantifiable Impact
+Problem / Opportunity
+
+
+PAGE 6
+Yes47.6%
+Maybe38.1%
+No14.3%
+Interview & Survey Results
+How many customers did you interview? - 21
+What was the interview mode? - Google Forms
+How many of them agree this is a problem
+and wants a solution? - 10
+ 
+How many of them said they may need a new
+solution? - 8
+How many of them said they don't need a new
+solution? - 3
+Google forms link:
+https://docs.google.com/forms/d/e/1FAIpQLSdIN_PjkWh2PDeRRQOI5K0dyzcQX_Zm9_xsOYMeHcozz-
+huFg/viewform?usp=sf_link
+
+
+PAGE 7
+Inconvenience of visiting an ophthalmologist frequently64%
+Diﬃculty in regularly monitoring IOP at home20%High Cost16%
+1. What is your biggest
+challenge in managing
+glaucoma?
+Annually44%
+Quarterly36%
+Monthly20%
+2. How often do you
+currently visit an
+ophthalmologist for
+glaucoma check-ups?
+No, I prefer professional measurements40.9%
+Yes, deﬁnitely31.8%
+Maybe, if it's accurate and reliable27.3%
+3. Would you prefer a
+more convenient way to
+measure your IOP at
+home?
+4. What factors are most
+important to you in a
+home IOP measurement
+device?
+5. Are you concerned about the
+potential risks or discomfort
+associated with traditional IOP
+measurement methods?
+All of the above55%
+Ease of use20%
+Aﬀordability20%
+Accuracy and reliability5%
+6. Would you be interested in a
+non-invasive device that uses air
+puff for IOP measurement?
+7. Have you ever experienced any
+difficulties using traditional IOP
+measurement devices?
+8. Would you be willing to try a new
+IOP measurement device if it was
+proven to be effective and
+convenient?
+No, I'm not worried52%
+I'm concerned about potential complications28%
+Yes, I'm worried20%
+I'm open to it, but I need more information68%
+Yes, that sounds promising20%No, I prefer traditional methods12%
+I'm not sure60%
+Yes, they were uncomfortable or inaccurate20%
+No, I haven't had any issues20%
+Maybe, depending on the cost and features52%
+Yes, I would be interested24%No, I prefer what I'm used to24%
+
+
+PAGE 8
+Market
+Segment Description Number of
+Customers Source
+TAM (Total
+Addressable
+Market)
+India: Individuals at risk of
+glaucoma or requiring
+regular IOP monitoring.
+Approximately 62.9
+million people
+Glaucoma Prevalence
+in India
+SAM
+(Serviceable
+Available
+Market)
+India: Individuals with
+access to healthcare
+facilities and technology for
+regular monitoring.
+Approximately 50% of TAM.
+Estimated 18.87 million
+(based on factors like
+geographical reach,
+pricing, and target
+customer segments)
+Healthcare Access in
+India
+SOM
+(Serviceable
+Obtainable
+Market)
+Chennai: Localized market
+focusing on Chennai
+residents needing glaucoma
+monitoring. Assuming
+Chennai represents ~1% of
+India's population and similar
+prevalence.
+Estimated 161,820 Population of
+Chennai
+Market size estimation 
+SOM
+SAM
+TAM
+62.9 million
+18.87 million
+1,61,820
+
+PAGE 9
+Customer
+Segment Niche Description
+Individuals General Population
+Adults aged 40 and above, particularly
+those with a family history of glaucoma
+or other risk factors.
+Individuals Rural Population Individuals living in rural areas with
+limited access to healthcare facilities.
+Healthcare
+Providers
+Optometrists and
+Ophthalmologists
+Practitioners seeking a convenient and
+efficient tool for screening and
+diagnosing glaucoma.
+Healthcare
+Institutions
+Eye Clinics and
+Hospitals
+Institutions looking to improve their
+glaucoma screening capabilities and
+patient care.
+Government
+Agencies
+Public Health
+Organizations
+Government agencies involved in eye
+health programs and initiatives.
+Customer Segment & Niche
+
+PAGE 10
+Customer Persona
+Age:  55
+Occupation: Retired government
+employee
+Location: Chennai, Tamil Nadu, India
+Vishal Sharma
+Personality Traits:
+Practical
+Cautious
+Trustworthy
+Goals:
+Maintain good vision and independence
+Avoid vision loss and blindness
+Find an affordable and accessible way to monitor glaucoma
+Reduce the burden of frequent doctor visits
+Challenges/Frustrations:
+Difficulty in accessing specialized eye care in remote areas
+High cost of glaucoma treatments and medications
+Inconvenience of traditional IOP measurement methods
+Fear of vision loss and its impact on daily life
+Bio - Sketch:
+Vishal Sharma, 55, is a retired government employee living in Pune. After being
+diagnosed with early-stage glaucoma, Vishal has to regularly monitor his
+intraocular pressure (IOP) to prevent vision loss. He has always prioritized his
+health, but frequent trips to the eye clinic are becoming burdensome.
+Though comfortable with smartphones, he prefers simple devices that don’t
+require much technical expertise. He enjoys spending time with his family and
+values being independent, especially in managing his health. His vision problems
+have increased his anxiety about potential blindness, and he is keen on finding a
+less stressful and more convenient way to manage his glaucoma.
+Comfort - seeking
+Health Conscious
+Independent
+Prevention - oriented
+Convenience - driven
+Motivations:
+Attributes:
+Anxiety-Prone
+Routine-Oriented
+Health-Conscious
+Accessibility-Driven
+Value-Seeker
+
+PAGE 11
+Value proposition Canvas
+GAIN
+CREATORS
+PRODUCT /
+SERVICE
+PAIN
+KILLERS
+GAINS
+JOBS
+PAINS
+Help individuals, especially those in remote or underserved
+areas, access reliable and affordable glaucoma screening.
+Provide a convenient and comfortable way to measure IOP
+for individuals at risk of glaucoma.
+Enable early detection of glaucoma to reduce the risk of
+vision loss.
+Accurate and reliable glaucoma screening.
+Convenient and accessible IOP measurement.
+Early detection of glaucoma, reducing the risk of vision loss.
+Improved quality of life for individuals with glaucoma.
+Cost savings associated with early detection and prevention.
+Difficulty in accessing reliable and affordable glaucoma
+screening, especially in remote or underserved areas.
+Inconvenience and discomfort associated with traditional
+IOP measurement methods.
+Fear of vision loss due to glaucoma.
+Financial burden of glaucoma treatment.
+Portable, non-invasive device for measuring IOP
+using air puff technology.
+Easy-to-use interface and intuitive design for both
+healthcare professionals and consumers.
+Affordable and accessible pricing.
+Potential for integration with telehealth platforms
+for remote monitoring.
+Eliminates the need for travel to specialized eye
+care facilities.
+Provides a comfortable and painless way to
+measure IOP.
+Reduces the financial burden of glaucoma
+treatment by enabling early detection and
+prevention.
+Enables early detection of glaucoma, reducing the
+risk of vision loss.
+Provides accurate and reliable IOP measurements.
+Improves the quality of life for individuals with
+glaucoma.
+Contributes to public health by reducing the
+prevalence of glaucoma-related blindness.
+
+
+PAGE 12
+Solution Benefits
+Portable Design Enables easy transport and use in various settings,
+including homes, clinics, and remote locations.
+Non-Invasive
+Measurement
+Eliminates discomfort associated with traditional
+methods, increasing patient comfort and reducing anxiety.
+Air Puff Technology Provides accurate IOP readings without direct contact,
+minimizing the risk of infection.
+User-Friendly
+Interface
+Simplifies operation for both healthcare professionals and
+patients, promoting ease of use.
+Smart Technology
+Integration
+Allows for real-time data tracking and monitoring,
+facilitating better disease management and timely
+interventions.
+Telemedicine
+Compatibility
+Enhances access to remote consultations, making it easier
+for patients to receive care without traveling to a clinic.
+Solution Consists of
+Processes involved
+Image processing
+IOT
+Sensors
+Machine Learning
+Artificial Intelligence
+Data Analysis
+
+PAGE 13
+Block Diagram
+
+PAGE 14
+Company Product UVP Price (INR) Market Review Acceptance Rating Website
+AirTon
+Portable non-invasive
+glaucoma detection
+using air puff &
+interference pattern
+Portable, affordable,
+real-time detection,
+database creation, non-
+invasive
+Est. ₹ 20,000–
+₹ 30,000 N/A N/A N/A N/A
+iCare Home2 Rebound tonometer for
+self-measurement
+First FDA-approved self-
+use IOP device with a
+user-friendly interface
+₹ 2,00,000–
+₹ 2,50,000
+Well-received, widely
+adopted but challenges
+with patient training for
+accuracy
+Moderate, but improved
+with version 2 4.0/5 icare-world.com
+Tono-Pen Avia Handheld electronic
+tonometer
+Lightweight, ergonomic,
+long battery life,
+accurate IOP readings
+₹ 1,20,000–
+₹ 1,50,000
+Popular among
+clinicians for ease of
+use, lacks patient-side
+self-use features
+Trusted among
+professionals but not for
+home use
+4.5/5 ophthalmetryoptic
+al.com
+Triggerfish Sensor Contact lens sensor for
+24-hour IOP monitoring
+Continuous IOP
+monitoring via a soft
+contact lens
+₹ 3,50,000+
+Innovative for
+continuous
+measurement, but very
+high cost
+Limited due to
+discomfort and high
+cost
+3.5/5 sensimed.ch
+Eyemate-IO Implantable micro
+sensor
+Implantable, provides
+real-time wireless IOP
+measurement
+₹ 4,00,000+
+High-end product,
+accepted for complex
+cases but invasive and
+expensive
+Low, mostly for surgical
+patients 3.8/5 implandata.com
+Keeler PSL One Non-contact tonometer
+Robust, reliable, optical
+technology for non-
+invasive IOP checks
+₹ 2,00,000+
+Highly durable and
+well-regarded in clinics,
+though expensive for
+home use
+High, but limited to
+clinics 4.2/5 keeler.co.uk
+Competition Analysis
+ (Direct Competitors)
+
+PAGE 15
+Company Product Description UVP Price (INR) Market Review &
+Acceptance
+Rating/
+Feedback Website
+Icare Finland
+Portable iCare tonometer
+for non-contact IOP
+measurement.
+Handheld, accurate, easy to
+use without anesthesia
+₹ 1,00,000 -
+₹ 2,00,000
+Widely accepted in
+hospitals globally for its
+reliability.
+4.5/5 www.icarefinland.com
+Nidek
+NT-510 Non-Contact
+Tonometer that uses air
+puff technology.
+Reliable air-puff technology
+with auto-alignment
+₹ 3,00,000 -
+₹ 4,50,000
+Popular in ophthalmology
+clinics; robust and trusted. 4.2/5 www.nidek-intl.com
+Reichert
+Technologies
+Tono-Pen handheld digital
+tonometer.
+Compact, affordable,
+accurate in both supine &
+sitting positions
+₹ 1,50,000 -
+₹ 3,00,000
+High market penetration;
+widely accepted by
+professionals.
+4.4/5 www.reichert.com
+Bionode LLC
+Wearable contact lens and
+glasses combo that
+modulates IOP.
+Non-invasive, uses
+electromagnetic fields for
+IOP reduction
+₹ 2,00,000 -
+₹ 3,00,000
+(expected)
+High interest in clinical
+trials; potential game-
+changer.
+N/A
+(prototype) www.purdue.edu
+Diaton
+Transpalpebral scleral
+tonometer (measures
+through eyelid).
+Non-contact, measures
+without anesthesia through
+eyelid
+₹ 70,000 -
+₹ 1,00,000
+Increasingly recognized in
+emergency settings and
+clinics.
+4.0/5 www.tonometerdiaton.com
+Competition Analysis
+Affordability: With an estimated price range of ₹ 20,000– ₹ 30,000, your device is
+positioned as one of the most affordable options, making it accessible to a broader
+market compared to competitors like iCare Home2 ( ₹ 2,00,000– ₹ 2,50,000) and
+Triggerfish ( ₹ 3,50,000+).
+Non-Invasiveness with Unique Technology: While many competitors rely on air puff
+(Nidek, Reichert), your venture’s integration of interference patterns to calculate IOP is
+an innovative approach that might offer higher accuracy or better patient comfort.
+Portability & Accessibility: Similar to Tono-Pen Avia, your device offers portability, but at a significantly lower price, which
+gives it an edge in accessibility for both clinical and home use.
+Data Management: One of the key differentiators is your device’s ability to transfer data and create a patient database.
+This feature can provide valuable insights over time and improve glaucoma management—a feature that is not as
+advanced in other competing products & a feature many traditional tonometers lack.
+Target Market: While competitors often focus on clinical environments or specialized cases, our venture addresses a larger
+market, including people with high screen time and eye strain, which could lead to early detection and intervention for
+glaucoma. This approach targets a growing demographic not directly addressed by the other competitors.
+Why Our Venture Can Stand Out:
+(Direct Competitors)
+
+PAGE 16
+Company Product Method
+Unique Value
+Proposition
+(UVP)
+Price (INR) Market Review Acceptance Website
+Visionix
+(Luneau) Visionix VX120+ Multi-diagnostic tool,
+includes IOP
+Combines IOP
+measurement with
+other eye tests
+~INR
+3,00,000+
+Highly regarded for
+comprehensive eye analysis,
+but high-cost and clinic-based
+Moderate to
+High Visionix
+Topcon TRK-2P All-in-one refraction
+and tonometry device
+Offers auto-
+refraction and IOP
+measurements
+~INR
+2,50,000+
+Popular in clinics for dual-
+functionality and ease of use High Topcon
+Bioptigen
+(Leica) Envisu C2300
+Optical coherence
+tomography (OCT)
+device
+Focused on
+structural imaging,
+detects eye issues
+~INR
+5,00,000+
+Premium quality imaging for
+advanced diagnostics, not for
+self-use
+High Leica
+Tomey FT-1000 Air-puff tonometer
+Non-contact, air-
+puff for IOP
+measurement
+~INR
+2,00,000+
+Moderate acceptance for
+standalone tonometry, mostly
+clinic-based
+Moderate Tomey
+Alcon
+(AcuFocus) AcuTarget HD
+Pupil diagnostics
+system, indirect IOP
+support
+IOP implications
+through pupil and
+light response
+~INR
+3,50,000+
+Mainly adopted by clinics for
+evaluating IOP-related risk
+factors
+High Alcon
+EyeQue Personal Vision
+Tracker
+Smartphone-based
+refraction device
+Low-cost, self-use
+vision tester for
+eye health
+~INR 15,000
+Gaining popularity among
+consumers for accessibility,
+but not IOP-specific
+Moderate EyeQue
+Glaukos iStent inject W Surgical implant for
+pressure control
+Long-term IOP
+reduction, but
+requires surgery
+Not listed;
+high
+Used for chronic cases in
+clinics; invasive but effective
+for severe glaucoma
+High (chronic
+cases) Glaukos
+Competition Analysis (Indirect Competitors)
+
+PAGE 17
+Leading eye hospitals and
+ophthalmology clinics
+Medical device manufacturing
+firms
+Regulatory bodies (CDSCO, CE,
+ISO)
+Insurance companies and
+healthcare financing partners
+Telemedicine platforms
+Non-profits and rural health
+initiatives
+University research labs and
+innovation hubs
+KEY PARTNERS
+COST STRUCTURE REVENUE STREAMS
+CUSTOMER SEGMENTSKEY ACTIVITIES
+KEY RESOURCES
+CUSTOMER RELATIONSHIP
+CHANNEL
+VALUE PROPOSITIONS
+Multidisciplinary R&D team (hardware,
+software, clinical)
+Patented air-puff technology + IOP
+monitoring algorithms
+State-of-the-art labs and manufacturing
+units
+Strong network with ophthalmologists
+and healthcare providers
+Financial backing (grants, VC, CSR
+initiatives)
+High-precision device R&D and
+prototyping
+Clinical validation and pilot testing
+Compliance with medical regulations
+Scalable and cost-effective manufacturing
+Strategic marketing and thought
+leadership
+Post-sales support and patient
+engagement
+First-in-class portable dual eye
+simultaneous IOP monitoring
+with real-time data
+Non-invasive, safe, and patient-
+friendly
+Dual-eye simultaneous scanning
+for faster diagnosis
+Affordable pricing, 10x cheaper
+than hospital tonometers
+Smart alerts for early detection
+to prevent vision loss
+Future-ready: Integrated with
+cloud-based health monitoring
+Empowering rural and remote
+healthcare accessibility
+Patient-centric onboarding and training
+Personalized device setup and
+education
+Loyalty programs for clinics and doctors
+In-app reminders and AI-driven health
+tips (future)
+Dedicated customer support helpline
+and service centers
+Glaucoma patients
+Eye care professionals,
+Clinics
+Hospitals
+Telemedicine platforms
+Remote or underserved
+populations
+One-time device sales to individuals and clinics
+Customized hospital packages and bulk orders
+Extended warranty and annual maintenance contracts
+SaaS model: Subscription for cloud health analytics (future)
+Licensing patented technology to global partners
+Intensive R&D and clinical trials
+Regulatory certifications (CDSCO, CE)
+Manufacturing, quality control, and logistics
+Branding, marketing, and salesforce management
+Customer support and warranty services
+App and software development (future upgrade)
+Direct sales via hospitals and eye care
+chains
+Strategic partnerships with
+telemedicine platforms
+E-commerce platforms (Amazon
+Healthcare, Flipkart Health+)
+Presence in medical exhibitions and
+conferences (e.g., AIOS)
+Government tenders and rural health
+outreach
+Influencer marketing via leading
+ophthalmologists
+Business Model Canvas
+DESIGNED FOR: DESIGNED BY: DATE: 28.04.2025
+Eye care patients, hospitals,
+clinics, and home healthcare
+providers
+SARAVANAN R K &
+Team AirTon VERSION: 1.0
+Tagline :  "Where Technology Meets Life for Better Health."
+
+PAGE 18
+Feature Description
+Non-Invasive IOP Measurement Uses air puff technology to measure intraocular pressure (IOP) without physical contact, ensuring
+comfort.
+Interference Pattern Technology Incorporates interference patterns for precise and accurate IOP calculations.
+Portable and Lightweight Compact, battery-powered device designed for ease of use in clinics, homes, and mobile screening units.
+Affordable Solution Priced under ₹ 50,000 to ensure accessibility, especially for rural and underserved healthcare centers.
+Data Transfer and Integration Enables digital data transfer for remote monitoring and integration with telemedicine platforms.
+User-Friendly Interface Intuitive interface that allows easy operation by both healthcare professionals and patients.
+Real-Time Data Analysis Provides immediate results and creates a patient database for long-term monitoring and trend analysis.
+Battery Life Long-lasting battery suitable for multiple tests in a single charge, ideal for mobile use.
+Safe and Hygienic Completely non-contact method, reducing the risk of infection and eliminating the need for anesthesia.
+Target Market Focus Designed to cater to individuals with high screen time, those at high risk of glaucoma, and regular
+patients.
+MVP Description
+
+
+PAGE 19
+MVP
+Front view Left Side view Back view Right Side view Top view
+Our MVP is a dual-eye, portable, non-invasive device designed to
+measure intraocular pressure (IOP) simultaneously in both eyes
+using air puff technology. This innovative approach enhances
+efficiency, accuracy, and patient comfort, addressing key
+limitations of existing single-eye tonometers.
+Key Features of the MVP:
+Dual-Eye IOP Measurement: Simultaneous assessment
+for improved accuracy and reduced testing time.
+Portable & Non-Invasive Design: Compact and easy to
+use, enabling monitoring outside clinical settings.
+Air Puff Technology: Ensures a quick, painless, and
+contact-free measurement.
+Basic User Interface: Simple controls for ease of use by
+medical professionals and potential home users.
+Prototype Validation: Focused on testing measurement
+accuracy, consistency, and reliability.
+
+PAGE 20
+Simlation via Proteus
+
+
+PAGE 21
+MVP  
+https://airton2k24.wixsite.com/airtonWebsite:
+(Website)
+
+PAGE 22
+MVP(Mobile version)
+
+PAGE 23
+RESEARCH AND REFERENCES
+OUTPUT
+https://aravinds2006-
+airton-node.hf.space/
+ PATIENTS AFFECTED BY GLAUCOMA
+AMONG DIFFERENT AGE GROUPS IN
+RURAL AND URBAN AREAS
+1.B. K. Koirala, R. Shrestha, and S. Shrestha,
+"On imaging based non-contact
+tonometer for intraocular pressure
+measurement," 2012 IEEE International
+Conference on Imaging Systems and
+Techniques Proceedings, Manchester,
+UK, 2012, pp. 618-622.
+2.R. K. Kodali and S. S. Mandal, "Intraocular
+Pressure Monitoring Using IoT," 2022
+IEEE Global Conference on Computing,
+Power and Communication Technologies
+(GlobConPT), Thiruvananthapuram,
+India, 2022, pp. 1-4.
+3.M. Křížek, H. Kaneko, and E. Sugimoto,
+"Understanding eye deformation in non-
+contact tonometry," 2008 30th Annual
+International Conference of the IEEE
+Engineering in Medicine and Biology
+Society, Vancouver, BC, Canada, 2008,
+pp. 923-926.
+4.S. Chinnaswamy, V. Natarajan, and S.
+Samiappan, "Intraocular Pressure
+Monitoring System for Glaucoma
+Patients Using IoT and Machine
+Learning," Engineering Proceedings, vol.
+59, no. 1, p. 179, 2023. 
+REFERENCES
+GLAUCOMA DETECTED EYE
+NON - GLAUCOMA EYE
+GUIDED  BY:
+Dr. J. Thamil Selvi , Head of the Department,
+Department of Electronics and
+Communication Engineering, Sri Sairam
+Engineering College, Chennai
+
+PAGE 24
+Satisﬁed48%
+Needs Improvement36%
+Not Satisﬁed16%
+MVP Validation 
+How many customers validated
+your MVP? - 25
+What was the Validation mode? -
+Google Forms
+How many of them were satisfied
+with your MVP? - 12
+ 
+How many of them said that MVP
+needs some improvement? - 9
+How many of them said that they
+were not satisfied? - 4
+https://docs.google.com/forms/u/1/d/e/1FAIpQLScmQ8suWO0Elpp159Lo7s2Sjo_RJW21lfVqNE-TkAYTSj07PQ/formResponse
+How will we get to that audience?
+Who is our target audience for the test? How many of
+them?
+What is your MVP ? : 3D model 
+Primary Audience: Ophthalmologists, optometrists, and
+glaucoma patients.
+Secondary Audience: Individuals with high screen time,
+people with other eye conditions, and people at risk for
+glaucoma.
+Sample Size: You should target testing on 20-30 patients
+across various demographics and eye conditions to get
+comprehensive feedback and validation.
+Partnership with Clinics and Hospitals: Collaborate with
+ophthalmology departments and clinics to recruit glaucoma
+patients for testing.
+Social Media Outreach: Targeted campaigns on social media
+platforms like Facebook, Twitter, and Instagram to reach
+individuals concerned about eye health.
+Support Groups and Organizations: Partner with glaucoma
+support groups and healthcare organizations to find
+participants who are at risk or already undergoing treatment.
+Direct Referral: Optometrists and eye care professionals can
+recommend patients to participate in the MVP validation.
+Many users appreciate the non-invasive nature of the device
+but highlight that ease of use is critical. Complex operation or
+unclear instructions can deter adoption.
+Users are concerned about comfort, particularly regarding
+the air puff mechanism. This realization emphasizes the need
+for a more user-friendly design to enhance comfort and
+reduce anxiety.
+Interest in data transfer and smartphone integration shows a
+market demand for connected health devices. However,
+technical issues in this area suggest that functionality needs
+to be refined.Variability in measurements indicates a
+potential issue with consistency. Users’ concerns highlight
+the need for calibration and guidance on optimal usage
+conditions to ensure accurate readings.
+Realization & Insights from the Analysis
+Google forms link: 
+
+PAGE 25
+Good57.1%
+User Friendly17.9%
+Impressive14.3%
+Need Improvement10.7%
+1.What are your first
+impressions of the 3D
+model of the device?
+YES46.2%
+No30.8%
+Somewhat23.1%
+2.Do you find the
+design of the device
+appealing and user-
+friendly?
+Ensure Accuracy42.9%
+Need Better Desing23.8%
+Simpliﬁed User Interface19%Other14.3%
+3.What improvements or
+additional features
+would you suggest for
+the device?
+4.Are there any aspects
+of the design that you
+find confusing or difficult
+to understand?
+5. What other features or
+improvements would you like to
+see in future versions of the
+device?
+Air Puﬀ Mechanism66.7%
+Nothing33.3%
+6.If you could improve one
+aspect of the device, what would
+it be?
+7.Do you have any additional
+comments or suggestions about
+the device?
+8.Overall, how satisfied are you with the
+device’s performance? Would you
+recommend it to others who are concerned
+about glaucoma or IOP monitoring?
+Data Tracking53.8%
+Seamless integration46.2%
+Mobile app32%
+Design28%
+Size20%
+Voice guidance20%
+Promising Device43.8%
+Needs Improvement31.3%
+Looks Good25%
+Satisﬁed45%
+Very much Satisﬁed30%Neutal25%
+
+
+PAGE 26
+GTM Strategy
+Component Details
+Market Research & Analysis
+Target Market: Individuals at risk of glaucoma (aged 40+), people with high screen time, and those
+with existing eye problems. 
+Geographic Focus: Urban areas initially, rural expansion later. 
+Competitive Analysis: Research competitors, positioning device as affordable, portable, and easy-to-
+use compared to hospital-grade devices.
+Product Positioning
+Unique Selling Proposition (USP): Non-invasive, affordable, portable device with air puff technology
+for accurate IOP measurement. 
+ Differentiation: Faster, more affordable, and easier to use than traditional glaucoma detection
+methods. Self-monitoring for home use, IoT integration for remote doctor consultation.
+Pricing Strategy
+Basic Model: ₹ 25,000 with standard features for home users. 
+ Advanced Model: ₹ 40,000 (with IoT connectivity and advanced sensors). 
+ Discounts: Seasonal offers, bulk discounts for clinics, subscription plans for remote monitoring. 
+ Flexible Payments: EMI options.
+Sales & Distribution
+Channels
+Online Sales: E-commerce website, Amazon, Flipkart. 
+ Offline Sales: Partnerships with ophthalmology clinics, optometrists, hospitals. 
+ Direct-to-Consumer: Promote via social media, targeted ads, and influencers.
+Go-To-Market Strategy 
+
+PAGE 27
+Go-To-Market Strategy 
+GTM Strategy
+Component Details
+Marketing & Promotion
+SEO: Optimize website for keywords related to glaucoma, IOP measurement, and home care. 
+ Social Media: Facebook, Instagram, LinkedIn for product demos and customer testimonials. 
+ Influencer Marketing: Partner with health influencers and ophthalmologists. 
+ Paid Ads: Use Google Ads, Instagram Ads for direct outreach. 
+ Referral Program: Offer discounts for customer referrals.
+Partnerships &
+Collaborations
+Healthcare Providers: Partner with eye care professionals to recommend the device. 
+ NGOs/Government: Collaborate with health organizations for outreach. 
+ Insurance: Work with insurance companies to include the device in health plans for glaucoma patients.
+Customer Support & After-
+Sales
+Technical Support: Live chat, phone, and email support. 
+ Warranty: 1-2 years for repairs/replacements. 
+ Remote Monitoring: Collaborate with doctors for remote monitoring of IOP and offer consultation services.
+Timeline & Execution Plan
+Phase 1 (Months 1-3): Finalize product and regulatory approvals, website and SEO setup, social media presence. 
+Phase 2 (Months 4-6): Product launch, feedback gathering, clinic distribution, influencer marketing. 
+Phase 3 (Months 7-12): Scale marketing, increase distribution, build partnerships with hospitals, eye clinics, and
+insurance companies.
+Metrics & KPIs
+Sales Metrics: Units sold, revenue, average order value. 
+ Customer Acquisition: Cost per acquisition, conversion rates. 
+ Customer Retention: Repeat purchases, satisfaction ratings, referral rates. 
+ Market Penetration: Sales by region, market share growth.
+
+PAGE 28
+Stage Description Assumption Percentage
+of SOM In Numbers
+Target
+Market
+(SOM)
+Individuals at risk
+of glaucoma,
+including high
+screen-time users
+and those with eye
+health issues.
+Approximately 10%
+of a regional
+population,
+focusing on
+accessible urban
+areas.
+100% 1.62 Lakhs
+Leads
+(Months 1-
+3)
+Initial interest
+from health
+campaigns, ads,
+and awareness
+content.
+25% of the SOM
+expresses interest,
+attracted by
+convenience and
+non-invasiveness.
+25% 40,500
+Prospects
+(Months 4-
+9)
+Leads actively
+considering the
+device through
+demos, trials, or
+health expos.
+40% of leads
+progress to this
+stage after
+evaluating the
+device’s value.
+10% 16,200
+Customers
+(Months
+10-12)
+Final buyers who
+see value in self-
+monitoring and
+early detection.
+30% of prospects
+convert to
+customers, driven
+by effectiveness,
+affordability, and
+testimonials.
+3% 4,860
+Sales Funnel
+Target Market:
+Leads:
+Prospects:
+Customers:
+1.62 Lakhs
+4,860
+16,200
+40,500
+*This Sales Funnel is for One Year
+
+PAGE 29
+Customer Acquisition Plan
+Stage Objective Target Market Strategies Metrics for Success
+Market
+Research &
+Segmentation
+Identify specific customer
+segments within target
+markets
+Ophthalmologists,
+Optometrists, Telemedicine
+Providers, Clinics, Hospitals,
+High-Risk Individuals (e.g., high
+screen time users, diabetics)
+Surveys, Focus Groups, and
+Analysis of Local & National
+Data; Competitor Analysis
+Defined customer personas;
+insights into needs
+Awareness
+Campaign Build brand awareness
+General Public, Healthcare
+Professionals, Clinics,
+Government Health
+Departments
+Digital Marketing (Social
+Media Ads, SEO, Blogs);
+Industry Events and Webinars;
+Influencer Partnerships
+(Ophthalmologists, Eye
+Health Advocates)
+Engagement rates; Reach and
+impressions on ads
+Lead
+Generation
+Drive interest and collect
+leads
+Eye Care Providers, Clinics,
+Private Healthcare Centers
+Landing Page with
+Educational Content;
+Newsletter Signup; Free
+Educational Webinars on
+Glaucoma
+Number of leads; Conversion
+rate on landing page
+Outreach &
+Direct Sales
+Personalized engagement
+with high-priority leads
+Clinics, Ophthalmologists,
+Optometry Chains
+Direct Outreach (emails, calls,
+and demos); Partnerships with
+Optometry Associations
+Number of meetings/demo
+requests; Response rate
+Free Trials &
+Pilots
+Build trust through
+firsthand experience
+Private Clinics, Hospitals, High-
+Risk Patients
+Limited-time free trials or
+pilot program; Testimonials
+and case studies from pilot
+participants
+Trial signups; Feedback quality;
+Conversion rate post-trial
+
+PAGE 30
+Customer Acquisition Plan
+Stage Objective Target Market Strategies Metrics for
+Success
+Content
+Marketing
+Educate market on
+benefits of non-invasive
+glaucoma screening
+Ophthalmologists,
+Patients at Risk, Clinics,
+Telemedicine Platforms
+Blog Articles, Video Content (demos,
+expert interviews); Glaucoma
+Awareness Campaigns (e.g., during
+World Glaucoma Week)
+Increase in website
+traffic; Time spent on
+page
+Partnership
+Development
+Expand reach through
+strategic partnerships
+Telemedicine Companies,
+Eye Health Organizations,
+NGOs
+Collaborate with telemedicine
+platforms, NGOs for rural healthcare,
+and eye care organizations
+Partnership agreements;
+Co-marketing initiatives
+Testimonials &
+Case Studies
+Establish credibility
+through real-world
+success stories
+Healthcare Professionals,
+Patients
+Gather testimonials and success
+stories from early adopters; Create
+case studies on outcomes and device
+benefits
+Number of testimonials;
+Case study
+views/downloads
+Online and
+Offline Events
+Reach potential
+customers directly
+Eye Health Conferences,
+Healthcare Seminars
+Participate in eye health expos,
+medical conferences, and healthcare
+trade shows; host Q&A sessions at
+events
+Leads generated from
+events; Event
+engagement
+Retargeting &
+Follow-Up
+Maintain engagement
+with warm leads
+All initial lead types and
+website visitors
+Retargeting Ads, Email Follow-Ups
+with personalized content based on
+initial engagement
+Re-engagement rate;
+Email open/click-
+through rates
+
+PAGE 31
+Startup Cost ₹ 8,60,000
+Business Registration Fees ₹ 10,000
+Ophthalmic Device R&D (Initial Prototype) ₹ 7,20,000 
+Website Design and Development ₹ 30,000 
+Basic Computer Systems for Data Processing ₹ 1,00,000 
+ Capital Work in Progress ( Fixed Asset ) ₹ 1,90,000
+Air-Puff Mechanism and IOP Sensor Development ₹ 1,15,000
+High-Resolution Mini-Cameras for IOP Detection ₹ 75,000
+Starting Operations ( Budgeted) ₹ 2,50,000
+Product Launch Materials (Digital and Print) ₹ 50,000
+Rental Expenses for Lab/Testing Spaces ₹ 1,00,000
+Regulatory Documentation and Compliance
+Preparation ₹ 50,000
+Stationery, Office Supplies, and Brochures ₹ 10,000
+Miscellaneous ₹ 40,000
+Start-up capital ₹ 13,00,000
+Share Captial  ₹ 3,50,000
+Loans (from Bank or Other Sources) ₹ 9,50,000
+Start up Costs
+The total investment will be INR 13 Lakhs. 
+The product is offered for Rs. 25,000 to Rs.35,000 per piece.
+The startup costs are allocated INR 8,60,000, which includes
+business registration fees of INR 10,000, R&D for developing
+the initial device prototype at INR 7,20,000, website design and
+development at INR 30,000, and a basic computer system for
+development at INR 1,00,000.
+For capital work in progress (fixed assets), a total of INR
+1,90,000 has been set aside. This includes INR 1,15,000 for
+setting up the air-puff mechanism and INR 75,000 for acquiring
+mini-cameras and sensor components, which are essential for
+accurate intraocular pressure (IOP) measurements.
+The starting operations budget of INR 2,50,000 will cover
+product launch expenses (INR 50,000), rental expenses for lab
+space (INR 1,00,000), regulatory documentation (INR 50,000),
+and miscellaneous office supplies (INR 10,000) to ensure
+smooth functioning.
+The startup capital will be sourced from INR 3,50,000 in share
+capital provided by the team and an additional INR 9,50,000 in
+loans, bringing the total startup capital to INR 6,00,000.
+https://docs.google.com/spreadsheets/d/1hx_keC0B2tl4alcs
+2rqSxzl5p275wOrlFDWPtsfTUQ8/edit?usp=sharingFinancial Statement:
+
+PAGE 32
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Totals
+Sales
+Cash Sales ₹  1,75,000 ₹  2,80,000 ₹  3,50,000 ₹  4,55,000 ₹  5,95,000 ₹  6,65,000 ₹  5,95,000 ₹  7,00,000 ₹  5,60,000 ₹  5,95,000 ₹  6,30,000 ₹  7,00,000 ₹  63,00,000
+No. of
+Customers 5 8 10 13 17 19 17 20 16 17 18 20 180
+Price Per Unit ₹  35,000 ₹  35,000 ₹  35,000 ₹  35,000 ₹  35,000 ₹  35,000 ₹  35,000 ₹  35,000 ₹  35,000 ₹  35,000 ₹  35,000 ₹  35,000
+₹  36,333
+Other Cash
+Receipts
+(Consulting
+Services)
+₹  20,000 ₹  20,000 ₹  20,000 ₹  20,000 ₹  20,000 ₹  20,000 ₹  20,000 ₹  20,000 ₹  20,000 ₹  20,000 ₹  20,000 ₹  20,000
+Total Sales ₹  1,95,000 ₹  3,00,000 ₹  3,70,000 ₹  4,75,000 ₹  6,15,000 ₹  6,85,000 ₹  6,15,000 ₹  7,20,000 ₹  5,80,000 ₹  6,15,000 ₹  6,50,000 ₹  7,20,000 ₹  65,40,000
+COGS
+Cost of Services ₹  1,25,000 ₹  2,00,000 ₹  2,50,000 ₹  3,25,000 ₹  4,25,000 ₹  4,75,000 ₹  4,25,000 ₹  5,00,000 ₹  4,00,000 ₹  4,25,000 ₹  4,50,000 ₹  5,00,000 ₹  45,00,000
+Cost Per Unit ₹  25,000 ₹  25,000 ₹  25,000 ₹  25,000 ₹  25,000 ₹  25,000 ₹  25,000 ₹  25,000 ₹  25,000 ₹  25,000 ₹  25,000 ₹  25,000 ₹  25,000
+Gross profit ₹  50,000 ₹  80,000 ₹  1,00,000 ₹  1,30,000 ₹  1,70,000 ₹  1,90,000 ₹  1,70,000 ₹  2,00,000 ₹  1,60,000 ₹  1,70,000 ₹  1,80,000 ₹  2,00,000 ₹  18,00,000
+Fixed Expenses
+Salaries ₹  - ₹  - ₹  - ₹  1,08,000 ₹  1,08,000 ₹  1,08,000 ₹  1,08,000 ₹  1,08,000 ₹  1,08,000 ₹  1,08,000 ₹  1,08,000 ₹  1,08,000 ₹  9,72,000
+Marketing and
+Promotion ₹  4,000 ₹  4,000 ₹  4,000 ₹  4,000 ₹  4,000 ₹  4,000 ₹  4,000 ₹  4,000 ₹  4,000 ₹  4,000 ₹  4,000 ₹  4,000 ₹  48,000
+Digital
+Marketing ₹  3,000 ₹  3,000 ₹  3,000 ₹  3,000 ₹  3,000 ₹  3,000 ₹  3,000 ₹  3,000 ₹  3,000 ₹  3,000 ₹  3,000 ₹  3,000 ₹  36,000
+Utilities
+(Electricity etc.) ₹  2,000 ₹  2,000 ₹  2,000 ₹  2,000 ₹  2,000 ₹  2,000 ₹  2,000 ₹  2,000 ₹  2,000 ₹  2,000 ₹  2,000 ₹  2,000 ₹  24,000
+Customer
+Service ₹  4,000 ₹  5,000 ₹  5,000 ₹  5,000 ₹  5,000 ₹  5,000 ₹  5,000 ₹  5,000 ₹  5,000 ₹  5,000 ₹  5,000 ₹  5,000 ₹  59,000
+Rent ₹  10,000 ₹  10,000 ₹  10,000 ₹  10,000 ₹  10,000 ₹  10,000 ₹  10,000 ₹  10,000 ₹  10,000 ₹  10,000 ₹  10,000 ₹  10,000 ₹  1,20,000
+Total Expenses ₹  23,000 ₹  24,000 ₹  24,000 ₹  1,32,000 ₹  1,32,000 ₹  1,32,000 ₹  1,32,000 ₹  1,32,000 ₹  1,32,000 ₹  1,32,000 ₹  1,32,000 ₹  1,32,000 ₹  12,59,000
+Result
+Net Profit/Loss ₹  27,000 ₹  56,000 ₹  76,000 ₹  -2,000 ₹  38,000 ₹  58,000 ₹  38,000 ₹  68,000 ₹  28,000 ₹  38,000 ₹  48,000 ₹  68,000 ₹  5,41,000
+Gross Profit
+Margin 29% 29% 29% 29% 29% 29% 29% 29% 29% 29% 29% 29% 29%
+Net Profit
+Margin 15% 20% 22% 0% 6% 9% 6% 10% 5% 6% 8% 10% 9%
+Forecast Profit & Loss
+https://docs.google.com/spreadsheets/d/1hx_keC0B2tl4alcs
+2rqSxzl5p275wOrlFDWPtsfTUQ8/edit?usp=sharingFinancial Statement:
+
+PAGE 33
+Year 1 Year 2 Year 3 Year 4 Year 5
+Number of sales 180 222 266 324 348
+Value of each sale
+(Contribution) ₹  11,333 ₹  11,333 ₹  15,028 ₹  15,028 ₹  18,659
+Average Price per unit ₹  36,333 ₹  36,333 ₹  43,600 ₹  43,600 ₹  47,232
+Average Cost per unit ₹  25,000 ₹  25,000 ₹  28,573 ₹  28,573 ₹  28,573
+Total revenue ₹  65,40,000 ₹  80,66,000 ₹  1,16,15,040 ₹  1,41,12,448 ₹  1,64,56,343
+Gross Profit ₹  20,40,000 ₹  25,16,000 ₹  40,03,326 ₹  48,64,101 ₹  65,01,227
+Capital costs
+Land and building N.A. N.A. N.A. N.A. N.A.
+Equipment ₹  1,50,000 ₹  1,50,000 ₹  1,50,000 ₹  1,50,000 ₹  1,50,000
+Product development costs ₹  1,90,000 ₹  1,90,000 ₹  1,90,000 ₹  1,90,000 ₹  1,90,000
+Others ₹  15,000 ₹  15,000 ₹  15,000 ₹  15,000 ₹  15,000
+Total ₹  3,55,000 ₹  3,55,000 ₹  3,55,000 ₹  3,55,000 ₹  3,55,000
+Expenses (Annual)
+Salaries ₹  9,72,000 ₹  10,69,200 ₹  11,76,120 ₹  12,93,732 ₹  14,23,105
+Marketing and Promotion ₹  48,000 ₹  52,800 ₹  58,080 ₹  63,888 ₹  70,277
+Digital Marketing &
+Customer Services ₹  36,000 ₹  39,600 ₹  43,560 ₹  47,916 ₹  52,708
+Utilities (electricity etc.) ₹  24,000 ₹  26,400 ₹  29,040 ₹  31,944 ₹  35,138
+Office Supplies ₹  59,000 ₹  64,900 ₹  71,390 ₹  78,529 ₹  86,382
+Rent ₹  1,20,000 ₹  1,32,000 ₹  1,45,200 ₹  1,59,720 ₹  1,75,692
+Total ₹  12,59,000 ₹  13,84,900 ₹  15,23,390 ₹  16,75,729 ₹  18,43,302
+Earnings (EBITDA) ₹  7,81,000 ₹  11,31,100 ₹  24,79,936 ₹  31,88,372 ₹  46,57,925
+Funding Plan & Projections
+https://docs.google.com/spreadsheets/d/1hx_keC0B2tl4alcs
+2rqSxzl5p275wOrlFDWPtsfTUQ8/edit?usp=sharingFinancial Statement:
+Note: A 20% YoY linear growth in sales is projected.
+
+PAGE 34
+Break-even analysis
+Average sales price per unit ₹  35,000
+Average cost of each unit ₹  25,000
+Gross Profit Margin 29%
+Fixed costs for the year ₹  1,259,000
+Sales required to break even ₹  4,406,500
+Number of unit sales to break even 126
+Gross Margin % of Sales
+Gross Profit for the year ₹  1,800,000
+Total Sales for the year ₹  6,540,000
+Contribution Margin 29%
+Gross Margin/Total Sales 28%
+Total Fixed Expenses
+Operating Expenses ₹  1,259,000
+Breakeven Sales (Annual)
+Gross Margin % of Sales 28%
+Total Fixed Expenses ₹  1,259,000
+Yearly Breakeven Amount ₹  4,574,367
+Monthly Breakeven Amount ₹  381,197
+Break-even analysis
+https://docs.google.com/spreadsheets/d/1hx_keC0B2tl4alcs
+2rqSxzl5p275wOrlFDWPtsfTUQ8/edit?usp=sharingFinancial Statement:
+
+PAGE 35
+Unit
+Economics Year 2026
+CAC ₹  467
+CLV ₹  653
+ARPU ₹  26,160
+P & L/ unit Year 2026
+Revenue ₹  36,333
+COGS ₹  25,000
+Gross Profit ₹  11,333
+Gross Profit
+Margin 31%
+Operating Costs ₹  31,994
+Operating Profit ₹  4,338.89
+Step 1
+APV = Average Purchase
+Value = Total
+revenue/Total number of
+purchases
+₹  36,333
+Step 2
+APF = Average Purchase
+Frequency = Number of
+purchases/ Number of
+unique customers
+0.72
+Step 3 Average Customer
+Lifespan = 1/Churnrate 0.08
+Step 4 CLV =APV*APF*ACL*GM ₹  653
+Assumptions
+Churn rate
+Customers at the beginning -
+Customers at the end/
+customers at the beginning
+12.5
+Customers at the
+Beginning of month - 8
+Customers at the
+End of month - 7
+Unit Economics
+https://docs.google.com/spreadsheets/d/1hx_keC0B2tl4alcs
+2rqSxzl5p275wOrlFDWPtsfTUQ8/edit?usp=sharingFinancial Statement:
+
+PAGE 36
+Category Description Revised Annual
+Amount
+R&D and Capital Costs
+Product development, equipment,
+testing tools, and certification
+compliance.
+₹ 3,00,000
+Salaries and HR
+Hiring engineers, sales, marketing,
+and customer service staff to support
+product development and customer
+satisfaction.
+₹ 50,000 to ₹ 1,00,000
+Marketing and Promotion
+Offline promotions, advertising, and
+targeted campaigns to build brand
+awareness and educate the market.
+₹ 20,000 to ₹ 30,000
+Digital Marketing &
+Customer Service
+Building online presence, CRM tools,
+and dedicated customer support for
+user queries and technical support.
+₹ 15,000 to ₹ 25,000
+Utilities Covers essential operational utilities
+such as electricity and internet.₹ 15,000 to ₹ 20,000
+Office Supplies Consumables and office essentials to
+support staff and operations.₹ 20,000 to ₹ 30,000
+Rent Office space for R&D, administrative
+work, and customer support.₹ 50,000 to ₹ 75,000
+Contingency Fund
+~5-10% of yearly expenses for
+unforeseen costs (regulatory,
+equipment, or unexpected
+operational needs).
+~ ₹ 30,000 to ₹ 50,000
+Total Fund Utilization
+Total funds needed each year to
+cover operational, marketing, and
+R&D costs along with contingency
+allocation.
+₹ 5,00,000
+How much funds required to reach to the next level of the
+venture?
+Funding Plan
+https://docs.google.com/spreadsheets/d/1hx_keC0B2tl4alcs
+2rqSxzl5p275wOrlFDWPtsfTUQ8/edit?usp=sharingFinancial Statement:
+How much have been bootstrapped? If not, why ?
+How much can be bootstrapped?
+How much external funding required? If not, why?
+₹ 3,50,000
+₹ 0  (Further Bootstrapping is not feasible) 
+₹ 5,00,000
+₹ 5,00,000
+Funds Utilization Strategy
+
+PAGE 37
+PROBLEM SOLVING
+IDEATION
+PROJECT MANAGMENT
+DOCUMENTATION TECHNICAL ANALYSIS
+PROGRAMMER
+Our Team
+SARAVANAN R K
+LEAD/CEO
+VASANTH K
+PROJECT MANAGER
+ARAVIND SELVAN C
+TECHNICAL ANALYST/CTO
+Expertise in tech, clinical care, and
+regulation.
+Focused on delivering patient-friendly, non-
+invasive solutions.
+Ready to launch with a strong market and
+regulatory approach
+Why this Makes Us a Good Team:
+
+PAGE 38
+THANK YOU!

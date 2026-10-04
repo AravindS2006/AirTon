@@ -1,0 +1,21 @@
+{
+  "template": true,
+  "calibration_id": null,
+  "device_id_and_revision": null,
+  "channel_and_quantity": null,
+  "units": null,
+  "reference_equipment_and_certificate": null,
+  "method_and_protocol_version": null,
+  "performed_at": null,
+  "environment": {},
+  "validity_domain": null,
+  "reference_uncertainty": null,
+  "combined_uncertainty": null,
+  "coefficients_and_derivation": null,
+  "held_out_verification": null,
+  "expires_at_or_reverification_trigger": null,
+  "raw_artifact_manifest": null,
+  "operator": null,
+  "reviewer": null,
+  "review_status": "pending"
+}

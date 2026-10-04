@@ -1,0 +1,45 @@
+{
+  "imported_on": "2026-10-04",
+  "origin": "User-supplied Team AirTon_20250703_080412_0000.pdf; copied without editing",
+  "page_count": 38,
+  "rendering": "pypdfium2 at scale 1.2; original pages; no image edits",
+  "extraction": "pypdf text extraction; figure text may be omitted",
+  "rights": "Team/institution/third-party rights require publication review",
+  "artifacts": [
+    {
+      "path": "artifacts/source/team-airton-2025-07-03.pdf",
+      "sha256": "53a44f1620d93eb649aa4c1001e37c70268cb8b838ba8852cf7837ca5ca066be",
+      "evidence_level": "supplied-original"
+    },
+    {
+      "path": "artifacts/source/deck-figures/page-13.png",
+      "sha256": "53e14a45ea7c550b201d3f51b2b24a09e3f2fd7662ffa7790ee5df52f91a2784",
+      "evidence_level": "rendered-original-excerpt"
+    },
+    {
+      "path": "artifacts/source/deck-figures/page-18.png",
+      "sha256": "2ac7e7d5bfa6c5b3a618bb47cc877723e0ca332e148990ad8bc17882abab3cf4",
+      "evidence_level": "rendered-original-excerpt"
+    },
+    {
+      "path": "artifacts/source/deck-figures/page-19.png",
+      "sha256": "ce2925599547d96fd160996a851884071ac3096b2d0a3dbf464e8103cef9f5a2",
+      "evidence_level": "rendered-original-excerpt"
+    },
+    {
+      "path": "artifacts/source/deck-figures/page-20.png",
+      "sha256": "b2c669b5cbc5a16a89a1271d8d490b6edb2c2546ce8f646c5c2882f99e2377d1",
+      "evidence_level": "rendered-original-excerpt"
+    },
+    {
+      "path": "artifacts/source/deck-figures/page-23.png",
+      "sha256": "7173bdccf739aec6d08702d30fb8cf7b1d4f2ad354d255ee66b7c83d61233575",
+      "evidence_level": "rendered-original-excerpt"
+    },
+    {
+      "path": "research/sources/team-deck-extracted.txt",
+      "sha256": "135f06d837ef255e637c11e0143b0bae342319fb959f078eb89f4ea26d1ff43a",
+      "evidence_level": "text-extraction-original"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+name: Repository checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.11', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e ".[ml,validation]"
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/check_repository.py
+      - run: python scripts/demo.py --output output/ci-demo
+      - run: python scripts/train_synthetic.py --output output/ci-ml

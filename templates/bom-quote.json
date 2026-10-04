@@ -1,0 +1,17 @@
+{
+  "template": true,
+  "bom_revision": null,
+  "evidence_level": "proposal-unquoted",
+  "intended_configuration": null,
+  "currency": "INR",
+  "quantity_basis": null,
+  "parts": [],
+  "per_part_required_fields": ["subsystem", "manufacturer", "exact_part_number", "datasheet_revision", "authorized_supplier", "quote_date", "quantity", "unit_price", "tax_shipping", "lifecycle", "alternate", "review_status"],
+  "assembly_cost": null,
+  "yield_assumption": null,
+  "calibration_cost": null,
+  "packaging_distribution_cost": null,
+  "warranty_service_allowance": null,
+  "prototype_and_nonrecurring_costs_separate": true,
+  "reviewer": null
+}

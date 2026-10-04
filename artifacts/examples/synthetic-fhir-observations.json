@@ -1,0 +1,344 @@
+[
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0000",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-000"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:00:00+00:00",
+    "bodySite": {
+      "text": "Right eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "valueQuantity": {
+      "value": 15.09,
+      "unit": "mmHg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0001",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-000"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:01:00+00:00",
+    "bodySite": {
+      "text": "Left eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "valueQuantity": {
+      "value": 25.62,
+      "unit": "mmHg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0002",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-000"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:02:00+00:00",
+    "bodySite": {
+      "text": "Right eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "valueQuantity": {
+      "value": 17.18,
+      "unit": "mmHg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0003",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-000"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:03:00+00:00",
+    "bodySite": {
+      "text": "Left eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "valueQuantity": {
+      "value": 12.45,
+      "unit": "mmHg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0004",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-001"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:04:00+00:00",
+    "bodySite": {
+      "text": "Right eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "valueQuantity": {
+      "value": 17.59,
+      "unit": "mmHg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0005",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-001"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:05:00+00:00",
+    "bodySite": {
+      "text": "Left eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "dataAbsentReason": {
+      "text": "Acquisition rejected: blink"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0006",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-001"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:06:00+00:00",
+    "bodySite": {
+      "text": "Right eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "valueQuantity": {
+      "value": 20.95,
+      "unit": "mmHg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0007",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-001"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:07:00+00:00",
+    "bodySite": {
+      "text": "Left eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "valueQuantity": {
+      "value": 13.2,
+      "unit": "mmHg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0008",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-002"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:08:00+00:00",
+    "bodySite": {
+      "text": "Right eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "valueQuantity": {
+      "value": 21.1,
+      "unit": "mmHg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0009",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-002"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:09:00+00:00",
+    "bodySite": {
+      "text": "Left eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "valueQuantity": {
+      "value": 15.0,
+      "unit": "mmHg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0010",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-002"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:10:00+00:00",
+    "bodySite": {
+      "text": "Right eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "valueQuantity": {
+      "value": 16.75,
+      "unit": "mmHg",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    }
+  },
+  {
+    "resourceType": "Observation",
+    "id": "demo-m-42-0011",
+    "status": "preliminary",
+    "code": {
+      "text": "Synthetic AirTon IOP estimate - not for clinical use"
+    },
+    "subject": {
+      "reference": "Patient/demo-subject-002"
+    },
+    "device": {
+      "reference": "Device/demo-device-001"
+    },
+    "effectiveDateTime": "2026-10-04T09:11:00+00:00",
+    "bodySite": {
+      "text": "Left eye"
+    },
+    "note": [
+      {
+        "text": "Synthetic demonstration; references and terminology require an implementation profile."
+      }
+    ],
+    "dataAbsentReason": {
+      "text": "Acquisition rejected: blink"
+    }
+  }
+]

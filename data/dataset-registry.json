@@ -1,0 +1,48 @@
+{
+  "reviewed_on": "2026-10-04",
+  "downloaded": false,
+  "datasets": [
+    {
+      "id": "refuge-2018",
+      "source_id": "S10",
+      "url": "https://arxiv.org/abs/1910.03667",
+      "modality": "retinal fundus",
+      "reported_images": 1200,
+      "tasks": ["glaucoma classification", "optic disc/cup segmentation"],
+      "airton_pressure_calibration_compatible": false,
+      "license_status": "exact release terms and access review pending",
+      "grouping": "verify patient provenance and overlap before splitting"
+    },
+    {
+      "id": "refuge2",
+      "source_id": "S11",
+      "url": "https://arxiv.org/abs/2202.08994",
+      "modality": "retinal fundus",
+      "reported_images": 2000,
+      "tasks": ["glaucoma classification", "segmentation", "domain evaluation"],
+      "airton_pressure_calibration_compatible": false,
+      "license_status": "exact release terms and access review pending",
+      "grouping": "verify overlap with REFUGE and patient identity"
+    },
+    {
+      "id": "papila-v1",
+      "source_id": "S12",
+      "url": "https://doi.org/10.6084/m9.figshare.14798004.v1",
+      "modality": "retinal fundus and clinical metadata",
+      "reported_images": 488,
+      "reported_patients": 244,
+      "tasks": ["glaucoma/suspect classification", "segmentation", "paired-eye research"],
+      "airton_pressure_calibration_compatible": false,
+      "license_status": "data-release terms review pending; paper license is separate",
+      "grouping": "both eyes by patient ID; retain suspect category"
+    },
+    {
+      "id": "airton-paired-signals",
+      "modality": "synchronized stimulus/optical signals plus reference measurements",
+      "available": false,
+      "tasks": ["pressure calibration", "quality rejection", "agreement evaluation"],
+      "license_status": "collection protocol, approvals and access governance pending",
+      "grouping": "participant, eye, session, visit, site, device"
+    }
+  ]
+}

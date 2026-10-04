@@ -1,0 +1,15 @@
+{
+  "experiment_id": "demo-linear-regression-v1",
+  "synthetic": true,
+  "seed": 42,
+  "subjects": 100,
+  "eyes_per_subject": 2,
+  "split_unit": "subject_id",
+  "train_fraction": 0.6,
+  "validation_fraction": 0.2,
+  "test_fraction": 0.2,
+  "estimator": "linear regression, fixed, no tuning",
+  "baseline": "training-target mean",
+  "clinical_use": false,
+  "note": "Descriptive recipe for scripts/train_synthetic.py; configuration values are documented rather than loaded by the script."
+}

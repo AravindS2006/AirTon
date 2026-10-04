@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "airton-research"
+version = "0.1.0"
+description = "AirTon research repository and synthetic connected-tonometry demonstration"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+ml = ["numpy>=1.26,<3", "scikit-learn>=1.4,<2"]
+validation = ["jsonschema>=4.20,<5"]
+
+[project.scripts]
+airton = "airton.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

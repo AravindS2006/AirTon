@@ -1,10 +1,11 @@
 {
-  "release_date": "2026-10-04",
-  "generated_at": "2026-10-04T03:41:07.678675+00:00",
+  "release_date": "2026-11-23",
+  "generated_at": "2026-11-23T10:00:34.083642+00:00",
   "synthetic": true,
   "commands": [
     "python scripts/demo.py",
     "python scripts/train_synthetic.py",
+    "python scripts/train_iop_model.py --profile full --output output/iop-full",
     "python scripts/archive_examples.py"
   ],
   "limitations": "Fictional values; software verification only; FHIR example not profile-validated; ML scores have no clinical meaning.",
@@ -37,6 +38,21 @@
     {
       "path": "artifacts/examples/synthetic-ml-run-manifest.json",
       "sha256": "56d2032cf82f0bac736d47b2a6c8851c683f7af8bc77de4b5d88fbe215b40201",
+      "evidence_level": "synthetic-generated"
+    },
+    {
+      "path": "artifacts/examples/synthetic-iop-metrics.json",
+      "sha256": "a3c8b45c5d32b344a88e0b4286c5f26a3a980ada70d4da8fa08636c89cf2b503",
+      "evidence_level": "synthetic-generated"
+    },
+    {
+      "path": "artifacts/examples/synthetic-iop-run-manifest.json",
+      "sha256": "184feadeadf21b741bdf340ab5da8e07238b62536d8d4e28c420f2c8b6c1c536",
+      "evidence_level": "synthetic-generated"
+    },
+    {
+      "path": "artifacts/examples/synthetic-iop-model-card.md",
+      "sha256": "9d08598ba14248d722ef526cc59a2bb63676e17dbbba2d30a6d5134e3af91d14",
       "evidence_level": "synthetic-generated"
     }
   ]

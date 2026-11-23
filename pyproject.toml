@@ -4,13 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "airton-research"
-version = "0.1.0"
-description = "AirTon research repository and synthetic connected-tonometry demonstration"
+version = "0.3.0"
+description = "AirTon research repository: synthetic connected-tonometry workflow and IOP ML engineering stack"
 requires-python = ">=3.11"
 dependencies = []
 
 [project.optional-dependencies]
-ml = ["numpy>=1.26,<3", "scikit-learn>=1.4,<2"]
+ml = ["numpy>=1.26,<3", "scikit-learn>=1.4,<2", "scipy>=1.11,<2", "lightgbm>=4.3,<5"]
+deep = ["torch>=2.2,<3", "torchvision>=0.17,<1", "safetensors>=0.4,<1", "pillow>=10,<12"]
 validation = ["jsonschema>=4.20,<5"]
 reports = ["reportlab>=4,<5", "pypdf>=5,<7"]
 

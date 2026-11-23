@@ -1,0 +1,35 @@
+{
+  "config_id": "retinal-classifier-research",
+  "clinical_use": false,
+  "note": "Research framework settings. A real run needs a governed manifest (AT-011) and reviewed dataset terms; pretrained weights are opt-in and licence-reviewed.",
+  "seed": 42,
+  "architecture": "efficientnet_b0",
+  "pretrained": false,
+  "image_size": 224,
+  "batch_size": 16,
+  "epochs": 30,
+  "freeze_backbone_epochs": 3,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "patience": 6,
+  "split": {
+    "train": 0.6,
+    "validation": 0.2,
+    "test": 0.2
+  },
+  "threshold_rule": "youden",
+  "target_sensitivity": null,
+  "bootstrap_replicates": 1000,
+  "device": "auto",
+  "amp": true,
+  "num_workers": 0,
+  "smoke_overrides": {
+    "architecture": "resnet18",
+    "image_size": 64,
+    "batch_size": 8,
+    "epochs": 2,
+    "freeze_backbone_epochs": 1,
+    "patience": 2,
+    "bootstrap_replicates": 50
+  }
+}

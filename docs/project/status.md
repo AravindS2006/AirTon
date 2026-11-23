@@ -1,4 +1,14 @@
-# AirTon verified progress - 2026-10-04
+# AirTon verified progress - 2026-10-04 (updated 2026-11-23)
+
+> **v0.3.0 update, 2026-11-23.** The ML workstream moved from a two-feature
+> regression to a production-engineered, tested IOP estimation stack with
+> layered abstention, conformal intervals, a portable pickle-free runtime and
+> clustered agreement reporting. A corrected retinal research framework replaces
+> the defective notebook workflow. **All of it is verified on synthetic data only.**
+> Device, bench, clinical, manufacturing and regulatory gates are unchanged and
+> open. See the [changelog](../../CHANGELOG.md), [ADR-003](../decisions/003-ml-architecture.md)
+> and [verification](../software/verification.md). Next ML dependency: bench
+> recordings to fit or replace the simulator (AT-021).
 
 Product priority confirmed by the founder: **home IOP monitoring for patients
 already under a doctor's care**. Repository baseline v0.2.0.
@@ -11,6 +21,7 @@ clinically validated instrument or commercial release.
 |---|---|---|---|
 | Product origin | SIH2024 deck, modified 23 August 2024 | Home non-contact IOP concept, problem 1550 | Reviewed intended-use/clinical design inputs |
 | Hardware | July 2025 block diagram/Proteus screenshots; five drawing PDFs dated 13 September 2026 | Concepts and visual design records exist | Native CAD/PCB/Proteus, as-built BOM, firmware, raw bench evidence |
+| ML engineering (v0.3.0) | Repository code, tests and generated synthetic card | IOP stack and retinal framework implemented and verified on synthetic data | Bench/paired data, approved gate settings and acceptance criteria |
 | Early ML | AIRTON_ML notebook, modified 5 April 2025 | 256px Keras CNN; logs report 455 train and 64 validation images | Dataset provenance, split/label mapping, reproducible valid evaluation |
 | ORIGA ML | Original and copy notebooks, May 2025 | VGG19, ResNet18, DenseNet169, custom VGG experiment code and output logs | Independent test, participant grouping, corrected preprocessing and labels |
 | Published weights | my_model2.h5 and Gmodel.h5 | Files downloaded locally, provider SHA-256 matched; HDF5 structure inspected | Dataset/checkpoint lineage and clinical qualification |

@@ -1,6 +1,7 @@
 # Current backlog - 2026-10-04
 
-Completed repository work: recovery and provenance for three notebooks, six public
+v0.3.0 (2026-11-23) added the synthetic ML engineering baseline; see the
+[changelog](../../CHANGELOG.md). Completed repository work: recovery and provenance for three notebooks, six public
 app snapshots, React source, two weight files and five drawing PDFs; model/dataset
 audits; current specification and startup record structure. This is not completion
 of device or clinical work.
@@ -21,15 +22,19 @@ confirmation. Priorities describe dependency order, not approved funding.
 | AT-009 | P1 | Draft paired-reference protocol and statistics | Clinical / biostatistics | Frozen protocol and analysis |
 | AT-010 | P1 | Define production contract and encrypted durable outbox | Software / security | Loss/reboot/queue/replay evidence |
 | AT-011 | P2 | Review exact fundus dataset release rights and overlap | ML / data governance | Dataset card and access approval |
-| AT-012 | P2 | Build actual signal estimator on approved paired data | ML / instrumentation | Model card and independent agreement |
+| AT-012 | P2 | Build actual signal estimator on approved paired data; the software stack is ready (v0.3.0, synthetic) | ML / instrumentation | Model card and independent agreement |
 | AT-013 | P2 | Evaluate lay-user guidance and safe failure | Human factors / clinical | Task study with representative users |
 | AT-014 | P2 | Compare bilateral sequential and simultaneous workflows | Hardware / clinical | Coupling, alignment and outcome evidence |
 | AT-015 | P2 | Implement production clinician review and authorization | Software / care team | Access, amendment and review tests |
 | AT-016 | P2 | Rebuild customer/market and service economics | Commercial | Scoped estimates with attributable inputs |
-| AT-017 | P0 | Resolve actual checkpoint/dataset/class mapping and fix recovered evaluation defects | ML / data governance | Frozen patient-grouped splits, corrected preprocessing and reserved external test |
+| AT-017 | P0 | Resolve actual checkpoint/dataset/class mapping and fix recovered evaluation defects; corrected framework exists in `src/airton/ml/retinal`, data/rights review open | ML / data governance | Frozen patient-grouped splits, corrected preprocessing and reserved external test |
 | AT-018 | P0 | Review landing claims, ownership and archived software licenses; keep demonstrations explicitly fictional | Product / legal / software | Reviewed claim register and source-rights record |
 | AT-019 | P1 | Reconcile 180/200-unit workbook totals, capital split, BOM and recurring service costs | Commercial / finance | Attributable budget, quotes and approved scenario |
 | AT-020 | P1 | Review home-use critical tasks, calibration/service pathway and device history controls | Quality / human factors | Reviewed DHF/production/device records and validation plan |
+| AT-021 | P0 | Fit or replace the synthetic applanation simulator using model-eye bench recordings; export them in the `airton.ml.dataset` format | Instrumentation / ML | Bench dataset manifest, simulator-vs-bench comparison, re-run of the selection |
+| AT-022 | P1 | Clinically review abstention settings (rule limits, quality recall target, OOD quantile, maximum interval width) and acceptable session yield | Clinical / quality / ML | Approved values with rationale in the risk file |
+| AT-023 | P1 | Decide whether a clinician-entered corneal thickness may be used as an estimator covariate | Ophthalmology / regulatory / ML | Decision record; identity and data-entry hazard analysis |
+| AT-024 | P2 | Add bundle signing and a controlled model release record on top of content-hash IDs | Software / quality | Signed bundle verification test and release checklist entry |
 
 Use the issue templates when converting these into tasks. No external people
 have been contacted or assigned commitments by creation of this backlog.

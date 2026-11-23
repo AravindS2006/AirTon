@@ -19,6 +19,19 @@ jobs:
       - run: python scripts/check_repository.py
       - run: python scripts/demo.py --output output/ci-demo
       - run: python scripts/train_synthetic.py --output output/ci-ml
+      - run: python scripts/train_iop_model.py --profile quick --no-deep --output output/ci-iop
+      - run: python -m airton.cli iop-demo --bundle output/ci-iop/bundle --output output/ci-iop-demo
+  deep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -e ".[ml,deep,validation]"
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/train_retinal_model.py --synthetic-smoke --output output/ci-retinal
   web:
     runs-on: ubuntu-latest
     defaults:

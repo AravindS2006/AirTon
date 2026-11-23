@@ -17,6 +17,7 @@
 | 2025-11-20 | Thiruvizhi Hub metadata | Same author's retinal model publication; direct AirTon relationship not proven |
 | 2026-09-13 | Device drawing PDF metadata | Isometric/elevation/patent-style concepts; no editable engineering design recovered |
 | 2026-10-04 | This repository work and founder clarification | Sources recovered, audited and organized; home monitoring selected as first commercial direction |
+| 2026-11-23 | Repository v0.3.0 ([changelog](../../CHANGELOG.md)) | Synthetic ML engineering baseline: IOP stack with abstention and conformal intervals, corrected retinal framework; no bench or clinical data |
 
 The August pitch planned hardware work for August 2025-January 2026, AI
 development for February-March 2026 and final prototype/launch readiness for

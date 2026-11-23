@@ -61,6 +61,50 @@ Inspect `output/ml-synthetic/run-manifest.json`, `metrics.json` and `model.json`
 No pickle is produced. The model learns a made-up algebraic target from made-up
 features; its scores are not estimates of AirTon or glaucoma performance.
 
+## IOP estimation stack (synthetic)
+
+```powershell
+.\.venv\Scripts\python -m pip install -e ".[ml,deep,validation]"
+.\.venv\Scripts\python scripts/train_iop_model.py --profile quick --no-deep   # seconds
+.\.venv\Scripts\python scripts/train_iop_model.py --profile full              # about 5 minutes on CPU
+.\.venv\Scripts\python -m airton.cli iop-demo --bundle output/iop-full/bundle
+```
+
+Training writes `bundle/` (hash-verified JSON/NPZ, no pickle), `metrics.json`,
+`run-manifest.json` and `model-card.md`. `iop-demo` generates new synthetic
+acquisitions, runs them through every gate, stores contract-valid records in
+SQLite and writes `review.html`. Rejected acquisitions show reasons and no
+value. Use the engine from Python:
+
+```python
+from airton.ml.runtime import IOPEngine
+engine = IOPEngine.load("output/iop-full/bundle")
+result = engine.infer(pressure, optical, metadata)   # status, reasons, estimate, interval
+record = engine.to_record(result, metadata)           # validated measurement contract
+```
+
+Bench data can replace the simulator through the `airton.ml.dataset` format.
+Non-synthetic datasets are refused until their governance block is complete,
+and this release will not train a non-synthetic bundle.
+
+### Running in Google Colab
+
+Open `ml/notebooks/colab/airton_colab_training.ipynb` in Colab (*File > Open
+notebook > GitHub*, or upload it). Add a read-only fine-grained GitHub token as
+the Colab Secret `GITHUB_TOKEN`, choose a GPU runtime if training the retinal
+model, set `REF` to the commit you want and run all cells. Device selection is
+automatic (`"device": "auto"` in `ml/configs/*.json`). Bring the downloaded
+results into the local ignored `output/` folder before review and archiving.
+
+## Retinal research framework
+
+```powershell
+.\.venv\Scripts\python scripts/train_retinal_model.py --synthetic-smoke
+```
+
+The smoke run uses generated shapes, not fundus images. A real run needs a
+governed manifest in approved storage (`--manifest`); see AT-011 and AT-017.
+
 ## Artifact management
 
 Generated experiments belong in ignored `output/`. Only reviewed synthetic examples

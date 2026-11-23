@@ -1,0 +1,106 @@
+{
+  "config_id": "iop-estimator-synthetic",
+  "evidence_level": "synthetic-generated",
+  "clinical_use": false,
+  "note": "All numeric settings are synthetic development values. They are not approved safety, quality or clinical limits; real values require reviewed bench evidence (AT-005, AT-012).",
+  "seed": 42,
+  "data": {
+    "source": "synthetic",
+    "n_subjects": 600,
+    "sessions": 2,
+    "repeats": 3,
+    "n_development_devices": 6,
+    "n_external_devices": 2,
+    "external_subject_fraction": 0.15,
+    "dataset_path": null
+  },
+  "split": {
+    "unit": "subject_id",
+    "external_domain": "devices marked external are held out entirely",
+    "fractions": {
+      "train": 0.55,
+      "validation": 0.15,
+      "calibration": 0.15,
+      "test": 0.15
+    }
+  },
+  "rules": {
+    "max_lateral_mm": 1,
+    "max_axial_mm": 1.5,
+    "max_broad_fraction": 0.3,
+    "max_saturation_fraction": 0.004,
+    "min_snr": 20
+  },
+  "quality": {
+    "target_artifact_recall": 0.95,
+    "num_rounds": 600,
+    "learning_rate": 0.03,
+    "num_leaves": 15
+  },
+  "estimator": {
+    "ridge_alpha": 1,
+    "gbm": {
+      "num_rounds": 2000,
+      "learning_rate": 0.02,
+      "num_leaves": 15,
+      "min_data_in_leaf": 25,
+      "early_stopping_rounds": 100
+    },
+    "deep": {
+      "device": "auto",
+      "enabled": true,
+      "members": 5,
+      "epochs": 80,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "beta_nll": 0.5,
+      "patience": 12,
+      "threads": 8
+    },
+    "selection_metric": "validation clustered RMSE; stack scored by 2-fold subject cross-fitting"
+  },
+  "uncertainty": {
+    "conformal_alpha": 0.1,
+    "max_interval_half_width_mmhg": 5,
+    "calibration_scores": "one randomly selected accepted acquisition per subject",
+    "difficulty_gbm": {
+      "num_rounds": 300,
+      "learning_rate": 0.03,
+      "num_leaves": 7,
+      "min_data_in_leaf": 30
+    }
+  },
+  "ood": {
+    "shrinkage": 0.1,
+    "calibration_quantile": 0.995,
+    "target_support_margin_mmhg": 3
+  },
+  "evaluation": {
+    "bootstrap_replicates": 1000
+  },
+  "profiles": {
+    "quick": {
+      "data": {
+        "n_subjects": 160
+      },
+      "estimator": {
+        "gbm": {
+          "num_rounds": 400
+        },
+        "deep": {
+          "enabled": false,
+          "members": 2,
+          "epochs": 8
+        }
+      },
+      "quality": {
+        "num_rounds": 200
+      },
+      "evaluation": {
+        "bootstrap_replicates": 100
+      }
+    },
+    "full": {}
+  }
+}

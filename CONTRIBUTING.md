@@ -13,9 +13,13 @@ python scripts/check_repository.py
 python scripts/demo.py
 ```
 
-For the optional ML exercise, install the package in a virtual environment with
-`python -m pip install -e ".[ml,validation]"` and run
-`python scripts/train_synthetic.py`.
+For ML work, install the package in a virtual environment with
+`python -m pip install -e ".[ml,deep,validation]"`, then run
+`python scripts/train_iop_model.py --profile quick` (a few seconds) or
+`--profile full` (about five minutes with the deep ensemble). Retrain into a new
+bundle rather than editing one; review the generated model card before archiving.
+Changes to rules, gates or estimators need a risk-register review (H03, H06,
+H09, H18-H20). The historical exercise `python scripts/train_synthetic.py` remains.
 
 Keep patient records and identifiers out of Git, screenshots, issues, and logs.
 An ignored directory is a convenience, not an access-control boundary. Store real

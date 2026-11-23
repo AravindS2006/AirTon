@@ -8,7 +8,9 @@ home IOP monitoring as the first commercial target on 4 October 2026. This repos
 project's working home: source material, evidence, requirements, hardware design
 records, software, experiments, clinical planning, and artifacts.
 
-**Current repository baseline: v0.2.0, 4 October 2026.** Actual historical project
+**Current repository version: v0.3.0, 23 November 2026** ([changelog](CHANGELOG.md)):
+a production-engineered ML stack for IOP estimation and a corrected retinal research
+framework, both verified on synthetic data only. Evidence baseline: v0.2.0, 4 October 2026. Actual historical project
 sources have been recovered: three notebooks, six Hugging Face app snapshots,
 the React web app, five device drawing PDFs, and two locally stored model files.
 The recovered retinal classifiers are research experiments; none is a verified
@@ -32,7 +34,7 @@ Eye pressure alone cannot establish or exclude glaucoma
 | Run the synthetic demonstration | [Getting started](docs/software/getting-started.md) |
 | Inspect completed checks and their limits | [Verification record](docs/software/verification.md) |
 | Develop the device | [Hardware design](hardware/README.md), [optical feasibility](docs/hardware/optical-feasibility.md) |
-| Develop ML models | [ML plan](ml/README.md), [data registry](data/dataset-registry.json) |
+| Develop ML models | [ML workstream](ml/README.md), [ADR-003](docs/decisions/003-ml-architecture.md), [synthetic model card](artifacts/examples/synthetic-iop-model-card.md), [data registry](data/dataset-registry.json) |
 | Design connected reports | [System architecture](docs/architecture/system.md), [cloud plan](docs/cloud/architecture.md) |
 | Plan studies and risk controls | [Clinical protocol](docs/clinical/validation-plan.md), [risk register](docs/quality/risk-register.md) |
 | Plan a clinical startup's records and operations | [Quality system](docs/quality/quality-system.md), [home validation](docs/clinical/home-monitoring-validation.md), [production records](quality/production-master/README.md), [service plan](docs/quality/post-market-and-service.md) |
@@ -68,16 +70,20 @@ Its role selector is a simulated login; readings, patients and revenue are mock
 data. It is not connected to a device, the Python demonstration API or a clinical
 service. See the app README for build and TypeScript checks.
 
-Optional grouped ML exercise:
+IOP estimation stack (synthetic data; see [ML workstream](ml/README.md)):
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python -m pip install -e ".[ml,validation]"
-.\.venv\Scripts\python scripts/train_synthetic.py
+.\.venv\Scripts\python -m pip install -e ".[ml,deep,validation]"
+.\.venv\Scripts\python scripts/train_iop_model.py --profile full
+.\.venv\Scripts\python -m airton.cli iop-demo --bundle output/iop-full/bundle
 ```
 
-The ML exercise learns an artificial algebraic mapping. Its scores verify an
-experiment workflow and have no meaning as clinical performance.
+The stack rejects unsuitable acquisitions with reasons, reports a calibrated
+interval with each accepted estimate and runs on numpy alone. The simulator's
+physics are assumptions, so its scores verify software behaviour and have no
+meaning as AirTon or clinical performance. The original exercise
+`scripts/train_synthetic.py` is retained.
 
 ## Repository map
 
@@ -90,7 +96,8 @@ docs/            product, architecture, clinical, quality, cloud, project docs
 hardware/        hardware specification, BOM planning, CAD/electronics work areas
 firmware/        non-actuating firmware state model and implementation plan
 src/airton/     contracts, simulator, local API, storage, reporting, evaluation
-ml/             three source-only historical notebooks, audits, experiment plan
+src/airton/ml/  synthetic IOP stack (gates, estimators, conformal, runtime) and retinal framework
+ml/             ML plan, training configs, historical notebooks and audits
 data/           actual/candidate dataset registry; no raw clinical images
 models/         actual model registry/results; two ignored local weight files
 quality/        design, production-master and per-device record structure

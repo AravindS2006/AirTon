@@ -1,4 +1,17 @@
-# Recovered training notebooks
+# Notebooks
+
+## Colab runner (current)
+
+[colab/airton_colab_training.ipynb](colab/airton_colab_training.ipynb) is a thin,
+output-free runner. It clones the private repository using a Colab Secret
+(`GITHUB_TOKEN`, fine-grained and read-only), scrubs the token from the Git
+remote, checks out a pinned ref, installs `.[ml,deep,validation]`, runs the
+tests and the repository's training scripts, and downloads a results zip. It
+contains no model code. Clear all outputs before committing changes to it; the
+repository check rejects notebooks with outputs. Do not use Colab for real
+patient data without an approved data-protection arrangement.
+
+## Recovered training notebooks
 
 Three archived notebooks contain the actual historical cell source:
 airton-ml-2024.ipynb (14cells), airton-glaucoma-deeplearn.ipynb (50cells), and

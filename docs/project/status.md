@@ -21,6 +21,7 @@ clinically validated instrument or commercial release.
 |---|---|---|---|
 | Product origin | SIH2024 deck, modified 23 August 2024 | Home non-contact IOP concept, problem 1550 | Reviewed intended-use/clinical design inputs |
 | Hardware | July 2025 block diagram/Proteus screenshots; five drawing PDFs dated 13 September 2026 | Concepts and visual design records exist | Native CAD/PCB/Proteus, as-built BOM, firmware, raw bench evidence |
+| Retinal research (v0.3.1) | LAG public dataset, M14 card | EfficientNet-B0 research classifier, internal test AUROC 0.991 | External validation, licensed commercial data, clinical evaluation |
 | ML engineering (v0.3.0) | Repository code, tests and generated synthetic card | IOP stack and retinal framework implemented and verified on synthetic data | Bench/paired data, approved gate settings and acceptance criteria |
 | Early ML | AIRTON_ML notebook, modified 5 April 2025 | 256px Keras CNN; logs report 455 train and 64 validation images | Dataset provenance, split/label mapping, reproducible valid evaluation |
 | ORIGA ML | Original and copy notebooks, May 2025 | VGG19, ResNet18, DenseNet169, custom VGG experiment code and output logs | Independent test, participant grouping, corrected preprocessing and labels |

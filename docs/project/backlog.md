@@ -34,6 +34,7 @@ confirmation. Priorities describe dependency order, not approved funding.
 | AT-021 | P0 | Fit or replace the synthetic applanation simulator using model-eye bench recordings; export them in the `airton.ml.dataset` format | Instrumentation / ML | Bench dataset manifest, simulator-vs-bench comparison, re-run of the selection |
 | AT-022 | P1 | Clinically review abstention settings (rule limits, quality recall target, OOD quantile, maximum interval width) and acceptable session yield | Clinical / quality / ML | Approved values with rationale in the risk file |
 | AT-023 | P1 | Decide whether a clinician-entered corneal thickness may be used as an estimator covariate | Ophthalmology / regulatory / ML | Decision record; identity and data-entry hazard analysis |
+| AT-025 | P1 | Obtain retinal data licensed for commercial use plus an external test set (different site/camera) before any product use of the retinal track; confirm institutional approval for the LAG research use | Data governance / ML | Licensed dataset record, external evaluation, approval reference |
 | AT-024 | P2 | Add bundle signing and a controlled model release record on top of content-hash IDs | Software / quality | Signed bundle verification test and release checklist entry |
 
 Use the issue templates when converting these into tasks. No external people

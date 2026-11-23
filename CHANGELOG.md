@@ -4,6 +4,31 @@ Repository software and record changes. Evidence levels follow
 [repository management](docs/project/repository-management.md). Nothing here is
 a clinical or device release.
 
+## v0.3.1 - 2026-11-23 - First real-data retinal research model (LAG)
+
+### Added
+- `scripts/build_retinal_manifest.py`: governed LAG manifest builder. It crops the field of view,
+  re-encodes without metadata, groups same-eye repeat captures (thumbnail correlation >= 0.985,
+  threshold chosen after visual review) and records the academic-use terms. Output goes to
+  git-ignored `local-private/`.
+- `ml/configs/retinal-lag.json` and model M14: EfficientNet-B0 trained locally on LAG. Test AUROC
+  0.991; card in `artifacts/research/`; weights git-ignored.
+- `--finalize-only` for `train_retinal_model.py`: rebuilds reports from a checkpoint and verifies
+  the recomputed frozen decisions match.
+
+### Fixed
+- Retinal training rebuilt the AdamW optimizer every epoch, resetting its state. It now builds
+  once per phase (frozen head, full fine-tune) and uses a cosine schedule.
+- The model card, test predictions and secondary operating point were not written, because a
+  code edit had silently failed to apply. The smoke test now asserts these outputs exist.
+
+### Records
+- M02 provenance corrected: `my_model2.h5` is byte-identical to the third-party
+  golden-panther/glaucoma-detector model (MIT); audit addendum added.
+- Dataset registry: LAG (academic use only; no re-upload) and the golden-panther images
+  (not usable). Risk H21 and backlog AT-025 added. LAG and Glaucoma-master folders git-ignored.
+  The Colab notebook warns not to upload LAG without the authors' written permission.
+
 ## v0.3.0 - 2026-11-23 - ML engineering baseline (synthetic)
 
 Plan and engineered prompt: [phase 0.3 plan](docs/project/plans/2026-11-23-ml-phase-0.3.md).

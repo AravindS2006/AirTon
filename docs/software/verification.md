@@ -1,5 +1,18 @@
 # Verification record
 
+## Repository v0.3.1 - LAG retinal research model
+
+**Date:** 2026-11-23. Same environment as v0.3.0, CPU only.
+
+| Check | Result | Scope / limit |
+|---|---|---|
+| LAG integrity | 4,854 images; every label file matches its folder; no exact duplicates | Supplied first public part (README reports 11,760 in the full database) |
+| Duplicate grouping | A coarse 16x16 hash was rejected after visual review showed false matches. Correlation >= 0.985 grouped 20 same-eye repeat sets; no label conflicts | Fellow eyes not detectable |
+| Training | 9 epochs (early stop), best validation AUROC 0.994 at epoch 5, about 1 h 50 min | Local CPU; LAG not uploaded anywhere |
+| Held-out test, evaluated once | AUROC 0.991 (0.986-0.996); Youden threshold 0.557: sensitivity 95.7%, specificity 94.9%; Brier 0.038 | Single source; internal test only |
+| Finalize from checkpoint | Recomputed temperature and thresholds matched the frozen decision; identical test AUROC | Reporting outputs had been missing (see changelog) |
+| M02 hash | Glaucoma-master/my_model2.h5 SHA-256 equals M02 | Provenance finding, not a model evaluation |
+
 ## Repository v0.3.0 - ML engineering baseline
 
 **Date:** 2026-11-23. Windows 11; Python 3.12.10, numpy 2.0.2, scipy 1.16.0,

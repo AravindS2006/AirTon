@@ -1,5 +1,5 @@
 {
-  "reviewed_on": "2026-10-04",
+  "reviewed_on": "2026-11-23",
   "downloaded": false,
   "datasets": [
     {
@@ -161,6 +161,39 @@
       "license_status": "repository-generated; no third-party data",
       "airton_pressure_calibration_compatible": false,
       "project_usage": "regenerated deterministically from seed; not stored in Git; parameters are assumptions, not measurements"
+    },
+    {
+      "id": "lag-v1-local",
+      "source_ids": [],
+      "url": "https://github.com/smilell/AG-CNN",
+      "original_reference": "Li L, Xu M, Wang X, Jiang L, Liu H. Attention Based Glaucoma Detection: A Large-Scale Database and CNN Model. CVPR 2019.",
+      "modality": "retinal fundus (500x500 JPEG) with eye-tracking attention maps",
+      "project_usage": "founder-supplied local copy (2026-11-23); used to train the M14 retinal research model",
+      "reported_images": 4854,
+      "recorded_classes": {
+        "0_non_glaucoma": 3143,
+        "1_suspicious_glaucoma": 1711
+      },
+      "publisher_full_database": "README states 11,760 images (4,878 suspicious / 6,882 negative); the supplied copy is the public first part",
+      "license_status": "AG-CNN README (read 2026-11-23): academic use only, other usage refused; re-upload to the internet not allowed. Not usable for commercial products; must not be uploaded to Colab/Drive or Git",
+      "grouping": "no patient IDs; 20 same-eye repeat groups found by thumbnail correlation >= 0.985 and kept in one partition; fellow-eye leakage cannot be excluded",
+      "storage": "repository-root folder and processed copy in local-private/, both git-ignored",
+      "airton_pressure_calibration_compatible": false
+    },
+    {
+      "id": "golden-panther-glaucoma-detector-images",
+      "url": "https://github.com/golden-panther/glaucoma-detector",
+      "modality": "optic-disc-cropped fundus images",
+      "project_usage": "founder-supplied local copy (2026-11-23); not used for training; provenance evidence for M02 only",
+      "reported_images": 184,
+      "recorded_classes": {
+        "normal": 92,
+        "glaucoma": 92
+      },
+      "license_status": "repository code MIT; image sources and rights not stated ('collected ... from web')",
+      "grouping": "unknown; likely overlaps other public datasets",
+      "assessment": "not suitable for training or evaluation: tiny, unverifiable provenance, optic-disc crops rather than full fundus images",
+      "airton_pressure_calibration_compatible": false
     }
   ],
   "raw_images_downloaded_during_recovery": false

@@ -41,9 +41,17 @@
       "evidence": [
         "P06"
       ],
-      "status": "local hash verified; HDF5 structure inspected; class/data/metric lineage unproven",
+      "status": "third-party model (golden-panther/glaucoma-detector, MIT); byte-identical weights confirmed 2026-11-23; training data provenance unverifiable",
       "license_status": "not declared",
-      "clinical_qualified": false
+      "clinical_qualified": false,
+      "third_party_origin": {
+        "finding_date": "2026-11-23",
+        "evidence": "Founder-supplied local copy of the golden-panther/glaucoma-detector repository contains my_model2.h5 with the identical SHA-256 (c4198d70...ca8) and an identical-architecture train.py (100x100 input, Conv64 9x9 ... sigmoid)",
+        "repository": "https://github.com/golden-panther/glaucoma-detector",
+        "licence": "MIT, Copyright (c) 2021 Gnanendra Avvaru (code licence; image rights not stated)",
+        "training_data_claim": "README: publicly available fundus images collected from the web, optic-disc crops, 1,115 per class, 8:1:1 random split; no provenance manifest",
+        "consequence": "M02 was not trained by the AirTon team. AirTon Hugging Face Spaces republished a third-party model; any further use needs the MIT notice and remains research-only."
+      }
     },
     {
       "id": "M03",
@@ -213,6 +221,32 @@
         "repository code; synthetic-shapes smoke test only"
       ],
       "status": "framework only; awaits rights-reviewed dataset and governance (AT-011, AT-017)",
+      "clinical_qualified": false
+    },
+    {
+      "id": "M14",
+      "name": "LAG EfficientNet-B0 retinal research classifier",
+      "purpose": "retinal-image glaucoma-suspect classification research; not IOP estimation; not a diagnosis",
+      "framework": "PyTorch 2.6 / torchvision 0.21 (src/airton/ml/retinal)",
+      "architecture": "EfficientNet-B0, ImageNet-pretrained start, single logit, temperature 0.976",
+      "dataset": "lag-v1-local (4,854 images; 3,399 / 727 / 728 train/validation/test by same-eye group)",
+      "local_weights": "models/weights/retinal-lag-efficientnet_b0-e7037f2e.safetensors (git-ignored)",
+      "sha256": "e7037f2e0912a2c0a5b414d1f594853a59299eafb3e0bcc965219a12f4152539",
+      "card": "artifacts/research/lag-efficientnet-b0-model-card.md",
+      "test_results": {
+        "auroc": 0.9914,
+        "auroc_group_bootstrap95": [
+          0.986,
+          0.996
+        ],
+        "youden_threshold": 0.557,
+        "sensitivity": 0.957,
+        "specificity": 0.949,
+        "n_test_images": 728
+      },
+      "evidence_level": "public-research-dataset, internal held-out test only",
+      "license_status": "academic use only (LAG terms); not for commercial products, public demos or redistribution",
+      "status": "research model; no external validation; fellow-eye leakage not excluded",
       "clinical_qualified": false
     }
   ]

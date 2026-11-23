@@ -41,21 +41,40 @@ def main():
                 raise ValueError("Only synthetic ML results can be archived by this script")
             shutil.copyfile(ml_source / old, target / new)
             files.append(entry(target / new, "synthetic-generated"))
-    (target / "manifest.json").write_text(json.dumps({"release_date": "2026-10-04", "generated_at": datetime.now(timezone.utc).isoformat(), "synthetic": True,
-        "commands": ["python scripts/demo.py", "python scripts/train_synthetic.py", "python scripts/archive_examples.py"],
+    iop_source = ROOT / "output/iop-full"
+    if iop_source.exists():
+        for old, new in (("metrics.json", "synthetic-iop-metrics.json"), ("run-manifest.json", "synthetic-iop-run-manifest.json")):
+            data = json.loads((iop_source / old).read_text(encoding="utf-8"))
+            if data.get("evidence_level", "synthetic-generated" if data.get("synthetic") else None) != "synthetic-generated":
+                raise ValueError("Only synthetic IOP results can be archived by this script")
+            shutil.copyfile(iop_source / old, target / new)
+            files.append(entry(target / new, "synthetic-generated"))
+        card = (iop_source / "model-card.md").read_text(encoding="utf-8")
+        if "Not for clinical use" not in card:
+            raise ValueError("IOP model card lacks the synthetic/non-clinical banner")
+        shutil.copyfile(iop_source / "model-card.md", target / "synthetic-iop-model-card.md")
+        files.append(entry(target / "synthetic-iop-model-card.md", "synthetic-generated"))
+    (target / "manifest.json").write_text(json.dumps({"release_date": "2026-11-23", "generated_at": datetime.now(timezone.utc).isoformat(), "synthetic": True,
+        "commands": ["python scripts/demo.py", "python scripts/train_synthetic.py",
+                     "python scripts/train_iop_model.py --profile full --output output/iop-full",
+                     "python scripts/archive_examples.py"],
         "limitations": "Fictional values; software verification only; FHIR example not profile-validated; ML scores have no clinical meaning.",
         "artifacts": files}, indent=2) + "\n", encoding="utf-8", newline="\n")
     deck_source = ROOT / "artifacts/source"
+    previous = {e["path"]: e for e in json.loads((deck_source / "manifest.json").read_text(encoding="utf-8"))["artifacts"]}
     figures = deck_source / "deck-figures"
     figures.mkdir(exist_ok=True)
     original = deck_source / "team-airton-2025-07-03.pdf"
     source_files = [entry(original, "supplied-original")]
     for page in (13, 18, 19, 20, 23):
         rendered = ROOT / f"tmp/pdfs/deck-page-{page}.png"
+        copied = figures / f"page-{page:02d}.png"
         if rendered.is_file():
-            copied = figures / f"page-{page:02d}.png"
             shutil.copyfile(rendered, copied)
             source_files.append(entry(copied, "rendered-original-excerpt"))
+        elif copied.relative_to(ROOT).as_posix() in previous:
+            # Renders are local-only; never drop a retained figure because tmp/ is absent.
+            source_files.append(previous[copied.relative_to(ROOT).as_posix()])
     extracted = ROOT / "research/sources/team-deck-extracted.txt"
     source_files.append(entry(extracted, "text-extraction-original"))
     (deck_source / "manifest.json").write_text(json.dumps({"imported_on": "2026-10-04",

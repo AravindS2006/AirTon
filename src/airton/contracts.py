@@ -12,7 +12,10 @@ FIELDS = {
 }
 ID_FIELDS = ("measurement_id", "session_id", "subject_id", "device_id", "calibration_id", "model_id")
 ID_PATTERN = re.compile(r"demo-[A-Za-z0-9_-]{1,80}\Z")
-REASONS = {"alignment", "blink", "signal_missing", "calibration_expired", "clock_untrusted"}
+# signal_quality, out_of_domain and estimate_uncertain were added in v0.3.0 for the
+# ML abstention gates; existing records remain valid (superset of reasons).
+REASONS = {"alignment", "blink", "signal_missing", "calibration_expired", "clock_untrusted",
+           "signal_quality", "out_of_domain", "estimate_uncertain"}
 
 
 def validate_measurement(value):

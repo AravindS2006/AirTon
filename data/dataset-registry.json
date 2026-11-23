@@ -145,6 +145,22 @@
       "license_status": "collection protocol, approvals and access governance pending",
       "grouping": "participant, eye, session, visit, site, device",
       "project_usage": "planned collection"
+    },
+    {
+      "id": "airton-synthetic-applanation",
+      "modality": "simulated synchronized pressure and optical air-puff waveforms with metadata",
+      "available": true,
+      "evidence_level": "synthetic-generated",
+      "generator": "src/airton/ml/acquisition.py (airton-synthetic-applanation-1)",
+      "tasks": [
+        "software verification of quality gates",
+        "estimator engineering",
+        "uncertainty calibration"
+      ],
+      "grouping": "subject, eye, session, device, domain",
+      "license_status": "repository-generated; no third-party data",
+      "airton_pressure_calibration_compatible": false,
+      "project_usage": "regenerated deterministically from seed; not stored in Git; parameters are assumptions, not measurements"
     }
   ],
   "raw_images_downloaded_during_recovery": false

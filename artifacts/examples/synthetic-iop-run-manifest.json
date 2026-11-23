@@ -1,0 +1,170 @@
+{
+  "template": false,
+  "experiment_id": "iop-estimator-synthetic-full-demo-iop-7d8b9861815b",
+  "evidence_level": "synthetic-generated",
+  "intended_question": "Does the IOP software stack train, abstain, calibrate and evaluate correctly end to end?",
+  "requirement_ids": [
+    "R03",
+    "R04",
+    "R05",
+    "R08",
+    "R13",
+    "R16",
+    "R19"
+  ],
+  "protocol_version": null,
+  "approval_references": [],
+  "device_revision": null,
+  "firmware_version": null,
+  "calibration_ids": [
+    "demo-cal-dev-00",
+    "demo-cal-dev-01",
+    "demo-cal-dev-02",
+    "demo-cal-dev-03",
+    "demo-cal-dev-04",
+    "demo-cal-dev-05",
+    "demo-cal-ext-06",
+    "demo-cal-ext-07"
+  ],
+  "model_id": "demo-iop-7d8b9861815b",
+  "dataset_manifest_sha256": "698ba8068d89b2fce197b1282f22fbb04f99c91b66502fc7ce7b06a54c38d968",
+  "source_revision": null,
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.0.2",
+    "scipy": "1.16.0",
+    "lightgbm": "4.6.0",
+    "torch": "2.6.0+cpu"
+  },
+  "seed": 42,
+  "split_definition": {
+    "unit": "subject_id",
+    "fractions": {
+      "train": 0.55,
+      "validation": 0.15,
+      "calibration": 0.15,
+      "test": 0.15
+    },
+    "external": "external-domain devices",
+    "subject_list_sha256": {
+      "train": "3b971d86931261801415e13f0563bbbd361fabdf5f07c7af48286a07f9121f3e",
+      "validation": "38d9de58eaece65e41b4f718dffcd946c68b843e8f181b5b84a12841f931e5b9",
+      "calibration": "74c366c6f5c989884c71280ae7eaaaaaa600e6355013a5f86e7e7d8edc346e63",
+      "test": "7b6e129d3dea3361dab7cb025e9143d9122c28fbe597f37d283bb29ea7cd04c5",
+      "external": "433079ec1fbb2d97400adc819912288dd97058e0e81d40b7547f4ac2b3b19606"
+    },
+    "subjects": {
+      "train": 275,
+      "validation": 75,
+      "calibration": 75,
+      "test": 75,
+      "external": 100
+    }
+  },
+  "prespecified_acceptance": null,
+  "raw_storage_reference": "regenerated deterministically from seed",
+  "artifact_hashes": {
+    "cnn_scalars.json": "33197e0a7462f5be608bf5c402ef2fbe47aac70328561d208c7351b87ebce5f7",
+    "difficulty_gbm.json": "ca2df8626eeeb4fb3f949d08d58fe3b2edaefedba996572a56c8ed357ca0408a",
+    "ood.json": "e66e8c85c6d2696317724a00a5ebbdeb5c3df4fdefa2c64a630058191c2b8e83",
+    "physics_ridge.json": "ae28e4cb0136c266436718c0746835ac1324ad7dde517f76f19af1dabd2cf8ac",
+    "quality_gbm.json": "931ffb0f48ab62667e8425d74d52e535caa527b1ca5dde2e789b4993f609d197",
+    "residual_gbm.json": "8e34b24694aaf965e6091092537cb204fe323c73b517e40d1fc1198c382c307f",
+    "settings.json": "d6f175962322a7a1abef29cb18773d1d69d17bef031d7dc513ef9e0961533d18",
+    "stack.json": "02f68609f952ee6a704b6d01387cf37a66f116a6d4d6d940fac564bb14c366be",
+    "cnn_member_0.npz": "77548db803a1b0f0c0fdd182a2c1cf812e38eb2477edc07142e56f17fd773b16",
+    "cnn_member_1.npz": "72b39f65069db8a07721f4d7945e85b91de761cb70f4fdc09d934ab70f23f2c7",
+    "cnn_member_2.npz": "a77f9d20ad65e9a41d24032247f9362b57022c761829db472fa501158e6a3324",
+    "cnn_member_3.npz": "a34deb874e019d9a4b64db64f58893623ae556c86b149deb0647e90c10881fa4",
+    "cnn_member_4.npz": "d9a75e81ae545c8b878233589c71802095bf610bebe8a35e7a23e0bb784868c1"
+  },
+  "config": {
+    "config_id": "iop-estimator-synthetic",
+    "evidence_level": "synthetic-generated",
+    "clinical_use": false,
+    "note": "All numeric settings are synthetic development values. They are not approved safety, quality or clinical limits; real values require reviewed bench evidence (AT-005, AT-012).",
+    "seed": 42,
+    "data": {
+      "source": "synthetic",
+      "n_subjects": 600,
+      "sessions": 2,
+      "repeats": 3,
+      "n_development_devices": 6,
+      "n_external_devices": 2,
+      "external_subject_fraction": 0.15,
+      "dataset_path": null
+    },
+    "split": {
+      "unit": "subject_id",
+      "external_domain": "devices marked external are held out entirely",
+      "fractions": {
+        "train": 0.55,
+        "validation": 0.15,
+        "calibration": 0.15,
+        "test": 0.15
+      }
+    },
+    "rules": {
+      "max_lateral_mm": 1,
+      "max_axial_mm": 1.5,
+      "max_broad_fraction": 0.3,
+      "max_saturation_fraction": 0.004,
+      "min_snr": 20
+    },
+    "quality": {
+      "target_artifact_recall": 0.95,
+      "num_rounds": 600,
+      "learning_rate": 0.03,
+      "num_leaves": 15
+    },
+    "estimator": {
+      "ridge_alpha": 1,
+      "gbm": {
+        "num_rounds": 2000,
+        "learning_rate": 0.02,
+        "num_leaves": 15,
+        "min_data_in_leaf": 25,
+        "early_stopping_rounds": 100
+      },
+      "deep": {
+        "enabled": true,
+        "members": 5,
+        "epochs": 80,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "beta_nll": 0.5,
+        "patience": 12,
+        "threads": 8
+      },
+      "selection_metric": "validation clustered RMSE; stack scored by 2-fold subject cross-fitting"
+    },
+    "uncertainty": {
+      "conformal_alpha": 0.1,
+      "max_interval_half_width_mmhg": 5,
+      "calibration_scores": "one randomly selected accepted acquisition per subject",
+      "difficulty_gbm": {
+        "num_rounds": 300,
+        "learning_rate": 0.03,
+        "num_leaves": 7,
+        "min_data_in_leaf": 30
+      }
+    },
+    "ood": {
+      "shrinkage": 0.1,
+      "calibration_quantile": 0.995,
+      "target_support_margin_mmhg": 3
+    },
+    "evaluation": {
+      "bootstrap_replicates": 1000
+    },
+    "profile": "full"
+  },
+  "failures_and_exclusions": "Rejected acquisitions are retained in evaluation denominators by reason.",
+  "results": "metrics.json",
+  "duration_seconds": 255.8,
+  "limitations": "Synthetic physics model with assumed parameters; no bench, human or clinical data.",
+  "reviewer": null,
+  "review_date": null
+}

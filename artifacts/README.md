@@ -15,6 +15,8 @@
 | `examples/synthetic-fhir-observations.json` | Illustrative FHIR-shaped observations | Synthetic; not profile validated |
 | `examples/manifest.json` | Reproduction commands, hashes and limitations | Software artifact provenance |
 | `examples/synthetic-ml-*.json` | Artificial regression coefficients, scores and grouped partitions | Synthetic ML workflow; no clinical meaning |
+| `examples/synthetic-iop-model-card.md` | Generated card for the v0.3.0 synthetic IOP stack | Synthetic engineering result; not clinical performance |
+| `examples/synthetic-iop-metrics.json`, `examples/synthetic-iop-run-manifest.json` | Held-out synthetic agreement, abstention, coverage, subgroups, environment and hashes | Synthetic; bundle weights are regenerated, not stored in Git |
 
 Research findings are maintained in `research/` so they remain easy to update.
 Future CAD exports, bench calibration evidence, controlled experiment reports,

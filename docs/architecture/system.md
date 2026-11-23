@@ -35,6 +35,11 @@ No diagram arrow proves an implemented sensor, cloud deployment or clinical serv
 | Independent safety/timing controller | Interlocks, bounded action, sampling trigger, shutdown | Cloud availability or clinical diagnosis |
 | Application host | UI, raw capture, local processing, durable outbox | Sole mechanism preventing harmful activation |
 | ML estimator | Versioned output within evaluated domain and rejection | Unreviewed calibration updates or treatment advice |
+
+The ML estimator is implemented on synthetic data in `src/airton/ml`
+([ADR-003](../decisions/003-ml-architecture.md)). Its runtime is numpy-only and
+loads hash-verified JSON/NPZ bundles, so it can run on the application host or
+gateway. It sits after the independent controller and has no actuation path.
 | Gateway/service | Identity, authorization, schema, deduplication, audit | Rewriting acquisition identity or hiding failed delivery |
 | Clinician application | Assigned review, amendment, acknowledgement | Treating absent/rejected values as normal |
 

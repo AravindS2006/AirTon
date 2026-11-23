@@ -11,6 +11,8 @@ beyond Python/React source. The current source/status is mapped below.
 | Original artifacts | artifacts/source | Original deck, reviewed figures and September2026 device drawing PDFs |
 | Historical source | legacy | Fixed public Hugging Face and GitHub source snapshots |
 | Training history | ml/notebooks/archive | Three actual notebook sources, stripped of private outputs/images |
+| ML engineering | src/airton/ml, ml/configs | Synthetic IOP estimation stack and corrected retinal research framework (v0.3.0) |
+| Plans | docs/project/plans | Dated engineered prompts and implementation plans |
 | Actual model lineage | models | Registry, saved-weight structure, historical results and model cards |
 | Large weights | models/weights, ignored | Two actual Keras files preserved locally; hash-verified, not clinically qualified |
 | Dataset records | data | Actual/candidate dataset registry, rights and grouping plan; no raw retinal data in Git |

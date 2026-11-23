@@ -1,4 +1,50 @@
-# Verification record - repository v0.2.0
+# Verification record
+
+## Repository v0.3.0 - ML engineering baseline
+
+**Date:** 2026-11-23. Windows 11; Python 3.12.10, numpy 2.0.2, scipy 1.16.0,
+LightGBM 4.6.0, torch 2.6.0+cpu, torchvision 0.21.0. Synthetic data only. This
+verifies software behaviour, not a device or clinical performance.
+
+| Check | Result | Scope / limit |
+|---|---|---|
+| `python -m unittest discover -s tests -v` | 48 tests passed (17 existing + 31 new) | Physics sanity, rules, feature robustness, LightGBM-to-numpy tree parity, CNN torch/numpy parity, conformal, clustered LoA hand calculation, bundle tamper refusal, contract-valid inference, dataset governance; retinal grouping, freeze, loader, temperature, labels, checkpoints, smoke training |
+| `python scripts/check_repository.py` | Passed; 179 local Markdown links | Links, JSON/Python syntax, retained artifact hashes |
+| `python scripts/demo.py` | Output byte-identical to archived synthetic examples | Contract reason superset and report label are backward compatible |
+| `python scripts/train_iop_model.py --profile quick --no-deep` | Passed in about 13 s; same model ID on repeat | Used by CI |
+| `python scripts/train_iop_model.py --profile full` | Passed in about 4.5 min; model `demo-iop-7d8b9861815b` reproduced exactly on a second run | 600 subjects, 7,200 acquisitions, 5-member deep ensemble; train/serve parity 0.0 mmHg |
+| `python -m airton.cli iop-demo` | 22/36 new synthetic acquisitions accepted; contract-valid records stored; review rendered | Rejections carry reasons and no value |
+| `python scripts/train_retinal_model.py --synthetic-smoke` | Passed | Generated shapes; verifies plumbing, not learning |
+| `python scripts/archive_examples.py` | Only the three new IOP files and the examples manifest changed | Previously retained examples and deck manifest byte-identical |
+
+Held-out synthetic results ([generated card](../../artifacts/examples/synthetic-iop-model-card.md)):
+
+| Partition | Accepted | Session yield | Artifact leakage | Bias, clustered 95% LoA (mmHg) | RMSE (95% CI) | 90% interval coverage | Ungated RMSE |
+|---|---|---|---|---|---|---|---|
+| Test (75 subjects) | 67.4% | 95.7% | 0.0% | -0.02, -3.64 to 3.60 | 1.84 (1.67-1.99) | 92.9% | 7.25 |
+| External device lot (100 subjects) | 46.3% | 79.0% | 0.0% | 0.09, -3.98 to 4.16 | 2.07 (1.82-2.35) | 93.5% | 6.46 |
+
+Validation RMSE: physics ridge 1.958, ridge+GBM 1.943, ridge+CNN ensemble 1.930
+(selected), stack 1.949. Findings to carry forward: gating is what makes the
+estimate usable (ungated error is about four times larger); richer models give
+only marginal gains over the physics baseline because the simulator's remaining
+error comes from unobserved corneal thickness, ocular pulse and reference noise;
+thickness subgroups show -1.1 to +1.3 mmHg bias on test; coverage is marginal,
+not conditional, with 85.4% in the external thin-cornea subgroup; and under the
+device-lot shift the system abstains more rather than reporting worse values.
+
+Colab runner and CUDA path: the notebook is checked by tests to be output-free,
+credential-free and script-driven. It was **not executed in Colab**, and the
+CUDA code path was not run because no GPU was available locally. After the
+device changes the CPU full profile was re-run to confirm the model ID was
+unchanged (see below).
+
+Development defect found by the new tests: a flat pressure channel crashed
+feature extraction. It now yields a `signal_missing` rejection with a
+regression test. GitHub Actions changes (quick IOP training, `iop-demo` and a
+CPU torch job) were not run remotely.
+
+## Repository v0.2.0
 
 **Date:** 2026-10-04. Windows; bundled Python 3.12.14 and Node.js 22.14.0.
 The following extends the original synthetic reference checks with actual source

@@ -33,3 +33,29 @@ Optional Lucide icons and placeholder images still use external providers; text
 and layout remain usable without them. See [software audit](../../docs/software/legacy-audit.md)
 and [product specification](../../docs/product/specification.md) for integration priorities.
 No clinical release is implied by a successful build.
+
+## Research demo page (`/#/demo`)
+
+Added 2026-11-23 for the college research demonstration. It talks to the local
+demo API, not a clinical service:
+
+```powershell
+# terminal 1, repository root (needs .[ml,deep] and the trained models)
+python scripts/serve_demo_api.py
+# terminal 2
+cd apps/web
+npm run dev        # open http://127.0.0.1:3000/#/demo
+```
+
+- **Air-puff section:** simulated acquisitions (clean, high pressure, blink,
+  misaligned, weak signal) run through the real IOP engine, with waveforms,
+  P1/P2 markers, the estimate and its range, or the rejection reasons.
+- **Retinal section:** upload a JPEG/PNG fundus photo for the LAG-trained research
+  model. Inference runs on the server, so weights are never sent to the
+  browser. Images are processed in memory and not stored. Unsuitable images are
+  refused by a colour check and an embedding out-of-distribution check.
+- Set `VITE_AIRTON_DEMO_API` if the API is not at `http://127.0.0.1:8770`.
+- The API binds to loopback by default. Hosting it publicly needs
+  `--allow-network`, an access-controlled deployment and agreement with the LAG
+  terms (academic use; the model must not be distributed). Present it locally if
+  in doubt.

@@ -159,7 +159,8 @@ def train(config, manifest_path, output_dir, log=print):
         raise AssertionError("Patient overlap across partitions")
     spec = preprocessing_spec(config["image_size"], config["pretrained"])
     loader = lambda rows, train_mode: DataLoader(
-        ImageRows(rows, build_transforms(spec, train_mode)), batch_size=config["batch_size"], shuffle=train_mode,
+        ImageRows(rows, build_transforms(spec, train_mode, config.get("rotation_deg", 0))),
+        batch_size=config["batch_size"], shuffle=train_mode,
         drop_last=False, num_workers=int(config.get("num_workers", 0)), pin_memory=device == "cuda",
         persistent_workers=int(config.get("num_workers", 0)) > 0,
         generator=torch.Generator().manual_seed(config["seed"]))

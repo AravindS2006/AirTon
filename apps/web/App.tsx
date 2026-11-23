@@ -8,6 +8,7 @@ import AboutUs from './components/AboutUs';
 import Blog from './components/Blog';
 import FAQ from './components/FAQ';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import ResearchDemo from './components/ResearchDemo';
 import NotFound from './components/NotFound';
 import Login from './components/Login';
 
@@ -48,6 +49,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/demo" element={<ResearchDemo />} />
 
           {/* Auth Pages */}
           <Route path="/login" element={user ? <Navigate to="/dashboard" /> : <Login onLogin={handleLogin} />} />

@@ -20,26 +20,17 @@ import hashlib
 import json
 from pathlib import Path
 
+import sys
+
 import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+from airton.ml.retinal.data import PREPARED_SIZE, prepare_fundus  # noqa: E402  (same code as inference)
 CLASSES = (("non_glaucoma", 0), ("suspicious_glaucoma", 1))
 DUPLICATE_CORRELATION = 0.985
-SIZE = 256
-
-
-def fov_square(img):
-    """Crop to the bright field of view, pad to a square on black, resize."""
-    arr = np.asarray(img)
-    mask = arr[:, :, 0] > 15
-    ys, xs = np.nonzero(mask)
-    if ys.size > 0.1 * mask.size:
-        img = img.crop((int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1))
-    side = max(img.size)
-    canvas = Image.new("RGB", (side, side))
-    canvas.paste(img, ((side - img.size[0]) // 2, (side - img.size[1]) // 2))
-    return canvas.resize((SIZE, SIZE), Image.LANCZOS)
+SIZE = PREPARED_SIZE
 
 
 def thumb(img, n=64):
@@ -66,7 +57,7 @@ def groups_from_similarity(T, threshold):
     return [find(i) for i in range(len(T))]
 
 
-def build(src, out):
+def build(src, out, permission=None):
     src, out = Path(src), Path(out)
     if not (out.resolve().is_relative_to(ROOT / "local-private") or not out.resolve().is_relative_to(ROOT)):
         raise SystemExit("Write the processed dataset to local-private/ or outside the repository")
@@ -81,7 +72,7 @@ def build(src, out):
             with Image.open(path) as im:
                 rgb = im.convert("RGB")
                 original_size = list(rgb.size)
-                processed = fov_square(rgb)
+                processed = prepare_fundus(rgb)
             name = f"images/lag-{label}-{path.stem}.png"
             processed.save(out / name, optimize=True)  # re-encode drops EXIF/metadata
             thumbs.append(thumb(processed))
@@ -108,7 +99,7 @@ def build(src, out):
         "source": "LAG database (Li et al., CVPR 2019), first public part, supplied locally by the founder",
         "citation": "Li L, Xu M, Wang X, Jiang L, Liu H. Attention Based Glaucoma Detection: A Large-Scale Database and CNN Model. CVPR 2019.",
         "governance": {
-            "approval_reference": "Founder instruction 2026-11-23: train the AirTon retinal research model on the supplied LAG copy (academic research use)",
+            "approval_reference": permission or "Founder instruction 2026-11-23: train the AirTon retinal research model on the supplied LAG copy (academic research use)",
             "data_use_terms_reviewed": "AG-CNN README read 2026-11-23: academic use only, other usage refused; re-upload to the internet not allowed",
             "direct_identifiers_removed": "Public de-identified images with numeric file names; re-encoded without metadata",
             "storage_location_approved": "Git-ignored local-private on the developer workstation; not uploaded; institutional confirmation pending",
@@ -131,8 +122,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--lag", default="LAG Dataset")
     parser.add_argument("--out", default="local-private/datasets/lag-v1")
+    parser.add_argument("--permission", default=None, help="reference to written permission from the LAG authors")
     args = parser.parse_args()
-    manifest = build(args.lag, args.out)
+    manifest = build(args.lag, args.out, args.permission)
     print(json.dumps(manifest["counts"] | {"groups_with_repeats": manifest["grouping"]["groups_with_repeats"]}, indent=1))
 
 

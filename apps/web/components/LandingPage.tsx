@@ -13,7 +13,10 @@ const LandingPage: React.FC = () => (
       <div className="container mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-6xl font-extrabold text-airton-blue-dark mb-4">Eye-pressure monitoring, closer to home.</h1>
         <p className="text-lg md:text-xl text-airton-gray max-w-3xl mx-auto mb-8">AirTon is developing a portable, affordable system for patients to monitor intraocular pressure at home under a doctor&apos;s care.</p>
-        <Link to="/login" className="inline-block bg-airton-blue text-white font-bold py-3 px-8 rounded-lg hover:bg-airton-blue-dark shadow-lg">Explore the demo</Link>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link to="/login" className="inline-block bg-airton-blue text-white font-bold py-3 px-8 rounded-lg hover:bg-airton-blue-dark shadow-lg">Explore the demo</Link>
+          <Link to="/demo" className="inline-block bg-white text-airton-blue-dark font-bold py-3 px-8 rounded-lg border border-airton-blue hover:bg-airton-blue-light">Try the research models</Link>
+        </div>
       </div>
     </section>
     <section id="vision" className="py-16">

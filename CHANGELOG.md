@@ -4,6 +4,29 @@ Repository software and record changes. Evidence levels follow
 [repository management](docs/project/repository-management.md). Nothing here is
 a clinical or device release.
 
+## v0.3.2 - 2026-11-23 - Research demo website
+
+### Added
+- `/#/demo` page in `apps/web`. The air-puff section runs simulated scenarios through the IOP engine
+  with waveform charts and accept/reject explanations. The retinal section uploads a photo for a
+  research score with a Grad-CAM heatmap and states its limits.
+- `src/airton/ml/demo_api.py` and `scripts/serve_demo_api.py`: loopback-default demo API with CORS
+  allowlist, 8 MB upload limit, early 413, in-memory image handling, concurrency limit, no logging.
+- `src/airton/ml/retinal/inference.py`: hash-verified demo package; colour gate plus embedding
+  OOD gate (PCA Mahalanobis and residual); Grad-CAM. `scripts/select_retinal_demo_model.py` selects
+  on validation only.
+- `docs/hardware/signal-interface.md`: the signals and metadata real air-puff hardware must provide.
+- 7 demo API tests and 1 IOP calibration test.
+
+### Changed / fixed
+- LAG academic-use permission from the LAG team recorded (dataset registry, manifest, M14).
+- Shared `prepare_fundus` used by both the manifest builder and inference, so preprocessing matches.
+- IOP training now fails with a clear message when too few calibration subjects exist; previously
+  it crashed while writing an infinite conformal quantile to JSON.
+- Grad-CAM overlay geometry follows the package preprocessing instead of a hard-coded crop.
+- A first, geometric fundus check rejected 70% of genuine LAG images; it was replaced after measurement.
+- ConvNeXt-Tiny run stopped by founder decision; EfficientNet-B0 kept.
+
 ## v0.3.1 - 2026-11-23 - First real-data retinal research model (LAG)
 
 ### Added

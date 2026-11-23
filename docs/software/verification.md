@@ -1,5 +1,15 @@
 # Verification record
 
+## Repository v0.3.2 - Research demo website
+
+| Check | Result | Scope / limit |
+|---|---|---|
+| Demo package selection | EfficientNet-B0 chosen on validation AUROC 0.9942; test AUROC 0.9914 unchanged | Single candidate after ConvNeXt was stopped |
+| OOD gate | 0.55% of in-domain test images flagged. Solid colour, noise, reddish noise, gradient and flat-disc images refused | Generated non-fundus probes only |
+| Informal external probe | 183/184 golden-panther optic-disc crops passed the gates; AUROC 0.587 (sensitivity 56%, specificity 59%) | Provenance-unverified images; shows poor transfer to other framing |
+| Demo API | Health, five simulated IOP scenarios (blink, misalignment and weak signal rejected with reasons), LAG predictions with heatmaps, 415/400/413/422 paths, CORS allowlist, loopback-only default | 7 automated tests plus a manual run against the trained models |
+| Web page | TypeScript and production build pass. Headless Edge render of `/#/demo` showed waveforms, P1/P2 markers and the estimate panel | Upload interaction not automated in the browser; tested at the API level |
+
 ## Repository v0.3.1 - LAG retinal research model
 
 **Date:** 2026-11-23. Same environment as v0.3.0, CPU only.

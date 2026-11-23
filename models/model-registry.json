@@ -245,9 +245,25 @@
         "n_test_images": 728
       },
       "evidence_level": "public-research-dataset, internal held-out test only",
-      "license_status": "academic use only (LAG terms); not for commercial products, public demos or redistribution",
+      "license_status": "academic use; permission from the LAG team by email, 2026-11-23 (college research project); not for commercial products; weights not distributed",
       "status": "research model; no external validation; fellow-eye leakage not excluded",
-      "clinical_qualified": false
+      "clinical_qualified": false,
+      "demo_package": {
+        "model_id": "retinal-demo-d0aa5ce45627",
+        "package": "models/weights/retinal-demo-model.json (git-ignored)",
+        "threshold": 0.5570394396781921,
+        "ood": {
+          "method": "PCA-32 shrinkage Mahalanobis plus out-of-subspace residual on penultimate embedding; each threshold at the 99.7th validation percentile",
+          "in_domain_test_flag_rate": 0.005494505494505495
+        },
+        "selection_record": "artifacts/research/retinal-demo-model-selection.md"
+      },
+      "external_probe": {
+        "data": "184 golden-panther optic-disc crops (provenance unverified)",
+        "accepted_by_gates": 183,
+        "auroc": 0.587,
+        "interpretation": "near chance on differently framed images; supports full-field LAG-like photographs only"
+      }
     }
   ]
 }

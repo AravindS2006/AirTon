@@ -178,7 +178,8 @@
       "license_status": "AG-CNN README (read 2026-11-23): academic use only, other usage refused; re-upload to the internet not allowed. Not usable for commercial products; must not be uploaded to Colab/Drive or Git",
       "grouping": "no patient IDs; 20 same-eye repeat groups found by thumbnail correlation >= 0.985 and kept in one partition; fellow-eye leakage cannot be excluded",
       "storage": "repository-root folder and processed copy in local-private/, both git-ignored",
-      "airton_pressure_calibration_compatible": false
+      "airton_pressure_calibration_compatible": false,
+      "permission": "Founder obtained academic-use and training permission from the LAG team by email on 2026-11-23 for a college research project; dataset re-upload still not permitted"
     },
     {
       "id": "golden-panther-glaucoma-detector-images",

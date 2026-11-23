@@ -16,6 +16,7 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/about" className="text-gray-600 hover:text-airton-blue transition-colors">About Us</Link>
           <a href="/#technology" className="text-gray-600 hover:text-airton-blue transition-colors">Technology</a>
+          <Link to="/demo" className="text-gray-600 hover:text-airton-blue transition-colors">Research demo</Link>
           <Link to="/blog" className="text-gray-600 hover:text-airton-blue transition-colors">Blog</Link>
           <a href="/#contact" className="text-gray-600 hover:text-airton-blue transition-colors">Contact</a>
         </nav>

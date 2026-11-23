@@ -303,6 +303,12 @@ class EndToEndTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 load_dataset(tmp)
 
+    def test_too_few_calibration_subjects_fail_clearly(self):
+        config = load_config(ROOT / "ml/configs/iop-estimator.json", "quick")
+        config["data"]["n_subjects"] = 20
+        with tempfile.TemporaryDirectory() as tmp, self.assertRaisesRegex(ValueError, "calibration subjects"):
+            run_training(config, tmp, use_deep=False, log=lambda *_: None)
+
     def test_config_must_remain_non_clinical(self):
         with tempfile.TemporaryDirectory() as tmp:
             raw = json.loads((ROOT / "ml/configs/iop-estimator.json").read_text(encoding="utf-8"))

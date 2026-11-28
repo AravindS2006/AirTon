@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Icon, Logo } from './ui/Primitives';
 import { scrollToId } from './LandingPage';
+import { ThemeToggle } from './immersive/Theme';
 
 const SECTIONS = [
   { id: 'how', label: 'How it works' },
@@ -48,9 +49,12 @@ const Header: React.FC = () => {
             Explore the demo
           </Link>
         </nav>
+        <div className="topbar-tools">
+          <ThemeToggle />
         <button type="button" className="menu-btn" aria-expanded={open} aria-controls="main-nav" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>
           <Icon name={open ? 'x' : 'menu'} size={22} />
         </button>
+        </div>
       </div>
     </header>
   );

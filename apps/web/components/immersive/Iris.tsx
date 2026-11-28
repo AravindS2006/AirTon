@@ -20,9 +20,11 @@ export type IrisSpec = IrisTarget | { d: IrisTarget; m?: IrisTarget };
 interface IrisApi {
   setTarget: (spec: IrisSpec, instant?: boolean) => void;
   pulse: (strength?: number) => void;
+  /** 0 = night (dark theme), 1 = daylight (light theme). The pupil follows with a slower light reflex. */
+  setTheme: (theme: number, instant?: boolean) => void;
 }
 
-const noop: IrisApi = { setTarget: () => undefined, pulse: () => undefined };
+const noop: IrisApi = { setTarget: () => undefined, pulse: () => undefined, setTheme: () => undefined };
 const IrisContext = createContext<IrisApi>(noop);
 export const useIris = () => useContext(IrisContext);
 
@@ -41,12 +43,13 @@ function resolve(spec: IrisSpec): IrisTarget {
 interface Renderer {
   setTarget: (t: IrisTarget, instant: boolean) => void;
   pulse: (s: number) => void;
+  setTheme: (t: number, instant: boolean) => void;
   destroy: () => void;
 }
 
 const VERT = 'attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }';
 const FRAG = `precision mediump float;
-uniform vec2 uRes; uniform vec2 uC; uniform float uR, uI, uP, uPulse, uT, uRip, uWarm, uFix;
+uniform vec2 uRes; uniform vec2 uC; uniform float uR, uI, uP, uPulse, uT, uRip, uWarm, uFix, uTheme;
 float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
 float n(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);
   return mix(mix(h(i), h(i+vec2(1.0,0.0)), f.x), mix(h(i+vec2(0.0,1.0)), h(i+vec2(1.0,1.0)), f.x), f.y); }
@@ -54,9 +57,15 @@ float fbm(vec2 p){ float v = 0.0, a = 0.5; for (int k = 0; k < 4; k++){ v += a*n
 void main(){
   vec2 fc = gl_FragCoord.xy; vec2 uv = fc/uRes; float m = min(uRes.x, uRes.y);
   vec2 q = (fc - 0.5*uRes)/m;
-  vec3 col = vec3(0.014, 0.024, 0.05);
-  col += vec3(0.018, 0.036, 0.085) * smoothstep(1.3, 0.0, length(q - vec2(0.0, 0.15)));
-  col += vec3(0.012, 0.026, 0.065) * fbm(q*1.4 + vec2(uT*0.012, -uT*0.009));
+  float hz = fbm(q*1.4 + vec2(uT*0.012, -uT*0.009));
+  vec3 night = vec3(0.014, 0.024, 0.05);
+  night += vec3(0.018, 0.036, 0.085) * smoothstep(1.3, 0.0, length(q - vec2(0.0, 0.15)));
+  night += vec3(0.012, 0.026, 0.065) * hz;
+  // Daylight: the ground becomes the white of the eye (sclera), cool and faintly clouded.
+  vec3 day = vec3(0.945, 0.956, 0.978);
+  day -= vec3(0.052, 0.042, 0.012) * smoothstep(0.2, 1.4, length(q - vec2(0.05, 0.1)));
+  day -= vec3(0.02, 0.016, 0.0) * hz;
+  vec3 col = mix(night, day, uTheme);
   vec2 d = (fc - uC)/uR; float r = length(d);
   float wave = uPulse * exp(-abs(r - uRip*1.35)*3.5);
   r += 0.05 * wave * sin(r*22.0 - uRip*16.0);
@@ -77,20 +86,23 @@ void main(){
   ic *= 1.0 - 0.8*smoothstep(0.8, 1.0, t);
   col = mix(col, ic, inIris * outPupil * uI);
   col = mix(col, vec3(0.004, 0.006, 0.012), (1.0 - outPupil) * inIris * uI);
-  col += vec3(0.04, 0.09, 0.24) * exp(-max(r - 1.0, 0.0)*5.0) * smoothstep(0.92, 1.04, r) * uI * 0.7;
+  col += vec3(0.04, 0.09, 0.24) * exp(-max(r - 1.0, 0.0)*5.0) * smoothstep(0.92, 1.04, r) * uI * 0.7 * (1.0 - uTheme);
+  float shade = exp(-max(r - 1.0, 0.0)*7.0) * smoothstep(0.96, 1.04, r);
+  col *= 1.0 - 0.24*shade*uI*uTheme;
   vec2 hl = d - vec2(-0.36, 0.40);
   col += vec3(0.82, 0.88, 1.0) * exp(-dot(hl, hl)*26.0) * smoothstep(1.1, 0.7, r) * 0.32 * uI;
-  col += vec3(0.85, 1.0, 0.45) * wave * 0.07 * uI;
+  col += mix(vec3(0.85, 1.0, 0.45)*0.07, vec3(-0.12, -0.07, 0.02)*0.6, uTheme) * wave * uI;
   float dd = dot(d, d);
   col += vec3(0.84, 1.0, 0.24) * uFix * uI * (exp(-dd*1100.0)*1.1 + exp(-dd*140.0)*0.22);
-  col *= 1.0 - 0.38*smoothstep(0.45, 1.2, length(uv - 0.5)*1.45);
-  col += (h(fc + fract(uT)*91.7) - 0.5) * 0.016;
+  float vg = smoothstep(0.45, 1.2, length(uv - 0.5)*1.45);
+  col *= 1.0 - vg*mix(0.38, 0.07, uTheme);
+  col += (h(fc + fract(uT)*91.7) - 0.5) * mix(0.016, 0.01, uTheme);
   gl_FragColor = vec4(col, 1.0);
 }`;
 
 function createRenderer(canvas: HTMLCanvasElement): Renderer {
   const reduce = prefersReducedMotion();
-  const dead: Renderer = { setTarget: () => undefined, pulse: () => undefined, destroy: () => undefined };
+  const dead: Renderer = { setTarget: () => undefined, pulse: () => undefined, setTheme: () => undefined, destroy: () => undefined };
   let gl: WebGLRenderingContext | null = null;
   try {
     gl = canvas.getContext('webgl', { antialias: false, alpha: false, premultipliedAlpha: false }) as WebGLRenderingContext | null;
@@ -131,12 +143,17 @@ function createRenderer(canvas: HTMLCanvasElement): Renderer {
   g.enableVertexAttribArray(loc);
   g.vertexAttribPointer(loc, 2, g.FLOAT, false, 0, 0);
   const U: Record<string, WebGLUniformLocation | null> = {};
-  ['uRes', 'uC', 'uR', 'uI', 'uP', 'uPulse', 'uT', 'uRip', 'uWarm', 'uFix'].forEach((k) => {
+  ['uRes', 'uC', 'uR', 'uI', 'uP', 'uPulse', 'uT', 'uRip', 'uWarm', 'uFix', 'uTheme'].forEach((k) => {
     U[k] = g.getUniformLocation(prog as WebGLProgram, k);
   });
 
   const cur = { x: 0.74, y: 0.5, r: 0.42, i: 0, p: 0.3, w: 0, fix: 0 };
   const tgt = { ...cur };
+  const startTheme = document.documentElement.dataset.theme === 'light' ? 1 : 0;
+  let theme = startTheme;
+  let themeT = startTheme;
+  let reflex = startTheme;
+  let reflexT = startTheme;
   let pulse = 0;
   let rip = 0;
   let last = performance.now();
@@ -160,6 +177,8 @@ function createRenderer(canvas: HTMLCanvasElement): Renderer {
       cur[key] += (tgt[key] - cur[key]) * k;
     });
     pulse *= Math.exp(-dt * 1.9);
+    theme += (themeT - theme) * (reduce ? 1 : 1 - Math.exp(-dt * 3));
+    reflex += (reflexT - reflex) * (reduce ? 1 : 1 - Math.exp(-dt * 1.3));
     rip += dt;
     const w = canvas.width;
     const h = canvas.height;
@@ -167,7 +186,8 @@ function createRenderer(canvas: HTMLCanvasElement): Renderer {
     g.uniform2f(U.uC, cur.x * w, h - cur.y * h);
     g.uniform1f(U.uR, cur.r * Math.min(w, h));
     g.uniform1f(U.uI, cur.i);
-    g.uniform1f(U.uP, cur.p);
+    g.uniform1f(U.uP, cur.p * (1 - 0.36 * reflex));
+    g.uniform1f(U.uTheme, theme);
     g.uniform1f(U.uWarm, cur.w);
     g.uniform1f(U.uFix, cur.fix);
     g.uniform1f(U.uPulse, pulse);
@@ -197,6 +217,15 @@ function createRenderer(canvas: HTMLCanvasElement): Renderer {
         if (reduce) draw(performance.now());
       }
     },
+    setTheme(t, instant) {
+      themeT = t;
+      reflexT = t;
+      if (instant || reduce) {
+        theme = t;
+        if (reduce) reflex = t;
+        draw(performance.now());
+      }
+    },
     pulse(s) {
       if (reduce) return;
       pulse = Math.min(1.2, pulse + s);
@@ -214,12 +243,14 @@ export const IrisProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const renderer = useRef<Renderer | null>(null);
   const pending = useRef<{ t: IrisTarget; instant: boolean } | null>(null);
+  const pendingTheme = useRef<number | null>(null);
 
   useEffect(() => {
     if (!canvasRef.current) return undefined;
     const r = createRenderer(canvasRef.current);
     renderer.current = r;
     if (pending.current) r.setTarget(pending.current.t, true);
+    if (pendingTheme.current !== null) r.setTheme(pendingTheme.current, true);
     return () => {
       r.destroy();
       renderer.current = null;
@@ -235,6 +266,10 @@ export const IrisProvider: React.FC<{ children: React.ReactNode }> = ({ children
       },
       pulse(s = 1) {
         renderer.current?.pulse(s);
+      },
+      setTheme(t, instant = false) {
+        if (renderer.current) renderer.current.setTheme(t, instant);
+        else pendingTheme.current = t;
       },
     }),
     [],

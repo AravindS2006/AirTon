@@ -30,6 +30,22 @@ The working copy was redesigned to share the visual language of the
 - Charts are hand-drawn SVG; `recharts` was removed, cutting the JavaScript bundle
   from over 500 kB to about 315 kB.
 
+### Daylight and night themes (2026-11-28)
+
+The whole site has a night theme and a daylight theme. In daylight the iris
+background becomes an eye in a bright room: the ground turns into the white of
+the eye and the pupil constricts, like a real pupillary light reflex; at night it
+dilates again. The switch is an eye-shaped button in the header, dashboard and
+login card. Where the browser supports view transitions, the new theme opens from
+the button as a growing aperture; elsewhere the colours glide. Settings offers
+System, Daylight and Night. The choice is kept in this browser's local storage and
+applied before the first paint; "System" follows the operating system.
+
+All colours are theme tokens in `index.css` (`:root` for night,
+`:root[data-theme='light']` for daylight), and translucent tints use
+`color-mix()` on those tokens. Bright night accents become darker, readable
+versions in daylight, while fills that carry dark text keep their glow.
+
 The redesign also aligns the interface with the specification:
 
 | Before | Now | Reference |

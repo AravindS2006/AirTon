@@ -4,6 +4,27 @@ Repository software and record changes. Evidence levels follow
 [repository management](docs/project/repository-management.md). Nothing here is
 a clinical or device release.
 
+## Unreleased - 2026-11-28 - Daylight theme and research demo integration
+
+Interface work only, plus the merge of the ML branch's v0.3.1 and v0.3.2 work
+(listed in their own sections below).
+
+### Added
+- Daylight theme for the whole web interface alongside the night theme: an
+  eye-shaped theme switch in the header, dashboard and login card, a System /
+  Daylight / Night choice in Settings, a no-flash inline script, and a view
+  transition that opens the new theme from the switch.
+- The WebGL iris follows the theme: the ground becomes the white of the eye in
+  daylight and the pupil constricts with a slower, visible light reflex.
+
+### Changed
+- All interface colours are theme tokens; translucent tints use `color-mix()`;
+  illustration SVGs take their colours from CSS classes instead of literals.
+- Merged `ml/v0.3-engineering-baseline`. The `/#/demo` research page is rebuilt
+  in the immersive design with SVG waveforms (no `recharts`); its copy,
+  disclaimers, LAG academic-use terms, upload checks and API client are unchanged.
+  It is linked from the header and landing page.
+
 ## Unreleased - 2026-11-28 - Immersive web interface and project presentation
 
 Interface and presentation work only. No change to the Python package, the

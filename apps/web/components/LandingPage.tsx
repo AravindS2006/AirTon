@@ -75,7 +75,7 @@ const LandingPage: React.FC = () => {
         id="top"
         className="hero"
         labelledBy="hero-title"
-        iris={{ d: { x: 0.74, y: 0.55, r: 0.4, i: 1, p: 0.3, fix: 1 }, m: { x: 0.5, y: 0.34, r: 0.5, i: 0.5, p: 0.3, fix: 1 } }}
+        iris={{ d: { x: 0.765, y: 0.55, r: 0.38, i: 1, p: 0.3, fix: 1 }, m: { x: 0.88, y: 0.14, r: 0.4, i: 0.6, p: 0.3, fix: 1 } }}
       >
         <div className="hero-jet" aria-hidden="true">
           <i style={{ top: 18, width: 520 }} />

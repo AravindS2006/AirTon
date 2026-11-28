@@ -1,5 +1,19 @@
 # Verification record
 
+## Daylight theme and research demo integration - 2026-11-28
+
+Linux container; Node.js 22.23.5; Chromium via Playwright. Interface checks only.
+
+| Check | Result | Scope / limit |
+|---|---|---|
+| `node node_modules/typescript/bin/tsc --noEmit` and `npm run build` | Passed; JS 333 kB (106 kB gzip), CSS 64 kB | After merging `ml/v0.3-engineering-baseline` |
+| Daylight render at 1440 px | Landing scenes, research demo, about, login, patient (chart hover), settings and doctor views | Legibility fixes applied where hero text met the iris and on evidence rows |
+| Theme switch | Clicking the header switch from night opened daylight through the aperture transition and saved the choice | Chromium with view transitions; the colour-glide fallback was not exercised in another browser |
+| Phone (390 px), daylight | Landing and patient view; no horizontal scroll | |
+| Network | No third-party requests; `/#/demo` only calls the local demo API (not running in this container, so the page showed its start instructions) | Demo API behaviour itself covered by `tests/test_demo_api.py` |
+| `python -m unittest discover -s tests` | 57 run, 38 passed, 19 skipped (torch and model files not available) | Includes the merged demo API tests |
+| `python scripts/check_repository.py` | Passed; 246 local Markdown links | |
+
 ## Web interface redesign and presentation - 2026-11-28
 
 Linux container; Node.js 22.23.5, npm 10.9.9; Chromium via Playwright for visual

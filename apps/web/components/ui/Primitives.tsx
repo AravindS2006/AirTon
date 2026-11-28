@@ -65,9 +65,9 @@ export const Icon: React.FC<{ name: keyof typeof PATHS | string; size?: number; 
 /* ------------------------------------------------------------------ brand */
 export const LogoMark: React.FC<{ size?: number }> = ({ size = 30 }) => (
   <svg width={size} height={size} viewBox="0 0 34 34" aria-hidden="true">
-    <circle cx="17" cy="17" r="15" fill="none" stroke="var(--cobalt)" strokeWidth="2" />
-    <circle cx="17" cy="17" r="8.5" fill="none" stroke="var(--ember)" strokeWidth="3" />
-    <circle cx="17" cy="17" r="3.4" fill="var(--fluor)" />
+    <circle cx="17" cy="17" r="15" fill="none" strokeWidth="2" style={{ stroke: 'var(--cobalt)' }} />
+    <circle cx="17" cy="17" r="8.5" fill="none" strokeWidth="3" style={{ stroke: 'var(--ember)' }} />
+    <circle cx="17" cy="17" r="3.4" style={{ fill: 'var(--fluor)' }} />
   </svg>
 );
 

@@ -137,23 +137,23 @@ const ApplanationLab: React.FC = () => {
       <div className="lab-stage">
         <div className="lab-views">
           <svg className="lab-cornea" viewBox="0 0 260 300" role="img" aria-label="Cornea under the air pulse, with the light source and detector">
-            <path d="M186,40 C214,20 246,18 260,20" fill="none" stroke="#2d4373" strokeWidth="2.5" />
-            <path d="M186,260 C214,280 246,282 260,280" fill="none" stroke="#2d4373" strokeWidth="2.5" />
-            <path d={`M186,40 Q${cx},150 186,260 L212,246 L212,54 Z`} fill="#5f8fff" fillOpacity=".16" />
-            <line x1="214" y1="62" x2="214" y2="128" stroke="#ff7a2e" strokeWidth="6" strokeLinecap="round" />
-            <line x1="214" y1="172" x2="214" y2="238" stroke="#ff7a2e" strokeWidth="6" strokeLinecap="round" />
-            <path d={`M186,40 Q${cx},150 186,260`} fill="none" stroke="#ecf1fa" strokeWidth="4" strokeLinecap="round" />
-            <rect x="4" y="136" width="44" height="28" rx="6" fill="#13203f" stroke="#ff7a2e" strokeWidth="1.5" />
-            <g stroke="#ffb24a" strokeLinecap="round" strokeWidth="2.5" style={{ opacity: 0.08 + 0.92 * airLevel }}>
+            <path d="M186,40 C214,20 246,18 260,20" className="lab-sclera" fill="none" strokeWidth="2.5" />
+            <path d="M186,260 C214,280 246,282 260,280" className="lab-sclera" fill="none" strokeWidth="2.5" />
+            <path d={`M186,40 Q${cx},150 186,260 L212,246 L212,54 Z`} className="lab-chamber" />
+            <line x1="214" y1="62" x2="214" y2="128" className="lab-irisline" strokeWidth="6" strokeLinecap="round" />
+            <line x1="214" y1="172" x2="214" y2="238" className="lab-irisline" strokeWidth="6" strokeLinecap="round" />
+            <path d={`M186,40 Q${cx},150 186,260`} className="lab-cornea-s" fill="none" strokeWidth="4" strokeLinecap="round" />
+            <rect x="4" y="136" width="44" height="28" rx="6" className="lab-box b-ember" strokeWidth="1.5" />
+            <g className="lab-air" strokeLinecap="round" strokeWidth="2.5" style={{ opacity: 0.08 + 0.92 * airLevel }}>
               <line x1="52" y1="144" x2={Math.max(60, apex - 16)} y2="144" />
               <line x1="52" y1="150" x2={Math.max(60, apex - 8)} y2="150" />
               <line x1="52" y1="156" x2={Math.max(60, apex - 16)} y2="156" />
             </g>
-            <rect x="34" y="34" width="34" height="20" rx="4" fill="#13203f" stroke="#5f8fff" strokeWidth="1.5" />
-            <line x1="68" y1="48" x2={apex} y2="150" stroke="#5f8fff" strokeWidth="2" strokeOpacity=".8" />
-            <line x1="68" y1="252" x2={apex} y2="150" stroke="#d6ff3e" strokeWidth="2.5" style={{ opacity: 0.06 + 0.94 * flash }} />
-            <circle cx="52" cy="256" r={6 + 20 * flash} fill="#d6ff3e" style={{ opacity: flash * 0.5 }} />
-            <rect x="34" y="246" width="34" height="20" rx="4" fill="#13203f" stroke="#d6ff3e" strokeWidth="1.8" />
+            <rect x="34" y="34" width="34" height="20" rx="4" className="lab-box b-cobalt" strokeWidth="1.5" />
+            <line x1="68" y1="48" x2={apex} y2="150" className="lab-beam-in" strokeWidth="2" />
+            <line x1="68" y1="252" x2={apex} y2="150" className="lab-beam-out" strokeWidth="2.5" style={{ opacity: 0.06 + 0.94 * flash }} />
+            <circle cx="52" cy="256" r={6 + 20 * flash} className="lab-glow" style={{ opacity: flash * 0.5 }} />
+            <rect x="34" y="246" width="34" height="20" rx="4" className="lab-box b-fluor" strokeWidth="1.8" />
             <text x="6" y="182" className="lab-tag">Nozzle</text>
             <text x="30" y="26" className="lab-tag">Light</text>
             <text x="22" y="290" className="lab-tag">Detector</text>

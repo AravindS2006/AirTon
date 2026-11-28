@@ -2,7 +2,7 @@ import React from 'react';
 
 const FLOW = 'M262,222 C276,262 272,320 252,348 C230,354 206,346 200,320 C197,262 214,216 232,194';
 
-/** Cross-section of the eye: aqueous humour flows from behind the iris to the drainage angle. */
+/** Cross-section of the eye: aqueous humour flows from behind the iris to the drainage angle. Colours follow the theme. */
 const EyeCrossSection: React.FC<{ className?: string }> = ({ className = '' }) => (
   <svg
     className={`eye-x ${className}`}
@@ -12,22 +12,22 @@ const EyeCrossSection: React.FC<{ className?: string }> = ({ className = '' }) =
   >
     <defs>
       <radialGradient id="eye-vit" cx="58%" cy="50%" r="62%">
-        <stop offset="0" stopColor="#15295a" />
-        <stop offset="1" stopColor="#0a1430" />
+        <stop offset="0" className="ex-stop-a" />
+        <stop offset="1" className="ex-stop-b" />
       </radialGradient>
     </defs>
-    <path d="M226.9,180.8 A280,280 0 1,1 226.9,519.2 A182,182 0 0,1 226.9,180.8 Z" fill="url(#eye-vit)" stroke="#2d4373" strokeWidth="3" />
-    <path d="M317,119.6 A266,266 0 1,1 317,580.4" fill="none" stroke="#5f8fff" strokeOpacity=".55" strokeWidth="2.5" />
-    <path d="M226.9,180.8 A182,182 0 0,0 226.9,519.2 L247,504 L247,196 Z" fill="#5f8fff" fillOpacity=".2" />
-    <path d="M226.9,519.2 A182,182 0 0,1 226.9,180.8" fill="none" stroke="#ecf1fa" strokeWidth="5" strokeLinecap="round" />
-    <ellipse cx="290" cy="350" rx="40" ry="92" fill="#5f8fff" fillOpacity=".16" stroke="#5f8fff" strokeOpacity=".7" strokeWidth="2" />
-    <line x1="247" y1="198" x2="247" y2="316" stroke="#ff7a2e" strokeWidth="10" strokeLinecap="round" />
-    <line x1="247" y1="384" x2="247" y2="502" stroke="#ff7a2e" strokeWidth="10" strokeLinecap="round" />
-    <ellipse cx="262" cy="196" rx="13" ry="22" fill="#2d4373" />
-    <ellipse cx="262" cy="504" rx="13" ry="22" fill="#2d4373" />
-    <path d="M722,360 L812,352 L812,420 L722,412 Z" fill="#1c2b4f" stroke="#5f8fff" strokeOpacity=".7" strokeWidth="2" />
-    <ellipse className="eye-x-disc" cx="724" cy="386" rx="7" ry="24" fill="#ffb24a" />
-    <g className="eye-x-arrows" stroke="#ff7a2e" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity=".9">
+    <path className="ex-globe" d="M226.9,180.8 A280,280 0 1,1 226.9,519.2 A182,182 0 0,1 226.9,180.8 Z" fill="url(#eye-vit)" strokeWidth="3" />
+    <path className="ex-retina" d="M317,119.6 A266,266 0 1,1 317,580.4" fill="none" strokeWidth="2.5" />
+    <path className="ex-chamber" d="M226.9,180.8 A182,182 0 0,0 226.9,519.2 L247,504 L247,196 Z" />
+    <path className="ex-cornea" d="M226.9,519.2 A182,182 0 0,1 226.9,180.8" fill="none" strokeWidth="5" strokeLinecap="round" />
+    <ellipse className="ex-lens" cx="290" cy="350" rx="40" ry="92" strokeWidth="2" />
+    <line className="ex-iris" x1="247" y1="198" x2="247" y2="316" strokeWidth="10" strokeLinecap="round" />
+    <line className="ex-iris" x1="247" y1="384" x2="247" y2="502" strokeWidth="10" strokeLinecap="round" />
+    <ellipse className="ex-cil" cx="262" cy="196" rx="13" ry="22" />
+    <ellipse className="ex-cil" cx="262" cy="504" rx="13" ry="22" />
+    <path className="ex-nerve" d="M722,360 L812,352 L812,420 L722,412 Z" strokeWidth="2" />
+    <ellipse className="eye-x-disc" cx="724" cy="386" rx="7" ry="24" />
+    <g className="eye-x-arrows" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path d="M480,190 l0,-34 m-10,12 l10,-12 l10,12" />
       <path d="M480,510 l0,34 m-10,-12 l10,12 l10,-12" />
       <path d="M620,350 l34,0 m-12,-10 l12,10 l-12,10" />
@@ -38,7 +38,7 @@ const EyeCrossSection: React.FC<{ className?: string }> = ({ className = '' }) =
     </g>
     <text x="480" y="356" textAnchor="middle" className="eye-x-iop">IOP</text>
     <text x="480" y="392" textAnchor="middle" className="eye-x-unit">mmHg</text>
-    <g fill="#d6ff3e">
+    <g className="ex-flow">
       {[0, -1.25, -2.5, -3.75].map((b) => (
         <circle key={b} r="4.5">
           <animateMotion dur="5s" repeatCount="indefinite" begin={`${b}s`} path={FLOW} />

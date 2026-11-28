@@ -1,27 +1,55 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Icon, Logo } from './ui/Primitives';
+import { scrollToId } from './LandingPage';
+
+const SECTIONS = [
+  { id: 'how', label: 'How it works' },
+  { id: 'safety', label: 'Safety' },
+  { id: 'evidence', label: 'Evidence' },
+];
+const PAGES = [
+  { to: '/about', label: 'About' },
+  { to: '/blog', label: 'Resources' },
+  { to: '/faq', label: 'FAQ' },
+];
 
 const Header: React.FC = () => {
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => setOpen(false), [location.pathname]);
+
+  const goSection = (id: string) => {
+    setOpen(false);
+    if (location.pathname === '/') scrollToId(id);
+    else navigate('/', { state: { section: id } });
+  };
+
   return (
-    <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-2">
-           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-airton-blue">
-                <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="2"/>
-                <circle cx="16" cy="16" r="8" fill="currentColor"/>
-                <path d="M16 4.5C19.8333 9.33333 24.3 12.5 30 14" stroke="#00A89D" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
-          <span className="text-2xl font-bold text-airton-blue-dark">AirTon</span>
+    <header className="topbar">
+      <div className="wrap topbar-inner">
+        <Link to="/" className="topbar-brand" aria-label="AirTon home">
+          <Logo />
         </Link>
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/about" className="text-gray-600 hover:text-airton-blue transition-colors">About Us</Link>
-          <a href="/#technology" className="text-gray-600 hover:text-airton-blue transition-colors">Technology</a>
-          <Link to="/blog" className="text-gray-600 hover:text-airton-blue transition-colors">Blog</Link>
-          <a href="/#contact" className="text-gray-600 hover:text-airton-blue transition-colors">Contact</a>
+        <nav className={`topbar-nav ${open ? 'open' : ''}`} aria-label="Main" id="main-nav">
+          {SECTIONS.map((s) => (
+            <button key={s.id} type="button" className="nav-link" onClick={() => goSection(s.id)}>
+              {s.label}
+            </button>
+          ))}
+          {PAGES.map((p) => (
+            <NavLink key={p.to} to={p.to} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              {p.label}
+            </NavLink>
+          ))}
+          <Link to="/login" className="btn btn-sm nav-cta">
+            Explore the demo
+          </Link>
         </nav>
-        <Link to="/login" className="bg-airton-blue text-white font-semibold px-6 py-2 rounded-lg hover:bg-airton-blue-dark transition-colors shadow-sm hover:shadow-md">
-          Login
-        </Link>
+        <button type="button" className="menu-btn" aria-expanded={open} aria-controls="main-nav" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>
+          <Icon name={open ? 'x' : 'menu'} size={22} />
+        </button>
       </div>
     </header>
   );

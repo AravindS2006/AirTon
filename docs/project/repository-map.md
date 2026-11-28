@@ -18,13 +18,13 @@ beyond Python/React source. The current source/status is mapped below.
 | Dataset records | data | Actual/candidate dataset registry, rights and grouping plan; no raw retinal data in Git |
 | Hardware | hardware | Recovered mechanical history, proposed electronics/BOM and native-file requirements |
 | Firmware | firmware | Non-actuating reference state model; no verified physical driver |
-| Active web prototype | apps/web | Recovered React app with fictional-data notice and local configuration |
+| Active web prototype | apps/web | Recovered React app, redesigned 2026-11-28; fictional-data notice, bundled assets, no third-party requests |
 | Reference backend | src/airton | Tested synthetic acquisition/storage/report/API example |
 | Cloud/operations | docs/cloud, infra | Architecture, provisioning, care-team security and operating requirements |
 | Clinical | docs/clinical | Paired-reference and home-use validation work packages, protocol planning |
 | Quality/design records | docs/quality, quality | Risk, record index, changes/releases, manufacture/service/surveillance |
 | Commercial/corporate | docs/business, business | Reconciled historical forecasts and ownership/diligence record guidance |
-| Reports | reports | Current master report and later dated project reports |
+| Reports | reports | Current master report, later dated project reports and the dated project presentation |
 | Configuration | config, schemas, templates | Baselines, contracts and review-required design settings |
 | Verification | scripts, tests, .github | Source/hash/link checks, synthetic tests, scenario generation and CI |
 | Restricted local evidence | local-private, ignored | Original notebook outputs and private drafts/extractions; this folder is not an access-control system |

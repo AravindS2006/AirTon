@@ -1,80 +1,136 @@
-import React, { useState, useEffect } from 'react';
-import type { User, Patient } from '../types';
-import { getDoctorData } from '../services/mockApiService';
+import React, { useEffect, useMemo, useState } from 'react';
+import type { Patient, PatientSummary, ReviewState, User } from '../types';
+import { getDoctorData, getPatientData } from '../services/mockApiService';
+import IOPTrendChart from './IOPTrendChart';
+import { Skeleton } from './PatientDashboard';
+import { FictionalBadge, Icon, Monogram, ReviewChip } from './ui/Primitives';
 
 interface DoctorDashboardProps {
   user: User;
 }
 
-const RiskBadge: React.FC<{ risk: 'Low' | 'Medium' | 'High' }> = ({ risk }) => {
-    const riskClasses = {
-        Low: 'bg-green-100 text-green-800',
-        Medium: 'bg-yellow-100 text-yellow-800',
-        High: 'bg-red-100 text-red-800',
-    };
-    return <span className={`px-2 py-1 text-xs font-medium rounded-full ${riskClasses[risk]}`}>{risk} Risk</span>
-};
-
-
 const DoctorDashboard: React.FC<DoctorDashboardProps> = ({ user }) => {
-  const [patients, setPatients] = useState<Omit<Patient, 'iopHistory'>[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [patients, setPatients] = useState<PatientSummary[] | null>(null);
+  const [overrides, setOverrides] = useState<Record<string, ReviewState>>({});
+  const [selected, setSelected] = useState<string | null>(null);
+  const [detail, setDetail] = useState<Patient | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const data = await getDoctorData(user.id);
+    let live = true;
+    getDoctorData(user.id).then((data) => {
+      if (!live) return;
       setPatients(data);
-      setLoading(false);
+      setSelected(data[0]?.id ?? null);
+    });
+    return () => {
+      live = false;
     };
-    fetchData();
   }, [user.id]);
 
-  if (loading) {
-    return <div className="text-center p-10">Loading patient list...</div>;
-  }
+  useEffect(() => {
+    if (!selected) return undefined;
+    let live = true;
+    setDetail(null);
+    getPatientData(selected).then((d) => live && setDetail(d));
+    return () => {
+      live = false;
+    };
+  }, [selected]);
+
+  const rows = useMemo(() => (patients ?? []).map((p) => ({ ...p, reviewState: overrides[p.id] ?? p.reviewState })), [patients, overrides]);
+  if (!patients) return <Skeleton rows={4} />;
+
+  const awaiting = rows.filter((r) => r.reviewState === 'awaiting').length;
+  const missed = rows.filter((r) => r.reviewState === 'missed').length;
+  const rejected = rows.reduce((t, r) => t + r.rejectedRecent, 0);
+  const current = rows.find((r) => r.id === selected) ?? null;
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white p-6 rounded-lg shadow">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-bold text-gray-800">Patient Overview</h2>
-          <button type="button" className="bg-airton-blue text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-airton-blue-dark flex items-center">
-            <i data-lucide="plus" className="mr-2 h-4 w-4"></i> Add Patient
+    <div className="dash-stack">
+      <div className="dash-banner">
+        <FictionalBadge />
+        <span>No alert thresholds are set. Monitoring schedules, thresholds and response times come from each patient&apos;s reviewed care plan.</span>
+      </div>
+
+      <section className="tiles" aria-label="Summary">
+        <div className="glass tile"><span className="eyebrow">Assigned patients</span><span className="num">{rows.length}</span></div>
+        <div className="glass tile"><span className="eyebrow">Awaiting review</span><span className="num c-fluor">{awaiting}</span></div>
+        <div className="glass tile"><span className="eyebrow">Missed sessions</span><span className="num c-alarm">{missed}</span></div>
+        <div className="glass tile"><span className="eyebrow">Rejected attempts, 4 weeks</span><span className="num c-paper">{rejected}</span></div>
+      </section>
+
+      <section className="glass pad">
+        <div className="pad-head">
+          <span className="eyebrow">Patient overview</span>
+          <button type="button" className="btn btn-ghost btn-sm" disabled title="Enrolment is not available in this demonstration">
+            <Icon name="plus" size={16} /> Enrol patient (not in demo)
           </button>
         </div>
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[640px] text-left">
+        <div className="table-wrap">
+          <table className="table">
             <thead>
-              <tr className="bg-gray-50 border-b">
-                <th className="p-3 text-sm font-semibold text-gray-600">Patient</th>
-                <th className="p-3 text-sm font-semibold text-gray-600">Age</th>
-                <th className="p-3 text-sm font-semibold text-gray-600">Last Checkup</th>
-                <th className="p-3 text-sm font-semibold text-gray-600">Risk Level</th>
-                <th className="p-3 text-sm font-semibold text-gray-600"></th>
+              <tr>
+                <th>Patient</th>
+                <th>Last session</th>
+                <th>OD</th>
+                <th>OS</th>
+                <th>Rejected, 4 weeks</th>
+                <th>Review</th>
+                <th><span className="sr-only">Chart</span></th>
               </tr>
             </thead>
             <tbody>
-              {patients.map((patient) => (
-                <tr key={patient.id} className="border-b hover:bg-gray-50">
-                  <td className="p-3">
-                    <div className="flex items-center space-x-3">
-                      <img src={patient.avatarUrl} alt={patient.name} className="w-10 h-10 rounded-full" />
-                      <span className="font-medium text-gray-800">{patient.name}</span>
-                    </div>
+              {rows.map((p) => (
+                <tr key={p.id} className={p.id === selected ? 'selected' : ''}>
+                  <td>
+                    <span className="who">
+                      <Monogram name={p.name} size={36} />
+                      <span>
+                        <b>{p.name}</b>
+                        <small>{p.age} years</small>
+                      </span>
+                    </span>
                   </td>
-                  <td className="p-3 text-gray-600">{patient.age}</td>
-                  <td className="p-3 text-gray-600">{patient.lastCheckup}</td>
-                  <td className="p-3"><RiskBadge risk={patient.riskLevel} /></td>
-                  <td className="p-3 text-right">
-                    <button type="button" className="text-airton-blue hover:underline text-sm font-medium">View Chart</button>
+                  <td>{new Date(p.lastSession).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</td>
+                  <td className="mono">{p.latest.od?.toFixed(1) ?? '—'}</td>
+                  <td className="mono">{p.latest.os?.toFixed(1) ?? '—'}</td>
+                  <td className="mono">{p.rejectedRecent}</td>
+                  <td><ReviewChip state={p.reviewState} /></td>
+                  <td className="right">
+                    <button type="button" className="link-btn" aria-pressed={p.id === selected} onClick={() => setSelected(p.id)}>
+                      Open chart <Icon name="arrow" size={14} />
+                    </button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      </div>
+      </section>
+
+      {current && (
+        <section className="glass pad" aria-label={`Chart for ${current.name}`}>
+          <div className="pad-head">
+            <span className="who">
+              <Monogram name={current.name} size={44} tone="fluor" />
+              <span>
+                <b className="h4">{current.name}</b>
+                <small>Fictional patient · {current.age} years</small>
+              </span>
+            </span>
+            <button
+              type="button"
+              className="btn btn-sm"
+              disabled={current.reviewState === 'reviewed'}
+              onClick={() => setOverrides({ ...overrides, [current.id]: 'reviewed' })}
+            >
+              <Icon name="check" size={16} /> {current.reviewState === 'reviewed' ? 'Reviewed' : 'Mark readings reviewed'}
+            </button>
+          </div>
+          {detail ? <IOPTrendChart points={detail.points} title="Pressure history · per eye" /> : <Skeleton rows={2} />}
+          <p className="src">Marking a review only changes this browser tab. Amendments in a real service keep the original record with author, time and reason.</p>
+        </section>
+      )}
     </div>
   );
 };

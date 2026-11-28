@@ -1,46 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { EvidenceLadder, Logo } from './ui/Primitives';
 
-const Footer: React.FC = () => {
-  return (
-    <footer className="bg-white border-t border-gray-200">
-      <div className="container mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-lg font-semibold text-airton-blue-dark mb-4">AirTon</h3>
-            <p className="text-airton-gray text-sm">Developing home eye-pressure monitoring under a doctor's care.</p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-gray-700 mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/about" className="text-airton-gray hover:text-airton-blue">About Us</Link></li>
-              <li><a href="/#technology" className="text-airton-gray hover:text-airton-blue">Technology</a></li>
-              <li><Link to="/blog" className="text-airton-gray hover:text-airton-blue">Blog</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-gray-700 mb-4">Support</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="/#contact" className="text-airton-gray hover:text-airton-blue">Contact Us</a></li>
-              <li><Link to="/faq" className="text-airton-gray hover:text-airton-blue">FAQ</Link></li>
-              <li><Link to="/privacy-policy" className="text-airton-gray hover:text-airton-blue">Privacy Policy</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-gray-700 mb-4">Connect</h4>
-            <div className="flex space-x-4 text-airton-gray">
-              <a href="#" className="hover:text-airton-blue"><i data-lucide="twitter"></i></a>
-              <a href="#" className="hover:text-airton-blue"><i data-lucide="linkedin"></i></a>
-              <a href="#" className="hover:text-airton-blue"><i data-lucide="facebook"></i></a>
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-airton-gray">
-          AirTon project interface demonstration &middot; {new Date().getFullYear()}
-        </div>
+const Footer: React.FC = () => (
+  <footer className="footer">
+    <div className="wrap footer-grid">
+      <div className="footer-brand">
+        <Logo size={34} />
+        <p>Developing home eye-pressure monitoring under a doctor&apos;s care.</p>
+        <EvidenceLadder lit={['supplied', 'proposed', 'synthetic']} />
       </div>
-    </footer>
-  );
-};
+      <nav aria-label="Project">
+        <h2 className="eyebrow">Project</h2>
+        <ul>
+          <li><Link to="/about">About AirTon</Link></li>
+          <li><Link to="/blog">Research resources</Link></li>
+          <li><Link to="/login">Dashboards demo</Link></li>
+        </ul>
+      </nav>
+      <nav aria-label="Support">
+        <h2 className="eyebrow">Support</h2>
+        <ul>
+          <li><Link to="/faq">FAQ</Link></li>
+          <li><Link to="/privacy-policy">Privacy information</Link></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 className="eyebrow">Status</h2>
+        <p className="footer-note">
+          Concept and research stage. No device, clinical service or patient data is connected to this interface. All readings and figures are fictional.
+        </p>
+      </div>
+    </div>
+    <div className="wrap footer-base">
+      <span>AirTon project interface demonstration · {new Date().getFullYear()}</span>
+      <span className="mono">Fonts, icons and styles are bundled locally</span>
+    </div>
+  </footer>
+);
 
 export default Footer;

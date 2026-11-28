@@ -1,107 +1,164 @@
-import React, { useState, useEffect } from 'react';
-import { ResponsiveContainer, LineChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Line } from 'recharts';
+import React, { useEffect, useMemo, useState } from 'react';
 import { getPatientData } from '../services/mockApiService';
-import type { User, Patient } from '../types';
+import type { DeliveryState, Eye, Patient, SessionPoint, User } from '../types';
+import { REASON_TEXT } from '../lib/simulator';
+import IOPTrendChart, { Sparkline } from './IOPTrendChart';
+import SimulatedSession from './SimulatedSession';
+import { DeliveryChip, FictionalBadge, Icon, Monogram } from './ui/Primitives';
 
 interface PatientDashboardProps {
   user: User;
 }
 
+const DAY = 86_400_000;
+const when = (iso: string) => new Date(iso).toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+
+export const Skeleton: React.FC<{ rows?: number }> = ({ rows = 3 }) => (
+  <div className="skeleton" role="status" aria-label="Loading fictional data">
+    {Array.from({ length: rows }).map((_, i) => (
+      <span key={i} />
+    ))}
+  </div>
+);
+
+function latestAccepted(points: SessionPoint[], eye: Eye) {
+  for (let i = points.length - 1; i >= 0; i--) {
+    const e = eye === 'OD' ? points[i].od : points[i].os;
+    if (e.iop !== null) return { ...e, date: points[i].date };
+  }
+  return null;
+}
+
+const STATES: DeliveryState[] = ['saved', 'delivered', 'reviewed'];
+
 const PatientDashboard: React.FC<PatientDashboardProps> = ({ user }) => {
-  const [patientData, setPatientData] = useState<Patient | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [patient, setPatient] = useState<Patient | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const data = await getPatientData(user.id);
-      setPatientData(data);
-      setLoading(false);
+    let live = true;
+    getPatientData(user.id).then((data) => live && setPatient(data));
+    return () => {
+      live = false;
     };
-    fetchData();
   }, [user.id]);
 
-  if (loading || !patientData) {
-    return <div className="text-center p-10">Loading patient data...</div>;
-  }
+  const recent = useMemo(() => (patient ? patient.sessions.slice(-2).reverse() : []), [patient]);
+  if (!patient) return <Skeleton rows={4} />;
 
-  const latestReading = patientData.iopHistory[patientData.iopHistory.length - 1];
+  const last = patient.points[patient.points.length - 1];
+  const eyes: { eye: Eye; label: string; tone: 'od' | 'os' }[] = [
+    { eye: 'OD', label: 'Right eye · OD', tone: 'od' },
+    { eye: 'OS', label: 'Left eye · OS', tone: 'os' },
+  ];
+  const appointments = [
+    { title: `Follow-up with ${patient.doctor}`, date: new Date(Date.now() + 6 * DAY) },
+    { title: 'Device service and calibration check', date: new Date(Date.now() + 41 * DAY) },
+  ];
 
   return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow flex items-center justify-between">
-          <div>
-            <p className="text-sm text-airton-gray">Latest IOP (Left)</p>
-            <p className="text-3xl font-bold text-airton-blue-dark">{latestReading.leftEye} <span className="text-lg font-normal">mmHg</span></p>
-          </div>
-          <i data-lucide="eye" className="text-airton-blue opacity-50 w-12 h-12"></i>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow flex items-center justify-between">
-          <div>
-            <p className="text-sm text-airton-gray">Latest IOP (Right)</p>
-            <p className="text-3xl font-bold text-airton-blue-dark">{latestReading.rightEye} <span className="text-lg font-normal">mmHg</span></p>
-          </div>
-          <i data-lucide="eye" className="text-airton-blue opacity-50 w-12 h-12"></i>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow flex items-center justify-between">
-          <div>
-            <p className="text-sm text-airton-gray">Risk Level</p>
-            <p className={`text-3xl font-bold ${patientData.riskLevel === 'High' ? 'text-red-500' : patientData.riskLevel === 'Medium' ? 'text-yellow-500' : 'text-green-500'}`}>{patientData.riskLevel}</p>
-          </div>
-          <i data-lucide="shield-alert" className="text-yellow-500 opacity-50 w-12 h-12"></i>
-        </div>
+    <div className="dash-stack">
+      <div className="dash-banner">
+        <FictionalBadge />
+        <span>Your doctor interprets these readings. AirTon does not diagnose glaucoma, set alert thresholds or change treatment.</span>
       </div>
 
-      <div className="bg-white p-6 rounded-lg shadow">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">IOP History</h2>
-        <div style={{ width: '100%', height: 400 }}>
-          <ResponsiveContainer>
-            <LineChart data={patientData.iopHistory} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="date" />
-              <YAxis domain={[5, 30]}/>
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="leftEye" name="Left Eye" stroke="#00529B" strokeWidth={2} activeDot={{ r: 8 }} />
-              <Line type="monotone" dataKey="rightEye" name="Right Eye" stroke="#00A89D" strokeWidth={2} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
+      <section className="grid-eyes" aria-label="Latest readings">
+        {eyes.map(({ eye, label, tone }) => {
+          const a = latestAccepted(patient.points, eye);
+          const sess = eye === 'OD' ? last.od : last.os;
+          return (
+            <article key={eye} className={`glass eye-card tone-${tone}`}>
+              <span className="eyebrow">{label}</span>
+              {a ? (
+                <p className="eye-value">
+                  <span className="num">{a.iop?.toFixed(1)}</span>
+                  <span className="eye-unit">± {a.halfWidth} mmHg</span>
+                </p>
+              ) : (
+                <p className="eye-value muted">No accepted reading</p>
+              )}
+              <Sparkline values={patient.points.map((p) => (eye === 'OD' ? p.od.iop : p.os.iop))} tone={tone} />
+              <p className="eye-meta">
+                {a ? `Latest accepted ${new Date(a.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}` : ''} · last session {sess.accepted} accepted, {sess.rejected} rejected
+              </p>
+            </article>
+          );
+        })}
+        <article className="glass session-card">
+          <span className="eyebrow">Latest session · {new Date(last.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>
+          <ol className="pipeline-states" aria-label="Delivery state">
+            {STATES.map((s) => (
+              <li key={s} className={STATES.indexOf(s) <= STATES.indexOf(last.state) ? 'done' : ''} aria-current={s === last.state ? 'step' : undefined}>
+                <DeliveryChip state={s} />
+              </li>
+            ))}
+          </ol>
+          <p className="body">Readings are reviewed by your care team on their schedule. Uploading does not mean a doctor has seen them yet.</p>
+        </article>
+      </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-lg font-semibold mb-4">Upcoming Appointments</h3>
-            <ul className="space-y-4">
-                <li className="flex items-center justify-between p-3 bg-airton-blue-light rounded-md">
-                    <div>
-                        <p className="font-semibold text-airton-blue-dark">Follow-up with Dr. Carter</p>
-                        <p className="text-sm text-airton-gray">Tuesday, Dec 5, 2023 at 10:30 AM</p>
-                    </div>
-                    <button type="button" className="text-airton-blue hover:underline text-sm">Details</button>
+      <section className="glass pad">
+        <IOPTrendChart points={patient.points} title="Your pressure history · 12 weekly sessions" />
+      </section>
+
+      <section className="grid-2">
+        <div className="glass pad">
+          <span className="eyebrow">Recent attempts</span>
+          <ul className="attempts">
+            {recent.flatMap((s) =>
+              s.attempts.map((a) => (
+                <li key={a.id} className={a.status}>
+                  <span className={`eye-tag ${a.eye === 'OD' ? 'od' : 'os'}`}>{a.eye}</span>
+                  <span className="attempt-time">{when(a.at)}</span>
+                  {a.status === 'pass' ? (
+                    <span className="attempt-val">
+                      {a.iop?.toFixed(1)} <small>± {a.halfWidth} mmHg</small>
+                    </span>
+                  ) : (
+                    <span className="attempt-rej">
+                      <Icon name="x" size={14} /> {a.reasons.map((r) => REASON_TEXT[r]).join(', ')} · no value
+                    </span>
+                  )}
                 </li>
-                 <li className="flex items-center justify-between p-3 bg-gray-50 rounded-md">
-                    <div>
-                        <p className="font-semibold text-gray-700">Annual Eye Exam</p>
-                        <p className="text-sm text-airton-gray">Friday, Jan 12, 2024 at 2:00 PM</p>
-                    </div>
-                    <button type="button" className="text-airton-blue hover:underline text-sm">Details</button>
-                </li>
-            </ul>
+              )),
+            )}
+          </ul>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-lg font-semibold mb-4">My Care Team</h3>
-            <div className="flex items-center space-x-4">
-                <img src="https://picsum.photos/seed/drcarter/80" className="w-20 h-20 rounded-full" alt="Dr. Emily Carter"/>
-                <div>
-                    <p className="font-bold text-lg text-airton-blue-dark">{patientData.doctor}</p>
-                    <p className="text-airton-gray">Ophthalmologist</p>
-                    <button type="button" className="mt-2 text-sm bg-airton-teal text-white px-4 py-1 rounded-full hover:opacity-90">Message</button>
-                </div>
+        <SimulatedSession eye="OD" />
+      </section>
+
+      <section className="grid-2">
+        <div className="glass pad care">
+          <span className="eyebrow">My care team</span>
+          <div className="care-row">
+            <Monogram name={patient.doctor} size={64} tone="fluor" />
+            <div>
+              <p className="h4">{patient.doctor}</p>
+              <p className="body">Ophthalmologist · reviews your readings and sets your monitoring plan</p>
             </div>
+          </div>
+          <button type="button" className="btn btn-ghost btn-sm" disabled title="Messaging is not available in this demonstration">
+            <Icon name="message" size={16} /> Message (not in demo)
+          </button>
         </div>
-      </div>
+        <div className="glass pad">
+          <span className="eyebrow">Upcoming</span>
+          <ul className="appts">
+            {appointments.map((a) => (
+              <li key={a.title}>
+                <span className="appt-date">
+                  <b>{a.date.toLocaleDateString('en-GB', { day: 'numeric' })}</b>
+                  <span>{a.date.toLocaleDateString('en-GB', { month: 'short' })}</span>
+                </span>
+                <span>
+                  <b>{a.title}</b>
+                  <span className="muted">{a.date.toLocaleDateString('en-GB', { weekday: 'long' })} · 10:30</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </div>
   );
 };

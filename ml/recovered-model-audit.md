@@ -135,3 +135,16 @@ For retinal research, preserve historical code, create rights-reviewed manifests
 fix preprocessing/labels/objectives, establish subject/domain partitions, and
 rerun into a new experiment ID with complete lineage and independent evaluation.
 Do not overwrite historical outputs to make them appear corrected.
+
+## Addendum 2026-11-23: origin of my_model2.h5 (M02)
+
+The founder supplied a local copy of the public
+[golden-panther/glaucoma-detector](https://github.com/golden-panther/glaucoma-detector)
+repository (MIT licence, 2021). Its `my_model2.h5` has the same SHA-256 as M02
+(`c4198d70...7d199ca8`), and its `train.py` defines the same 100 px custom CNN
+recorded above for `airton_static/train.py`. So the "published custom CNN" in the
+AirTon Spaces is a **third-party model, not an AirTon training result**. Its README
+says it was trained on fundus images "collected ... from web", cropped to the optic
+disc. No source list or image rights are given, so its data lineage cannot be
+verified. The historical record above is preserved unchanged; this addendum
+corrects only its attribution.

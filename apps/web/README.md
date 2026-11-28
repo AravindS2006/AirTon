@@ -20,7 +20,8 @@ The working copy was redesigned to share the visual language of the
 - Page changes play an eyelid blink; dashboard tabs refocus instead.
 - Display, body and data typefaces (Anybody, Instrument Sans, JetBrains Mono) are
   bundled from `@fontsource-variable` packages. Icons are a local SVG set and
-  avatars are generated monograms. The interface makes **no third-party requests**:
+  avatars are generated monograms. The interface makes **no third-party requests**
+  (the research demo page calls only the local demo API):
   the unpinned `lucide@latest` CDN script and the placeholder-photo service are gone.
 - The landing page includes a playable version of the repository's synthetic
   applanation simulator and deterministic rules (`lib/simulator.ts`, ported from
@@ -28,6 +29,22 @@ The working copy was redesigned to share the visual language of the
   gates and estimators do not run in the browser.
 - Charts are hand-drawn SVG; `recharts` was removed, cutting the JavaScript bundle
   from over 500 kB to about 315 kB.
+
+### Daylight and night themes (2026-11-28)
+
+The whole site has a night theme and a daylight theme. In daylight the iris
+background becomes an eye in a bright room: the ground turns into the white of
+the eye and the pupil constricts, like a real pupillary light reflex; at night it
+dilates again. The switch is an eye-shaped button in the header, dashboard and
+login card. Where the browser supports view transitions, the new theme opens from
+the button as a growing aperture; elsewhere the colours glide. Settings offers
+System, Daylight and Night. The choice is kept in this browser's local storage and
+applied before the first paint; "System" follows the operating system.
+
+All colours are theme tokens in `index.css` (`:root` for night,
+`:root[data-theme='light']` for daylight), and translucent tints use
+`color-mix()` on those tokens. Bright night accents become darker, readable
+versions in daylight, while fills that carry dark text keep their glow.
 
 The redesign also aligns the interface with the specification:
 
@@ -42,6 +59,36 @@ The redesign also aligns the interface with the specification:
 
 The persistent fictional-data notice is unchanged. Fictional data comes from a
 fixed seed in `services/mockApiService.ts`, so every visit shows the same history.
+
+## Research demo page (`/#/demo`)
+
+Added 2026-11-23 for the college research demonstration and restyled in the
+immersive design on 2026-11-28. It talks to the local demo API, not a clinical
+service:
+
+```powershell
+# terminal 1, repository root (needs .[ml,deep] and the trained models)
+python scripts/serve_demo_api.py
+# terminal 2
+cd apps/web
+npm run dev        # open http://127.0.0.1:3000/#/demo
+```
+
+- **Air-puff section:** simulated acquisitions (clean, high pressure, blink,
+  misaligned, weak signal) run through the real IOP engine, with waveforms,
+  P1/P2 markers, the estimate and its range, or the rejection reasons.
+- **Retinal section:** upload a JPEG/PNG fundus photo for the LAG-trained research
+  model. Inference runs on the server, so weights are never sent to the
+  browser. Images are processed in memory and not stored. Unsuitable images are
+  refused by a colour check and an embedding out-of-distribution check.
+- Set `VITE_AIRTON_DEMO_API` if the API is not at `http://127.0.0.1:8770`.
+- The API binds to loopback by default. Hosting it publicly needs
+  `--allow-network`, an access-controlled deployment and agreement with the LAG
+  terms (academic use; the model must not be distributed). Present it locally if
+  in doubt.
+- Without the API the page shows how to start it; the rest of the site does not
+  depend on it. This page is the only one that makes network requests, and only
+  to that local API.
 
 ## Run and check
 

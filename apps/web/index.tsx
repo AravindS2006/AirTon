@@ -7,6 +7,7 @@ import '@fontsource-variable/jetbrains-mono/wght.css';
 import './index.css';
 import App from './App';
 import { IrisProvider } from './components/immersive/Iris';
+import { ThemeProvider } from './components/immersive/Theme';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -18,7 +19,9 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <IrisProvider>
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
       </IrisProvider>
     </HashRouter>
   </React.StrictMode>,

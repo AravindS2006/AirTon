@@ -75,7 +75,7 @@ const LandingPage: React.FC = () => {
         id="top"
         className="hero"
         labelledBy="hero-title"
-        iris={{ d: { x: 0.74, y: 0.55, r: 0.4, i: 1, p: 0.3, fix: 1 }, m: { x: 0.5, y: 0.34, r: 0.5, i: 0.5, p: 0.3, fix: 1 } }}
+        iris={{ d: { x: 0.765, y: 0.55, r: 0.38, i: 1, p: 0.3, fix: 1 }, m: { x: 0.88, y: 0.14, r: 0.4, i: 0.6, p: 0.3, fix: 1 } }}
       >
         <div className="hero-jet" aria-hidden="true">
           <i style={{ top: 18, width: 520 }} />
@@ -169,6 +169,9 @@ const LandingPage: React.FC = () => {
             </li>
           </ol>
           <ApplanationLab />
+          <Link to="/demo" className="link-arrow">
+            Run the full IOP estimation engine on simulated scenarios <Icon name="arrow" size={16} />
+          </Link>
         </div>
       </Scene>
 
@@ -292,6 +295,9 @@ const LandingPage: React.FC = () => {
           <div className="cta-row center">
             <Link to="/login" className="btn">
               Open the dashboards <Icon name="arrow" size={18} />
+            </Link>
+            <Link to="/demo" className="btn btn-ghost">
+              Try the research models
             </Link>
             <Link to="/about" className="btn btn-ghost">
               Read about AirTon

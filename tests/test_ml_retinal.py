@@ -20,7 +20,7 @@ if HAS_TORCH:
                                         load_manifest, preprocessing_spec, write_synthetic_shapes)
     from airton.ml.retinal.model import build_model, set_backbone_trainable
     from airton.ml.retinal.train import (choose_threshold, classification_report, evaluate, fit_temperature,
-                                         load_checkpoint, save_checkpoint, train)
+                                         finalize_from_checkpoint, load_checkpoint, save_checkpoint, train)
 
 
 @unittest.skipUnless(HAS_TORCH, "torch/torchvision not installed")
@@ -100,13 +100,47 @@ class RetinalFrameworkTests(unittest.TestCase):
         for (k, a), (_, b) in zip(model.state_dict().items(), clone.state_dict().items()):
             self.assertTrue(torch.equal(a, b), k)
 
+    def test_lag_manifest_builder_groups_repeats_and_records_terms(self):
+        spec = importlib.util.spec_from_file_location("build_retinal_manifest", ROOT / "scripts/build_retinal_manifest.py")
+        builder = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(builder)
+        from PIL import Image
+
+        rows = load_manifest(self.manifest_path)["images"]
+        with tempfile.TemporaryDirectory() as tmp:
+            src = Path(tmp) / "LAG"
+            for folder, label in builder.CLASSES:
+                for sub in ("image", "label", "attention_map"):
+                    (src / folder / sub).mkdir(parents=True)
+                picks = [r for r in rows if r["label"] == label][:4]
+                for k, r in enumerate(picks):
+                    Image.open(r["resolved_path"]).save(src / folder / "image" / f"{k:04d}.jpg", quality=98)
+                    (src / folder / "label" / f"{k:04d}.txt").write_text(str(label))
+            # A repeat capture of the same eye must share a group with its original.
+            Image.open(src / "non_glaucoma/image/0000.jpg").save(src / "non_glaucoma/image/0009.jpg", quality=90)
+            (src / "non_glaucoma/label/0009.txt").write_text("0")
+            manifest = builder.build(src, Path(tmp) / "out")
+            groups = {r["source_file"].split("/")[-1]: r["patient_id"] for r in manifest["images"]
+                      if r["source_file"].startswith("non_glaucoma")}
+            self.assertEqual(groups["0000.jpg"], groups["0009.jpg"])
+            self.assertFalse(manifest["governance"]["commercial_use_permitted"])
+            self.assertEqual(load_manifest(Path(tmp) / "out/manifest.json")["dataset_id"], "lag-v1-local")
+            (src / "non_glaucoma/label/0001.txt").write_text("1")
+            with self.assertRaises(ValueError):
+                builder.build(src, Path(tmp) / "out2")
+
     def test_smoke_training_freezes_decisions_before_test(self):
         config = json.loads((ROOT / "ml/configs/retinal-classifier.json").read_text(encoding="utf-8"))
         config.update(config.pop("smoke_overrides"))
         config.update({"epochs": 1, "image_size": 32, "bootstrap_replicates": 10})
         with tempfile.TemporaryDirectory() as out:
             report = train(config, self.manifest_path, out, log=lambda *_: None)
-            self.assertTrue((Path(out) / "frozen-decision.json").is_file())
+            for name in ("frozen-decision.json", "model-card.md", "test-predictions.csv", "metrics.json"):
+                self.assertTrue((Path(out) / name).is_file(), name)
+            self.assertIn("Research only", (Path(out) / "model-card.md").read_text(encoding="utf-8"))
+            again = finalize_from_checkpoint(config, self.manifest_path, out, log=lambda *_: None)
+            self.assertAlmostEqual(again["frozen"]["threshold"], report["frozen"]["threshold"], places=6)
+            self.assertAlmostEqual(again["test_report"]["auroc"] or 0, report["test_report"]["auroc"] or 0, places=6)
         self.assertTrue(report["synthetic"])
         self.assertFalse(report["clinical_use"])
         self.assertEqual(report["history"][0]["train_samples_processed"], report["partitions"]["train"]["images"])

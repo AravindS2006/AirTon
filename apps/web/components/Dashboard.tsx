@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import type { User } from '../types';
 import { FictionalBadge, Icon, Logo, Monogram } from './ui/Primitives';
+import { ThemeToggle } from './immersive/Theme';
 
 interface DashboardProps {
   user: User;
@@ -67,6 +68,7 @@ const Dashboard: React.FC<DashboardProps> = ({ user, onLogout }) => {
             <h1 className="dash-title">{TITLES[location.pathname] ?? 'Overview'}</h1>
           </div>
           <div className="dash-user">
+            <ThemeToggle />
             <span className="dash-user-name">
               <b>{user.name}</b>
               <span>{user.email}</span>

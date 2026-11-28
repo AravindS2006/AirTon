@@ -59,6 +59,47 @@ def crop_box(width, height, x, y, half):
     return left, top, right, bottom
 
 
+PREPARED_SIZE = 256
+
+
+def prepare_fundus(img, size=PREPARED_SIZE):
+    """Crop to the bright field of view, pad to a black square and resize (training and inference)."""
+    from PIL import Image
+
+    img = img.convert("RGB")
+    arr = np.asarray(img)
+    mask = arr[:, :, 0] > 15
+    ys, xs = np.nonzero(mask)
+    if ys.size > 0.1 * mask.size:
+        img = img.crop((int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1))
+    side = max(img.size)
+    canvas = Image.new("RGB", (side, side))
+    canvas.paste(img, ((side - img.size[0]) // 2, (side - img.size[1]) // 2))
+    return canvas.resize((size, size), Image.LANCZOS)
+
+
+def fundus_check(prepared):
+    """Cheap first gate: reject images with no texture or without the red-dominant colour of a fundus photo.
+
+    This is a heuristic, not a fundus detector; the model-embedding distance check in the
+    demo package is the main out-of-distribution guard.
+    """
+    arr = np.asarray(prepared, dtype=np.float32)
+    r, g, b = arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]
+    mask = r > 15
+    reasons = []
+    if mask.mean() < 0.3:
+        reasons.append("image is mostly dark")
+    gray = arr.mean(axis=2)
+    if float(gray[mask].std() if mask.any() else 0.0) < 8:
+        reasons.append("image has almost no detail")
+    if mask.any():
+        mr, mg, mb = float(r[mask].mean()), float(g[mask].mean()), float(b[mask].mean())
+        if not (mr >= 1.05 * mg and mr > mb):
+            reasons.append("colour balance unlike a fundus photograph")
+    return {"looks_like_fundus": not reasons, "reasons": reasons, "field_of_view_fraction": round(float(mask.mean()), 3)}
+
+
 def preprocessing_spec(image_size, pretrained):
     """Single preprocessing definition saved with every checkpoint and reused at inference."""
     mean, std = (IMAGENET_MEAN, IMAGENET_STD) if pretrained else ((0.5, 0.5, 0.5), (0.25, 0.25, 0.25))
@@ -66,12 +107,13 @@ def preprocessing_spec(image_size, pretrained):
             "colour": "RGB", "annotation_dependent_crop": False}
 
 
-def build_transforms(spec, train):
+def build_transforms(spec, train, rotation_deg=0):
     from torchvision import transforms as T
 
     norm = [T.ToTensor(), T.Normalize(spec["mean"], spec["std"])]
     if train:
-        return T.Compose([T.RandomResizedCrop(spec["center_crop"], scale=(0.8, 1.0), ratio=(0.95, 1.05)),
+        extra = [T.RandomRotation(rotation_deg)] if rotation_deg else []
+        return T.Compose([*extra, T.RandomResizedCrop(spec["center_crop"], scale=(0.8, 1.0), ratio=(0.95, 1.05)),
                           T.RandomHorizontalFlip(), T.ColorJitter(0.15, 0.15, 0.1, 0.02), *norm])
     return T.Compose([T.Resize(spec["resize"]), T.CenterCrop(spec["center_crop"]), *norm])
 

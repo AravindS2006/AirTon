@@ -3,6 +3,7 @@ import type { User } from '../types';
 import { UserRole } from '../types';
 import { Icon, Logo } from './ui/Primitives';
 import { useIris } from './immersive/Iris';
+import { ThemeToggle } from './immersive/Theme';
 
 interface LoginProps {
   onLogin: (user: User) => void;
@@ -34,7 +35,10 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     <div className="login">
       <div className="wrap login-grid">
         <form className="glass login-card" onSubmit={handleLogin}>
-          <Logo size={36} />
+          <div className="login-top">
+            <Logo size={36} />
+            <ThemeToggle />
+          </div>
           <div>
             <h1 className="display display-sm">Choose a <em>demonstration role</em></h1>
             <p className="body">Select a role to view the dashboard.</p>

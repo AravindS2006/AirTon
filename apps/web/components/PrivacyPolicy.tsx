@@ -13,8 +13,9 @@ const PrivacyPolicy: React.FC = () => (
           information in demonstration controls.
         </p>
         <p>
-          Styles, scripts, fonts and icons are built and served locally. The interface itself makes no requests to third-party services; external pages open only when you
-          follow a source link. The app has not been prepared as a private clinical system.
+          Styles, scripts, fonts and icons are built and served locally. The interface makes no requests to third-party services; external pages open only when you
+          follow a source link. The research demo page talks only to the local demo API you start yourself (loopback by default). Images uploaded there are analysed in
+          memory and not stored. The app has not been prepared as a private clinical system.
         </p>
         <p>
           A future clinical service requires a reviewed privacy notice, purpose and access controls, retention rules, patient rights handling, vendor governance and incident

@@ -29,5 +29,6 @@ models/weights/*
 hardware/cad/exports/
 .DS_Store
 Thumbs.db
-/Glaucoma-master
-/LAG Dataset
+# Third-party datasets/repos supplied locally; academic-use terms forbid re-upload.
+/LAG Dataset/
+/Glaucoma-master/

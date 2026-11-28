@@ -73,6 +73,7 @@ the same commands at a pinned commit, so results stay comparable and reviewable.
 | [Google Colab notebook](notebooks/colab/airton_colab_training.ipynb) | Retinal image training on a GPU; IOP runs when no local Python is set up | Thin runner: clones a pinned ref, runs the scripts, downloads a results zip. GPU runs give a different (but recorded) model ID |
 | GitHub Actions | Regression checks on every push | Quick profile only |
 | Approved institutional or cloud compute | **Any real bench or patient data** | Colab and personal Drive are not approved storage for health data |
+| Local workstation | **LAG** (academic-use dataset) | Academic-use permission from the LAG team (2026-11-23). The terms still forbid re-uploading the database, so cloud runs need permission that explicitly covers it |
 
 Colab is not where model code is written. Change the code in the repository,
 commit it, then run it in Colab at that commit. Notebook-only edits are lost
@@ -101,6 +102,41 @@ once, patient-bootstrap AUROC, Wilson intervals, calibration error, explicitly
 labelled confusion matrices and tensor-only checkpoints. Run
 `python scripts/train_retinal_model.py --synthetic-smoke` to exercise it on
 generated shapes.
+
+### First real-data run: LAG (2026-11-23, M14)
+
+```powershell
+python scripts/build_retinal_manifest.py --lag "LAG Dataset" --out local-private/datasets/lag-v1
+python scripts/train_retinal_model.py --config ml/configs/retinal-lag.json --manifest local-private/datasets/lag-v1/manifest.json --output output/retinal-lag
+```
+
+EfficientNet-B0 from ImageNet weights, about 1 h 50 min on a 16-core CPU. Held-out
+test (728 images): AUROC 0.991 (95% CI 0.986-0.996); sensitivity 95.7% and
+specificity 94.9% at the validation-frozen Youden threshold. Full card:
+[lag-efficientnet-b0-model-card.md](../artifacts/research/lag-efficientnet-b0-model-card.md).
+These are **single-source, internal** results. No other camera, site or population
+was tested, and fellow-eye leakage cannot be excluded without patient IDs. LAG is
+academic-use only, so this model cannot go into the product (AT-025, H21).
+
+The supplied `Glaucoma-master` folder is a third-party code repository with 184
+web-sourced optic-disc crops of unknown provenance. It is not used for training.
+Its `my_model2.h5` is byte-identical to M02 (see the
+[audit addendum](recovered-model-audit.md#addendum-2026-11-23-origin-of-my_model2h5-m02)).
+
+### Research demo (website)
+
+`scripts/select_retinal_demo_model.py` picks the demo model on **validation**
+data, freezes its threshold and fits an out-of-distribution guard (PCA
+Mahalanobis plus residual on the network's embedding, about 0.5% of in-domain
+test images flagged). It writes a hash-verified package to the ignored
+`models/weights/`. `scripts/serve_demo_api.py` serves it with the IOP engine
+for the website's `/#/demo` page (see [apps/web/README.md](../apps/web/README.md)).
+A heavier ConvNeXt-Tiny run was started and stopped at the founder's request
+because EfficientNet-B0 was sufficient. On 183 differently framed optic-disc
+crops the model scored near chance (AUROC 0.59), so the demo states that it
+supports full-field photographs only.
+
+For the air-puff model and hardware, see the [signal interface](../docs/hardware/signal-interface.md).
 
 ## Historical record (v0.2.0)
 

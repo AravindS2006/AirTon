@@ -7,6 +7,7 @@
 | `source/manifest.json` | Source origin/hash and excerpt provenance | Integrity record |
 | `source/device-drawings/` | Five actual September 2026 device drawing PDFs | Concept drawings; no native CAD or as-built proof |
 | `research/` | Two aggregate notebook confusion-matrix figures | Historical output excerpts; class-label audit required |
+| `research/lag-efficientnet-b0-*` | M14 model card and metrics (text only; no images or weights) | Public research dataset, internal held-out test; academic-use only |
 | `recovery-manifest.json` | 80 retained recovered source/figure/drawing hashes | Exact legacy sources; notebook outputs stripped |
 | `../legacy/` | Fixed-revision public GitHub / Hugging Face app and model source | Historical prototype implementations |
 | `../reports/` | Dated master report in Markdown and PDF | Current evidence synthesis; not clinical validation |

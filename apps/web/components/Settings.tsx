@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from './ui/Primitives';
+import { AppearancePicker } from './immersive/Theme';
 
 const TOGGLES = [
   { id: 'news-updates', label: 'News and updates', hint: 'Project announcements', on: true },
@@ -9,6 +10,11 @@ const TOGGLES = [
 
 const Settings: React.FC = () => (
   <div className="dash-stack narrow-col">
+    <section className="glass pad">
+      <span className="eyebrow">Appearance</span>
+      <AppearancePicker />
+      <p className="src">Saved in this browser. The background eye follows the theme: its pupil constricts in daylight.</p>
+    </section>
     <section className="glass pad">
       <span className="eyebrow">Email notifications</span>
       <ul className="switches">

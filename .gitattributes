@@ -6,5 +6,7 @@ legacy/** -text
 *.yml text eol=lf
 *.pdf binary
 *.png binary
+*.webp binary
+*.woff2 binary
 *.step binary
 *.stl binary

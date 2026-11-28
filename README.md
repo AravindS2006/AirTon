@@ -26,7 +26,8 @@ Eye pressure alone cannot establish or exclude glaucoma
 |---|---|
 | Read the current specification and master report | [Home monitoring specification](docs/product/specification.md), [dated master report](reports/airton-project-report-2026-10-04.md), [PDF](reports/airton-project-report-2026-10-04.pdf) |
 | Inspect actual recovered project work | [Evidence register](docs/project/evidence-register.md), [project history](docs/project/history.md), [repository map](docs/project/repository-map.md) |
-| Run the recovered web interface | [React app](apps/web/README.md), [legacy source audit](docs/software/legacy-audit.md) |
+| Run the web interface | [React app](apps/web/README.md), [legacy source audit](docs/software/legacy-audit.md) |
+| Present the project | [Presentation, 28 November 2026](reports/presentation-2026-11-28/README.md) |
 | Inspect actual models and datasets used | [Model registry](models/model-registry.json), [historical model audit](ml/recovered-model-audit.md), [dataset registry](data/dataset-registry.json) |
 | Read the research and recommendations | [Research dossier](research/deep-research.md) |
 | Check evidence and original deck claims | [Source register](research/source-register.md), [claim audit](research/deck-claim-audit.md) |
@@ -58,7 +59,7 @@ sample files with SHA-256 hashes, a local SQLite store, a report preview, and
 illustrative FHIR observations. A rejected acquisition has no pressure result.
 Run the same command again to exercise idempotent ingestion.
 
-The recovered React interface is independently runnable:
+The React interface, redesigned on 28 November 2026 to match the project presentation, is independently runnable:
 
 ```powershell
 cd apps/web
@@ -90,7 +91,7 @@ meaning as AirTon or clinical performance. The original exercise
 ```text
 artifacts/       team PDF, recovered drawings, notebook figures, hash manifests
 legacy/          immutable recovered GitHub / Hugging Face source snapshots
-apps/web/        runnable recovered React interface with explicit demo status
+apps/web/        runnable React interface (immersive redesign) with explicit demo status
 research/        evidence synthesis, citation register, deck audit, search log
 docs/            product, architecture, clinical, quality, cloud, project docs
 hardware/        hardware specification, BOM planning, CAD/electronics work areas
@@ -102,7 +103,7 @@ data/           actual/candidate dataset registry; no raw clinical images
 models/         actual model registry/results; two ignored local weight files
 quality/        design, production-master and per-device record structure
 business/       historical financial assumptions and reconciled scenarios
-reports/        dated project specification/progress/evidence report and PDF
+reports/        dated project report and PDF, dated project presentation
 schemas/        strict synthetic measurement JSON Schema
 scripts/        demo, synthetic ML, model integrity, finance and report generation
 tests/          integrity, rejection, API, grouping, and report behavior checks

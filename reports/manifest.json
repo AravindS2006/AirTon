@@ -15,6 +15,42 @@
       "path": "reports/airton-project-report-2026-10-04.pdf",
       "bytes": 38519,
       "sha256": "9bb1fdb995cf924042fa4ceac47dbcc3b112f561897417ea31dcb92a89fab0ca"
+    },
+    {
+      "path": "reports/presentation-2026-11-28/engine.js",
+      "bytes": 30321,
+      "sha256": "52f51f41a53e3df581e3fbad13a712ab79920be6ff50149216fd293ac1a4e55b",
+      "set": "presentation-2026-11-28 (repository v0.3.0 evidence; not a clinical or release record)"
+    },
+    {
+      "path": "reports/presentation-2026-11-28/img/mvp-renders-2025-07.webp",
+      "bytes": 89652,
+      "sha256": "27a415aee79a9c09964931c5d79e331cbef8bfdb9dfa9f2fabfa1bb9e6d201d7",
+      "set": "presentation-2026-11-28 (repository v0.3.0 evidence; not a clinical or release record)"
+    },
+    {
+      "path": "reports/presentation-2026-11-28/img/patent-sheet-2026-09.webp",
+      "bytes": 73438,
+      "sha256": "fa3c959fda06fa67454d39677719bb4c3ce21c087bcd8bbd256d3736e79da6b0",
+      "set": "presentation-2026-11-28 (repository v0.3.0 evidence; not a clinical or release record)"
+    },
+    {
+      "path": "reports/presentation-2026-11-28/img/proteus-2025-07.webp",
+      "bytes": 74694,
+      "sha256": "1138ec71047b452c50e34561bf2a2f514b50b0b8b119ffbd82b7e5791d49aa44",
+      "set": "presentation-2026-11-28 (repository v0.3.0 evidence; not a clinical or release record)"
+    },
+    {
+      "path": "reports/presentation-2026-11-28/index.html",
+      "bytes": 155296,
+      "sha256": "7d62a5965cc65608a331967597ef7ad6092f07343ed1078513e07acf6b1d2e5f",
+      "set": "presentation-2026-11-28 (repository v0.3.0 evidence; not a clinical or release record)"
+    },
+    {
+      "path": "reports/presentation-2026-11-28/scenes.js",
+      "bytes": 39767,
+      "sha256": "1774b56340ef057852f1b437a05cf5d5f1583459d871cf9b8b3900c4ab3a216c",
+      "set": "presentation-2026-11-28 (repository v0.3.0 evidence; not a clinical or release record)"
     }
   ]
 }

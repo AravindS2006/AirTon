@@ -4,6 +4,38 @@ Repository software and record changes. Evidence levels follow
 [repository management](docs/project/repository-management.md). Nothing here is
 a clinical or device release.
 
+## Unreleased - 2026-11-28 - Immersive web interface and project presentation
+
+Interface and presentation work only. No change to the Python package, the
+measurement contract, the ML stack or any clinical setting.
+
+### Added
+- `reports/presentation-2026-11-28/`: standalone 32-slide project presentation
+  with a source table, derived-image record and manifest hashes.
+- `apps/web/lib/simulator.ts`: browser port of the synthetic applanation
+  simulator, simplified feature extraction and deterministic rules.
+- `apps/web/components/immersive/`: WebGL iris background driven by routes and
+  scroll scenes; blink page transitions.
+- Interactive applanation lab on the landing page; simulated practice session in
+  the patient view; per-eye trend chart with uncertainty bands, rejected attempts
+  and a table view.
+
+### Changed
+- `apps/web`: complete visual redesign. Fonts bundled from `@fontsource-variable`
+  packages, local SVG icons and generated monograms replace the unpinned
+  `lucide@latest` CDN script and placeholder photos; the interface makes no
+  third-party requests. `recharts` removed.
+- Fictional data is seeded and modelled as per-eye sessions with rejected
+  attempts (reason, no value), uncertainty half-widths and delivery states.
+- Risk-level badges replaced by review states; the automated "IOP elevated"
+  notification replaced by delivery, review and service notices (R01, R13, R22, R23).
+- Unavailable demo actions are disabled and labelled. Header section links no
+  longer navigate to missing hash routes.
+
+### Unchanged
+- `legacy/` snapshots, the persistent fictional-data notice, loopback-only
+  development server and pinned lockfile workflow.
+
 ## v0.3.0 - 2026-11-23 - ML engineering baseline (synthetic)
 
 Plan and engineered prompt: [phase 0.3 plan](docs/project/plans/2026-11-23-ml-phase-0.3.md).

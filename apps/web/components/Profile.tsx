@@ -1,38 +1,34 @@
 import React from 'react';
+import type { User } from '../types';
+import { FictionalBadge, Icon, Monogram } from './ui/Primitives';
 
-const Profile: React.FC = () => {
-  return (
-    <div className="bg-white p-8 rounded-lg shadow">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Profile</h2>
-      <div className="space-y-4">
+const Profile: React.FC<{ user: User }> = ({ user }) => (
+  <div className="dash-stack narrow-col">
+    <section className="glass pad profile">
+      <div className="profile-head">
+        <Monogram name={user.name} size={72} tone="cobalt" />
         <div>
-          <label className="block text-sm font-medium text-gray-600">Name</label>
-          <p className="text-lg text-gray-800">Jane Doe</p>
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-600">Email</label>
-          <p className="text-lg text-gray-800">jane.doe@email.com</p>
-        </div>
-        <div>
-            <button
-                type="button"
-                className="bg-airton-blue text-white font-semibold px-5 py-2 rounded-lg hover:bg-airton-blue-dark transition-colors text-sm"
-            >
-                Edit Profile
-            </button>
-        </div>
-        <div className="pt-4 border-t">
-            <h3 className="text-lg font-semibold text-gray-700">Account Security</h3>
-            <button
-                type="button"
-                className="mt-2 bg-gray-200 text-gray-800 font-semibold px-5 py-2 rounded-lg hover:bg-gray-300 transition-colors text-sm"
-            >
-                Change Password
-            </button>
+          <p className="h3">{user.name}</p>
+          <FictionalBadge label="Fictional profile" />
         </div>
       </div>
-    </div>
-  );
-};
+      <dl className="fields">
+        <div><dt>Name</dt><dd>{user.name}</dd></div>
+        <div><dt>Email</dt><dd>{user.email}</dd></div>
+        <div><dt>Role</dt><dd>{user.role}</dd></div>
+        <div><dt>Account</dt><dd>Demonstration role, no authentication</dd></div>
+      </dl>
+      <div className="btn-row">
+        <button type="button" className="btn btn-sm" disabled title="Not available in this demonstration">
+          <Icon name="user" size={16} /> Edit profile
+        </button>
+        <button type="button" className="btn btn-ghost btn-sm" disabled title="Not available in this demonstration">
+          <Icon name="lock" size={16} /> Change password
+        </button>
+      </div>
+      <p className="src">Editing and password changes are disabled: this demonstration has no accounts.</p>
+    </section>
+  </div>
+);
 
 export default Profile;

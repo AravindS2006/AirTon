@@ -19,9 +19,9 @@ const DashboardHome: React.FC<DashboardHomeProps> = ({ user }) => {
       return <AdminDashboard user={user} />;
     default:
       return (
-        <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-xl font-bold text-gray-800">Error</h2>
-            <p className="text-airton-gray mt-2">Invalid user role detected. Please contact support.</p>
+        <div className="glass card">
+          <h2 className="h3">Unknown role</h2>
+          <p className="body">This demonstration only has patient, doctor and admin views. Log out and choose one of them.</p>
         </div>
       );
   }

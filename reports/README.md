@@ -20,6 +20,10 @@ output/pdf/. Review every final page before copying an updated PDF into reports/
 and updating the manifest. A rebuilt PDF can differ in creation metadata/hash.
 Do not change dated report claims without retaining the prior review/version.
 
+[presentation-2026-11-28](presentation-2026-11-28/README.md) is a standalone
+32-slide presentation of repository v0.3.0 evidence, with a source table and
+derived-image record. Its file hashes are in the manifest.
+
 Keep dated snapshots rather than silently changing prior claims. Each report
 needs source identifiers, actual completed work, unresolved evidence and the
 current intended use. The public prototype, recorded notebook outputs and

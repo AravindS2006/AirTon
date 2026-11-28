@@ -1,5 +1,5 @@
 {
-  "name": "AirTon - Glaucoma Screening",
-  "description": "A comprehensive web application for AirTon, a health-tech startup specializing in glaucoma screening. It includes a landing page and a role-based dashboard for patients, doctors, and admins to monitor intraocular pressure (IOP).",
+  "name": "AirTon - Home IOP Monitoring Demo",
+  "description": "Interface demonstration for AirTon, a proposed home eye-pressure monitoring system for patients under a doctor's care. Landing story, applanation simulator and role-based dashboards on fictional data; not connected to a device or a clinical service.",
   "requestFramePermissions": []
 }

@@ -32,11 +32,14 @@ snapshot is preserved unchanged. Its package lock, metadata and components are
 retained. The active copy now corrects unsupported accuracy, fictional testimonial,
 unverified company and HIPAA claims and replaces them with the reviewed project
 position. Archive copy remains historical. Any publication still requires team
-ownership, claims and rights review. The recovered CDN assets remain an uncontrolled
-prototype dependency; icon loading now fails gracefully if unavailable. The active
-copy now bundles Tailwind through pinned local build dependencies and uses system
-fonts, removing the failed CDN styling and redundant import map. Placeholder
-images and optional icon loading still contact external providers.
+ownership, claims and rights review. The active copy bundles Tailwind through
+pinned local build dependencies, removing the failed CDN styling and redundant
+import map. On 2026-11-28 the active copy was redesigned (see the
+[web app README](../../apps/web/README.md)): the unpinned CDN icon script and the
+placeholder-photo service were replaced by local SVG icons and generated
+monograms, and fonts are bundled from npm packages, so the interface makes no
+third-party requests. The redesign also replaced the risk-level badges and an
+automated pressure interpretation with review and delivery states.
 
 The active demo Python service is separate, synthetic-only and loopback-only.
 It is not a production bridge for real hardware/patients. Integrating the React
@@ -52,7 +55,6 @@ conflicting uploads; test reboot/loss and authorization. Bound/decode image
 uploads, verify input modality/quality and quarantine failed analysis. Use a
 validated estimator/model registry and explicit provenance, never random scores.
 
-Local CSS packaging is completed for the demo. Package remaining icons/assets
-locally before a controlled production build. Review all dependencies
+Local packaging of CSS, fonts and icons is completed for the demo. Review all dependencies
 and transitive vulnerabilities at a release revision. A local build is not an
 SBOM, penetration test, deployment approval or clinical validation.

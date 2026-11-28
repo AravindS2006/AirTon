@@ -1,5 +1,19 @@
 # Verification record
 
+## Web interface redesign and presentation - 2026-11-28
+
+Linux container; Node.js 22.23.5, npm 10.9.9; Chromium via Playwright for visual
+checks. Interface and presentation only; no device or clinical behaviour verified.
+
+| Check | Result | Scope / limit |
+|---|---|---|
+| `node node_modules/typescript/bin/tsc --noEmit` | Passed | apps/web working copy |
+| `npm run build` | Passed; JS 315 kB (101 kB gzip), CSS 52 kB; no large-chunk warning | Production bundle with bundled fonts |
+| Rendered check of the production build | Landing scenes, applanation lab (accept and alignment rejection), about, FAQ, 404, login, patient, doctor and admin views at 1440 px; landing and patient view at 390 px | No horizontal scroll; no third-party requests observed; one NaN on an emptied slider value fixed |
+| Presentation render | All 32 slides at 1920×1080 with every step revealed | No frame overflow or script errors; phone width without horizontal scroll |
+| `python -m unittest discover -s tests` | 48 run, 37 passed, 11 skipped (torch not installed); Python 3.13.18 | Python package unchanged |
+| `python scripts/check_repository.py` | Passed; 237 local Markdown links | Includes the new presentation hashes and links |
+
 ## Repository v0.3.0 - ML engineering baseline
 
 **Date:** 2026-11-23. Windows 11; Python 3.12.10, numpy 2.0.2, scipy 1.16.0,

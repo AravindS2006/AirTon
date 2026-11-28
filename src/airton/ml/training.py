@@ -263,6 +263,10 @@ def run_training(config, output_dir, *, use_deep=None, log=print, repo_root=None
     one_per_subject = np.array(sorted(one_per_subject))
     conf_scores = np.abs(y[one_per_subject] - estimate[one_per_subject]) / sigma[one_per_subject]
     q_conf = conformal_quantile(conf_scores, uc["conformal_alpha"])
+    if not np.isfinite(q_conf):
+        needed = int(np.ceil(1 / uc["conformal_alpha"] - 1))
+        raise ValueError(f"Only {one_per_subject.size} calibration subjects have an accepted acquisition; "
+                         f"at least {needed} are needed for alpha={uc['conformal_alpha']}. Increase n_subjects.")
     log(f"conformal quantile {q_conf:.3f} from {one_per_subject.size} subjects; OOD threshold {ood_threshold:.2f}")
 
     # ------------------------------------------------------------ bundle

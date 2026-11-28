@@ -1,0 +1,28 @@
+{
+  "config_id": "retinal-lag-efficientnet-b0",
+  "clinical_use": false,
+  "note": "Research training on the locally supplied LAG copy (academic use only; no re-upload; do not run in Colab/Drive). CPU-sized schedule.",
+  "seed": 42,
+  "architecture": "efficientnet_b0",
+  "pretrained": true,
+  "image_size": 224,
+  "batch_size": 32,
+  "epochs": 10,
+  "freeze_backbone_epochs": 1,
+  "learning_rate": 0.0003,
+  "head_lr_multiplier": 3,
+  "weight_decay": 0.0001,
+  "patience": 3,
+  "split": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "threshold_rule": "youden",
+  "target_sensitivity": null,
+  "secondary_target_sensitivity": 0.9,
+  "bootstrap_replicates": 1000,
+  "device": "auto",
+  "amp": true,
+  "num_workers": 6
+}

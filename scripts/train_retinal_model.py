@@ -23,10 +23,12 @@ def main():
     source = parser.add_mutually_exclusive_group(required=True)
     source.add_argument("--manifest")
     source.add_argument("--synthetic-smoke", action="store_true")
+    parser.add_argument("--finalize-only", action="store_true",
+                        help="rebuild reports from the checkpoint in --output without retraining")
     parser.add_argument("--output", default="output/retinal-research")
     args = parser.parse_args()
     from airton.ml.retinal.data import write_synthetic_shapes
-    from airton.ml.retinal.train import train
+    from airton.ml.retinal.train import finalize_from_checkpoint, train
 
     config = json.loads(Path(args.config).read_text(encoding="utf-8"))
     smoke = config.pop("smoke_overrides", {})
@@ -36,6 +38,8 @@ def main():
         config.update(smoke)
         with tempfile.TemporaryDirectory() as tmp:
             report = train(config, write_synthetic_shapes(tmp), args.output)
+    elif args.finalize_only:
+        report = finalize_from_checkpoint(config, args.manifest, args.output)
     else:
         report = train(config, args.manifest, args.output)
     print(json.dumps({"test_auroc": report["test_report"]["auroc"], "output": str(Path(args.output).resolve()),

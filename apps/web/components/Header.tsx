@@ -9,6 +9,7 @@ const SECTIONS = [
   { id: 'evidence', label: 'Evidence' },
 ];
 const PAGES = [
+  { to: '/demo', label: 'Research demo' },
   { to: '/about', label: 'About' },
   { to: '/blog', label: 'Resources' },
   { to: '/faq', label: 'FAQ' },

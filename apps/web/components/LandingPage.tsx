@@ -169,6 +169,9 @@ const LandingPage: React.FC = () => {
             </li>
           </ol>
           <ApplanationLab />
+          <Link to="/demo" className="link-arrow">
+            Run the full IOP estimation engine on simulated scenarios <Icon name="arrow" size={16} />
+          </Link>
         </div>
       </Scene>
 
@@ -292,6 +295,9 @@ const LandingPage: React.FC = () => {
           <div className="cta-row center">
             <Link to="/login" className="btn">
               Open the dashboards <Icon name="arrow" size={18} />
+            </Link>
+            <Link to="/demo" className="btn btn-ghost">
+              Try the research models
             </Link>
             <Link to="/about" className="btn btn-ghost">
               Read about AirTon

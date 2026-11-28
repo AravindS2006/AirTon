@@ -1,0 +1,274 @@
+{
+  "synthetic": false,
+  "dataset_id": "lag-v1-local",
+  "clinical_use": false,
+  "partitions": {
+    "train": {
+      "images": 3399,
+      "patients": 3384
+    },
+    "validation": {
+      "images": 727,
+      "patients": 725
+    },
+    "test": {
+      "images": 728,
+      "patients": 725
+    }
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "train_loss": 0.6751654252265263,
+      "train_samples_processed": 3399,
+      "trainable_parameters": 1281,
+      "validation_auroc": 0.9001986919446974,
+      "seconds": 253.1
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.3400661813648142,
+      "train_samples_processed": 3399,
+      "trainable_parameters": 4008829,
+      "validation_auroc": 0.978839307889726,
+      "seconds": 662.6
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.18405623736189336,
+      "train_samples_processed": 3399,
+      "trainable_parameters": 4008829,
+      "validation_auroc": 0.9855368821922345,
+      "seconds": 614.7
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.16072522441791626,
+      "train_samples_processed": 3399,
+      "trainable_parameters": 4008829,
+      "validation_auroc": 0.9838728371553936,
+      "seconds": 444.5
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.0845385488866883,
+      "train_samples_processed": 3399,
+      "trainable_parameters": 4008829,
+      "validation_auroc": 0.9902061428926235,
+      "seconds": 760.7
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.07758822492656725,
+      "train_samples_processed": 3399,
+      "trainable_parameters": 4008829,
+      "validation_auroc": 0.994229654772746,
+      "seconds": 662.8
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.04153660348682026,
+      "train_samples_processed": 3399,
+      "trainable_parameters": 4008829,
+      "validation_auroc": 0.9934017716698402,
+      "seconds": 491.6
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.036235589823387204,
+      "train_samples_processed": 3399,
+      "trainable_parameters": 4008829,
+      "validation_auroc": 0.9927974170047189,
+      "seconds": 409.4
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.03246582995551641,
+      "train_samples_processed": 3399,
+      "trainable_parameters": 4008829,
+      "validation_auroc": 0.99322791621823,
+      "seconds": 415.0
+    }
+  ],
+  "frozen": {
+    "temperature": 0.9762035709870395,
+    "threshold": 0.5570394396781921,
+    "threshold_rule": "youden",
+    "secondary_threshold": 0.9243906140327454,
+    "secondary_target_sensitivity": 0.9,
+    "checkpoint": "checkpoint.safetensors",
+    "preprocessing": {
+      "resize": 256,
+      "center_crop": 224,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "colour": "RGB",
+      "annotation_dependent_crop": false
+    },
+    "label_mapping": {
+      "0": "non-glaucoma (LAG negative)",
+      "1": "suspicious glaucoma (LAG positive)"
+    },
+    "architecture": "efficientnet_b0"
+  },
+  "device": "cpu",
+  "mixed_precision": false,
+  "validation_report": {
+    "n_images": 727,
+    "n_patients": 725,
+    "threshold": 0.5570394396781921,
+    "confusion_matrix": {
+      "labels": [
+        "non-glaucoma (LAG negative)",
+        "suspicious glaucoma (LAG positive)"
+      ],
+      "rows_true_cols_pred": [
+        [
+          457,
+          13
+        ],
+        [
+          5,
+          252
+        ]
+      ]
+    },
+    "sensitivity": 0.980544747081712,
+    "sensitivity_wilson95": [
+      0.9552727707009676,
+      0.9916620740477227
+    ],
+    "specificity": 0.9723404255319149,
+    "specificity_wilson95": [
+      0.9532562311374022,
+      0.983765761022003
+    ],
+    "auroc": 0.994229654772746,
+    "brier": 0.022837630728276243,
+    "ece_10bin": 0.021756614839724048,
+    "note": "Wilson intervals treat images as independent; use the patient bootstrap for clustered AUROC."
+  },
+  "test_report": {
+    "n_images": 728,
+    "n_patients": 725,
+    "threshold": 0.5570394396781921,
+    "confusion_matrix": {
+      "labels": [
+        "non-glaucoma (LAG negative)",
+        "suspicious glaucoma (LAG positive)"
+      ],
+      "rows_true_cols_pred": [
+        [
+          447,
+          24
+        ],
+        [
+          11,
+          246
+        ]
+      ]
+    },
+    "sensitivity": 0.9571984435797666,
+    "sensitivity_wilson95": [
+      0.9249948156392167,
+      0.9759350973807923
+    ],
+    "specificity": 0.9490445859872612,
+    "specificity_wilson95": [
+      0.9253011141850481,
+      0.9655222677595835
+    ],
+    "auroc": 0.9913504671739076,
+    "brier": 0.03751087742600686,
+    "ece_10bin": 0.033401027038860304,
+    "note": "Wilson intervals treat images as independent; use the patient bootstrap for clustered AUROC.",
+    "auroc_patient_bootstrap95": [
+      0.985920903942167,
+      0.9957757638541165
+    ]
+  },
+  "duration_seconds": 53.7,
+  "limitations": "Research framework output. Not a glaucoma diagnosis and not linked to IOP estimation.",
+  "test_report_secondary_operating_point": {
+    "n_images": 728,
+    "n_patients": 725,
+    "threshold": 0.9243906140327454,
+    "confusion_matrix": {
+      "labels": [
+        "non-glaucoma (LAG negative)",
+        "suspicious glaucoma (LAG positive)"
+      ],
+      "rows_true_cols_pred": [
+        [
+          465,
+          6
+        ],
+        [
+          29,
+          228
+        ]
+      ]
+    },
+    "sensitivity": 0.8871595330739299,
+    "sensitivity_wilson95": [
+      0.8426391754743155,
+      0.9202759423596495
+    ],
+    "specificity": 0.9872611464968153,
+    "specificity_wilson95": [
+      0.9724891127888975,
+      0.9941490250659155
+    ],
+    "auroc": 0.9913504671739076,
+    "brier": 0.03751087742600686,
+    "ece_10bin": 0.033401027038860304,
+    "note": "Wilson intervals treat images as independent; use the patient bootstrap for clustered AUROC."
+  },
+  "governance": {
+    "approval_reference": "Founder instruction 2026-11-23: train the AirTon retinal research model on the supplied LAG copy (academic research use)",
+    "data_use_terms_reviewed": "AG-CNN README read 2026-11-23: academic use only, other usage refused; re-upload to the internet not allowed",
+    "direct_identifiers_removed": "Public de-identified images with numeric file names; re-encoded without metadata",
+    "storage_location_approved": "Git-ignored local-private on the developer workstation; not uploaded; institutional confirmation pending",
+    "commercial_use_permitted": false,
+    "redistribution_permitted": false
+  },
+  "manifest_sha256": "297b249018dfae11bca6d5bebf110d228c4dbefcd4fd326e5e8f3e1e6f276cc1",
+  "checkpoint_sha256": "e7037f2e0912a2c0a5b414d1f594853a59299eafb3e0bcc965219a12f4152539",
+  "config": {
+    "config_id": "retinal-lag-efficientnet-b0",
+    "clinical_use": false,
+    "note": "Research training on the locally supplied LAG copy (academic use only; no re-upload; do not run in Colab/Drive). CPU-sized schedule.",
+    "seed": 42,
+    "architecture": "efficientnet_b0",
+    "pretrained": true,
+    "image_size": 224,
+    "batch_size": 32,
+    "epochs": 10,
+    "freeze_backbone_epochs": 1,
+    "learning_rate": 0.0003,
+    "head_lr_multiplier": 3,
+    "weight_decay": 0.0001,
+    "patience": 3,
+    "split": {
+      "train": 0.7,
+      "validation": 0.15,
+      "test": 0.15
+    },
+    "threshold_rule": "youden",
+    "target_sensitivity": null,
+    "secondary_target_sensitivity": 0.9,
+    "bootstrap_replicates": 1000,
+    "device": "auto",
+    "amp": true,
+    "num_workers": 6
+  },
+  "finalized_from_checkpoint": true
+}

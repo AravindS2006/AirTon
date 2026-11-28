@@ -96,6 +96,17 @@ model, set `REF` to the commit you want and run all cells. Device selection is
 automatic (`"device": "auto"` in `ml/configs/*.json`). Bring the downloaded
 results into the local ignored `output/` folder before review and archiving.
 
+## Research demo website
+
+```powershell
+python scripts/serve_demo_api.py          # loads models/weights/retinal-demo-model.json and output/iop-full/bundle
+cd apps/web; npm run dev                  # open http://127.0.0.1:3000/#/demo
+```
+
+Build the retinal demo package first with `scripts/select_retinal_demo_model.py`
+(see [ml/README.md](../../ml/README.md)) and the IOP bundle with
+`scripts/train_iop_model.py --profile full`.
+
 ## Retinal research framework
 
 ```powershell

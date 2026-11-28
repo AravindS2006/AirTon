@@ -11,6 +11,7 @@ import AboutUs from './components/AboutUs';
 import Blog from './components/Blog';
 import FAQ from './components/FAQ';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import ResearchDemo from './components/ResearchDemo';
 import NotFound from './components/NotFound';
 import Login from './components/Login';
 
@@ -28,6 +29,7 @@ function routeIris(path: string): IrisSpec {
   if (path.startsWith('/dashboard')) return { d: { x: 1.06, y: 0.14, r: 0.42, i: 0.26 }, m: { x: 1.12, y: 0.04, r: 0.5, i: 0.18 } };
   if (path.startsWith('/login')) return { d: { x: 0.72, y: 0.52, r: 0.4, i: 1, p: 0.28, fix: 1 }, m: { x: 0.5, y: 0.2, r: 0.42, i: 0.55, fix: 1 } };
   if (path === '/') return { d: { x: 0.74, y: 0.55, r: 0.4, i: 1, p: 0.3, fix: 1 }, m: { x: 0.5, y: 0.34, r: 0.5, i: 0.5, fix: 1 } };
+  if (path === '/demo') return { d: { x: 1.05, y: 0.18, r: 0.42, i: 0.35 }, m: { x: 1.15, y: 0.08, r: 0.5, i: 0.22 } };
   if (path === '/about') return { d: { x: 0.92, y: 0.3, r: 0.42, i: 0.5 }, m: { x: 1.05, y: 0.1, r: 0.5, i: 0.3 } };
   if (path === '/blog') return { d: { x: 0.08, y: 0.92, r: 0.45, i: 0.42 }, m: { x: -0.1, y: 1, r: 0.5, i: 0.3 } };
   if (path === '/faq') return { d: { x: 0.94, y: 0.82, r: 0.4, i: 0.45 }, m: { x: 1.1, y: 0.95, r: 0.5, i: 0.3 } };
@@ -115,6 +117,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/demo" element={<ResearchDemo />} />
 
           {/* Simulated login */}
           <Route path="/login" element={user ? <Navigate to="/dashboard" /> : <Login onLogin={setUser} />} />

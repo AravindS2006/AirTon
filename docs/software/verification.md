@@ -14,6 +14,29 @@ checks. Interface and presentation only; no device or clinical behaviour verifie
 | `python -m unittest discover -s tests` | 48 run, 37 passed, 11 skipped (torch not installed); Python 3.13.18 | Python package unchanged |
 | `python scripts/check_repository.py` | Passed; 237 local Markdown links | Includes the new presentation hashes and links |
 
+## Repository v0.3.2 - Research demo website
+
+| Check | Result | Scope / limit |
+|---|---|---|
+| Demo package selection | EfficientNet-B0 chosen on validation AUROC 0.9942; test AUROC 0.9914 unchanged | Single candidate after ConvNeXt was stopped |
+| OOD gate | 0.55% of in-domain test images flagged. Solid colour, noise, reddish noise, gradient and flat-disc images refused | Generated non-fundus probes only |
+| Informal external probe | 183/184 golden-panther optic-disc crops passed the gates; AUROC 0.587 (sensitivity 56%, specificity 59%) | Provenance-unverified images; shows poor transfer to other framing |
+| Demo API | Health, five simulated IOP scenarios (blink, misalignment and weak signal rejected with reasons), LAG predictions with heatmaps, 415/400/413/422 paths, CORS allowlist, loopback-only default | 7 automated tests plus a manual run against the trained models |
+| Web page | TypeScript and production build pass. Headless Edge render of `/#/demo` showed waveforms, P1/P2 markers and the estimate panel | Upload interaction not automated in the browser; tested at the API level |
+
+## Repository v0.3.1 - LAG retinal research model
+
+**Date:** 2026-11-23. Same environment as v0.3.0, CPU only.
+
+| Check | Result | Scope / limit |
+|---|---|---|
+| LAG integrity | 4,854 images; every label file matches its folder; no exact duplicates | Supplied first public part (README reports 11,760 in the full database) |
+| Duplicate grouping | A coarse 16x16 hash was rejected after visual review showed false matches. Correlation >= 0.985 grouped 20 same-eye repeat sets; no label conflicts | Fellow eyes not detectable |
+| Training | 9 epochs (early stop), best validation AUROC 0.994 at epoch 5, about 1 h 50 min | Local CPU; LAG not uploaded anywhere |
+| Held-out test, evaluated once | AUROC 0.991 (0.986-0.996); Youden threshold 0.557: sensitivity 95.7%, specificity 94.9%; Brier 0.038 | Single source; internal test only |
+| Finalize from checkpoint | Recomputed temperature and thresholds matched the frozen decision; identical test AUROC | Reporting outputs had been missing (see changelog) |
+| M02 hash | Glaucoma-master/my_model2.h5 SHA-256 equals M02 | Provenance finding, not a model evaluation |
+
 ## Repository v0.3.0 - ML engineering baseline
 
 **Date:** 2026-11-23. Windows 11; Python 3.12.10, numpy 2.0.2, scipy 1.16.0,

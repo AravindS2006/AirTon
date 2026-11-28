@@ -36,6 +36,54 @@ measurement contract, the ML stack or any clinical setting.
 - `legacy/` snapshots, the persistent fictional-data notice, loopback-only
   development server and pinned lockfile workflow.
 
+## v0.3.2 - 2026-11-23 - Research demo website
+
+### Added
+- `/#/demo` page in `apps/web`. The air-puff section runs simulated scenarios through the IOP engine
+  with waveform charts and accept/reject explanations. The retinal section uploads a photo for a
+  research score with a Grad-CAM heatmap and states its limits.
+- `src/airton/ml/demo_api.py` and `scripts/serve_demo_api.py`: loopback-default demo API with CORS
+  allowlist, 8 MB upload limit, early 413, in-memory image handling, concurrency limit, no logging.
+- `src/airton/ml/retinal/inference.py`: hash-verified demo package; colour gate plus embedding
+  OOD gate (PCA Mahalanobis and residual); Grad-CAM. `scripts/select_retinal_demo_model.py` selects
+  on validation only.
+- `docs/hardware/signal-interface.md`: the signals and metadata real air-puff hardware must provide.
+- 7 demo API tests and 1 IOP calibration test.
+
+### Changed / fixed
+- LAG academic-use permission from the LAG team recorded (dataset registry, manifest, M14).
+- Shared `prepare_fundus` used by both the manifest builder and inference, so preprocessing matches.
+- IOP training now fails with a clear message when too few calibration subjects exist; previously
+  it crashed while writing an infinite conformal quantile to JSON.
+- Grad-CAM overlay geometry follows the package preprocessing instead of a hard-coded crop.
+- A first, geometric fundus check rejected 70% of genuine LAG images; it was replaced after measurement.
+- ConvNeXt-Tiny run stopped by founder decision; EfficientNet-B0 kept.
+
+## v0.3.1 - 2026-11-23 - First real-data retinal research model (LAG)
+
+### Added
+- `scripts/build_retinal_manifest.py`: governed LAG manifest builder. It crops the field of view,
+  re-encodes without metadata, groups same-eye repeat captures (thumbnail correlation >= 0.985,
+  threshold chosen after visual review) and records the academic-use terms. Output goes to
+  git-ignored `local-private/`.
+- `ml/configs/retinal-lag.json` and model M14: EfficientNet-B0 trained locally on LAG. Test AUROC
+  0.991; card in `artifacts/research/`; weights git-ignored.
+- `--finalize-only` for `train_retinal_model.py`: rebuilds reports from a checkpoint and verifies
+  the recomputed frozen decisions match.
+
+### Fixed
+- Retinal training rebuilt the AdamW optimizer every epoch, resetting its state. It now builds
+  once per phase (frozen head, full fine-tune) and uses a cosine schedule.
+- The model card, test predictions and secondary operating point were not written, because a
+  code edit had silently failed to apply. The smoke test now asserts these outputs exist.
+
+### Records
+- M02 provenance corrected: `my_model2.h5` is byte-identical to the third-party
+  golden-panther/glaucoma-detector model (MIT); audit addendum added.
+- Dataset registry: LAG (academic use only; no re-upload) and the golden-panther images
+  (not usable). Risk H21 and backlog AT-025 added. LAG and Glaucoma-master folders git-ignored.
+  The Colab notebook warns not to upload LAG without the authors' written permission.
+
 ## v0.3.0 - 2026-11-23 - ML engineering baseline (synthetic)
 
 Plan and engineered prompt: [phase 0.3 plan](docs/project/plans/2026-11-23-ml-phase-0.3.md).
